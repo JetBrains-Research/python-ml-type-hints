@@ -35,12 +35,14 @@ Gist -- several RNN's for tokens, identifiers and comments, modified by feedback
   5. End or go to 3.
   
 Model predicts function arguments types and function return type separately.  
+
 To annotate function arguments it uses such parameters as:  
   - function name
   - argument name
   - all other arguments names
   - all usages of argument
   - argument type  
+  
 To annotate function return type it uses such parameters as:
   - function name
   - sequence of argument names
