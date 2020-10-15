@@ -24,3 +24,47 @@ Comparison:
   
 
 Main pros of DeepTyper -- consistency, indifference to structural information about source code (both pro and flaw -- DeepTyper can be applied to many languages but it does not take in account properties of a specific language)
+
+
+## TypeWriter
+Gist -- several RNN's for tokens, identifiers and comments, modified by feedback-directed search and a static type checker. Top-k types inferred by model are passed to a tool searching for consistent types. That is done in a following manner:  
+  1. Assume most prediction by TypeWriter is correct
+  2. Try to set all unknown (not annotated types) to top-1 prediction by TypeWriter
+  3. Run static type-checker on new code
+  4. Try to minimize feedback function (weighted sum of yet unpredicted annotations and type errors caused by incorrect predictions) by changing some predictions to other candidates
+  5. End or go to 3.
+  
+Model predicts function arguments types and function return type separately.  
+To annotate function arguments it uses such parameters as:  
+  - function name
+  - argument name
+  - all other arguments names
+  - all usages of argument
+  - argument type  
+To annotate function return type it uses such parameters as:
+  - function name
+  - sequence of argument names
+  - comment assosiated with function
+  - set of return statements
+  - return type
+Noticed problems:  
+ - Closed-world type suggestion
+ - Model doesn't predict anything besides return type and function argument types
+ - Feedback-directed search is slow
+ - Structural information is not considered (except some, like usage sentences and return statements)
+
+Data:  
+  - Internal Facebook code base
+  - `python3` tagged GitHub projects with more than 50 stars, all Python project with `mypy` as dependency on Library.io, total 1137 repos and app. 12000 files, where 55% of functions have annotated return types and 41% of arguments have type annotations  
+
+Comparison:
+  - Naive model -- considers top-10 most frequent types in dataset and samples its prediction from the distribution of these 10 types
+  - DeepTyper -- reimplementation of DeepTyper project for Python
+  - NL2Type -- reimple of NL2Type project for Python  
+TypeWriter outperforms all three presented models both in arguments type prediction task and return type prediction task by app. 10-15% for top-1 precision, and shows somewhat similar result to DeepTyper and NL2Type for top-3 and top-5 precision, and the same can be applied to recall.
+  - pyre infer -- static type inference tool. Comparison was conducted on a set of randomly chosen, fully annotated files from the industrial code base at Facebook. TypeWriter outperforms pyre infer, suggesting much more types than static analysis, and in most cases where both tools suggest a type, they suggest identical type.
+
+Pros of TypeWriter:  
+  - code passed through TypeWriter does not contain type errors if it did not contain any
+  - TypeWriter considers task of predicting function return type and function arguments type as different tasks, thus solving each task more precisely
+  - TypeWriter captures some structural information about source code, like usage statements and return statements, unlike DeepTyper
