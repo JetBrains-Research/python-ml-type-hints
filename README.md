@@ -2,25 +2,25 @@
 
 ## DeepTyper
 
-Время обучения и работы:  
-  Работа -- меньше 2х секунд на не очень больших файлах (время из статьи, экспериментально не проверено)
-  Обучение -- в статье не обнаружено.
+Work and training time:  
+  Work time -- less than 2 seconds for average sized files (taken from the article, not tested)
+  Training time -- not mentioned in the article
 
-Суть подхода -- две bidirectional-RNN с объеднияющим их так называемым "consistency layer", который учитывает то, что идентификатор встречается в коде в разных местах (однако не учитывается, что это может быть вхождение разных переменных). Учитывается это с помощью усреднения результата первой RNN для каждого идентификатора по всем его вхождениям в исходный код. 
-Замеченные проблемы:  
-  - По результативности модель без улучшений (top-1 и top-5 accuracy) слабо отличается от обычной RNN, как указано в самой статье -- top-1 accuracy отличается на 2%, а top-5 accuracy совпадает.
-  - Проблема, вытекающая из предыдущей -- есть сравнение продвинутой модели с другими средствами вывода типов, но также хотелось бы сравнить продвинутую теми же способами plain RNN с этими средствами или с самой продвинутой моделью (т.е. есть DeepTyper+CheckJS, хотелось бы сравнить это с RNN+CheckJS, чтобы понять, есть ли какой-то значительный выигрыш) 
-  - Исходный код рассматривается как набор литералов, т.е. не используется какая-то структурная информация о коде, н-р AST. Сделано так для того, чтобы использовать уже проверенные и понятные модели.
-  - Используется closed-world type suggestion, самые популярные типы покроются, но новые типы в модель не добавить.
+Gist -- two bi-RNN connetcted by so called "consistency layers" considering a possibility that identifier appears several times within one code snippet (although it does not consider that it could be appearence of different identifiers). It is done with averaging of output of RNN for each appearence of each identifer within one code snippet. 
+Noticed problems:  
+  - Model shows weak improvement (for top-1 and top-5 accuracy) against plain RNN according to results -- top-1 accuracy is 2% higher, whereas top-5 accuracy is the same.  
+  - Problems connected with previous -- there is a comparison of advanced model with other type inference tools, but the article lacks comparison of plain RNN with such tools (or comparison of advanced RNN with advanced model)   
+  - No structural information is considered, code is comprehended as sequence of tokens. This design decision is a trade-off between reusage of existing model and productivity.
+  - Closed-world type suggestion offers no opportunity to add new types to model without retraining it
 
-Данные:  
-  - Первые 1000 проектов с наибольшем количеством звезд на GitHub, состоящие преимущественно из TypeScript кода, из которых удалены проекты с >5000 токенов и проекты, в которых только заголовочные файлы на TypeScript, после чего осталось 776 проектов. После этого на проектах запустили компилятор тайпскрипта, который проставил каждому идентификатору тип (возможно, any)
+Data:  
+  - Top-1000 most starred GitHub projects written mostly in TypeScript, excluding projects with more than 5000 tokens and projects, containing only TypeScript header files, only 776 projects left. Each project wath parsed with ```tsc``` compiler, which infers type information for each identifier (possibly ```any```).
   
-Сравнение:  
-  - Бейзлайн -- наивный метод, использующий метод максимального правдоподобия.
-  - Plain RNN -- RNN без дополнительного слоя, по точности почти не проигрывает, но есть проблема с констистентностью -- может выдать разным вхождениям одного идентификатора разные типы
-  - tsc+CheckJS -- запускается компилятор тайпскрипта, выводит какие-то типы, затем запускается тул CheckJS, который тоже выводит какие-то типы поверх уже выведенных (или пишет any, если не уверен). В этом случае проводилось несколько экспериментов, была добавлена гибридная модель и трешхолд уверенности, которая запускала tsc+CheckJS, а затем запускала DeepTyper, и в тех случаях, где DeepTyper был уверен в своем выборе (т.е. вероятность наиболее вероятного типа больше трешхолда уверенности), модели было разрешено подставлять на место этого типа свой тип (также 2 эксперимента -- в первом было можно заменять только any, во втором любой тип, заметных отличий не было найдено)
-  - JSNice -- тул для вывода типов в функциях, обученный на большом корпусе, использует статистику из графов зависимостей. Т.к. доступен только в веб-форме, было проведено только 30 измерений (взяли 30 случайных функций из топ-100 JS проектов на гитхабе и вручную проставили типы для проверки корректности). Здесь также было проведено исследование гибридной модели, где сначала запускался JSNice, а потом там, где он не был уверен, а DeepTyper уверен, проставлялся выведенный DeepTyper тип. С трешхолдом уверенности (т.е. минимальной вероятностью такой, что DeepTyper может проставлять тип, если вероятность его наиболее вероятного типа больше этой вероятности) в 90% точность достигает 65%, а неправильных или не до конца верных результатов не больше 2% (для 167 идентификаторов, требующих вывода типов). Это на 10% больше по точности, чем у JSNice и у DeepTyper с нулевым трешхолдом, но с другой стороны, дает столько же или меньше неправильных результатов.
+Comparison:  
+  - Baseline -- naive method, which assigns each identifier the type distribution it has at a training time.
+  - Plain RNN -- RNN without consistency layers, shows almost same results, has problems with consistency -- it is possible that plain RNN offers different types for different occurences of one identifier
+  - tsc+CheckJS -- comparison against types that ```tsc``` could infer when also equipped with static type-inference tool CheckJS. Hybrid model, which applies DeepTyper to the results of type inference conducted by tsc+CheckJS. DeepTyper shows significant accuracy boost against CheckJS and hybrid model.
+  - JSNice -- tool for type-inference in JS functions using statistic from dependency graphsl learned on a large corpus. Since it is only available to use via a web form, only 30 experiments were held (30 random functions were taken from top-100 most starred JS projects on GitHub, for each function correct types were manually determined). In a same manner with CheckJS hybrid model was invented. With confidence threshold set at 90% accuracy reaches 65%, whereas there are only 2% incorrect or partially correct results, (for 167 identifiers, which needed type-inference). It is 10% more, compared to JSNice and DeepTyper с with 0% threshold, whereas it shows a same amount or even less incorrect results.
   
 
-Основные плюсы такого подхода -- учитываются разные вхождения одного идентификатора (что не сильно увеличивает точность, но снижает количество ошибок, когда разным вхождениям предлагается разный тип), не используется структурная информация об исходном коде (может быть как плюсом, так и минусом -- как плюс, не нужно делать сложных действий, чтобы мигрировать с одного языка на другой, минус -- упускаются особенности конкретного языка, который можно было бы использовать)
+Main pros of DeepTyper -- consistency, indifference to structural information about source code (both pro and flaw -- DeepTyper can be applied to many languages but it does not take in account properties of a specific language)
