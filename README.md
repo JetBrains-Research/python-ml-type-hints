@@ -62,7 +62,7 @@ Data:
 Comparison:
   - Naive model -- considers top-10 most frequent types in dataset and samples its prediction from the distribution of these 10 types
   - DeepTyper -- reimplementation of DeepTyper project for Python
-  - NL2Type -- reimple of NL2Type project for Python  
+  - NL2Type -- reimplementation of NL2Type project for Python  
 TypeWriter outperforms all three presented models both in arguments type prediction task and return type prediction task by app. 10-15% for top-1 precision, and shows somewhat similar result to DeepTyper and NL2Type for top-3 and top-5 precision, and the same can be applied to recall.
   - pyre infer -- static type inference tool. Comparison was conducted on a set of randomly chosen, fully annotated files from the industrial code base at Facebook. TypeWriter outperforms pyre infer, suggesting much more types than static analysis, and in most cases where both tools suggest a type, they suggest identical type.
 
