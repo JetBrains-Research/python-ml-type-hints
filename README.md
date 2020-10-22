@@ -51,7 +51,6 @@ To annotate function return type it uses such parameters as:
   - return type
 Noticed problems:  
  - Closed-world type suggestion
- - Model doesn't predict anything besides return type and function argument types
  - Feedback-directed search is slow
  - Structural information is not considered (except some, like usage sentences and return statements)
 
@@ -70,3 +69,32 @@ Pros of TypeWriter:
   - code passed through TypeWriter does not contain type errors if it did not contain any
   - TypeWriter considers task of predicting function return type and function arguments type as different tasks, thus solving each task more precisely
   - TypeWriter captures some structural information about source code, like usage statements and return statements, unlike DeepTyper
+
+## Typilus
+Gist -- GNN with several types of edges adapted to Python syntaxis and nodes that uses deep similarity learning and KNN to tackle the open-world type suggestion problem, also uses type checker to deal with false positive guesses.
+
+Working time:  
+  - single training epoch takes 86sec on a Nvidia K80 GPU
+  - single inference epoch takes 7.3sec
+
+Noticed problems:  
+ - Yet to investigate
+ 
+ Data: 
+  - 600 Python Github repositories that contain at least one type annotation
+  - `pytype` is run to augment corpus with type annotations that can be inferred from a static analysis tool
+  - deduplication tool is run, removing code duplicates to exclude bias from results
+  - around 25k non-Any types, most popular are `str`, `int` and `bool`
+  - top-10 types account for more than half of the dataset, however, types, used less than 100 times, still account for 32% of the dataset
+
+Comparison:  
+  - DeepTyper based models -- reimplementation of DeepTyper project for python, using subtokens instead of full tokens and consistency module added to output biGRU layer
+  - code2seq based models  
+
+In all experiments all models except Typilus trains with different way of training. There are 3 options -- the classification-based loss that narrows the problem to closed-world type suggestion, deep similarity learning that produces a type space and `Typilus loss` that combines both.  
+Typilus outperforms all presented models, reaching 54.6% accuracy when considering exact type match with 77.2% accuracy on common types (types used at least 100 times in the dataset) and 22.5% accuracy on rare types (all other types), and reaching 64.1% accuracy when considering match up to parametric type (match when ignoring type parameters) with 80.3% accuracy on common types and 41.2% accuracy on rare types.
+
+Pros of Typilus:  
+  - open-world type suggestion
+  - type checker to deal with false positives guesses
+  - GNN to capture structural data
