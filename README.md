@@ -1,6 +1,8 @@
 # python-ml-type-hints
 
-## DeepTyper
+## DeepTyper 
+
+Article link: http://vhellendoorn.github.io/PDF/fse2018-j2t.pdf  
 
 Work and training time:  
   Work time -- less than 2 seconds for average sized files (taken from the article, not tested)
@@ -27,6 +29,9 @@ Main pros of DeepTyper -- consistency, indifference to structural information ab
 
 
 ## TypeWriter
+
+Article link: https://arxiv.org/pdf/1912.03768.pdf  
+
 Gist -- several RNN's for tokens, identifiers and comments, modified by feedback-directed search and a static type checker. Top-k types inferred by model are passed to a tool searching for consistent types. That is done in a following manner:  
   1. Assume most prediction by TypeWriter is correct
   2. Try to set all unknown (not annotated types) to top-1 prediction by TypeWriter
@@ -71,6 +76,9 @@ Pros of TypeWriter:
   - TypeWriter captures some structural information about source code, like usage statements and return statements, unlike DeepTyper
 
 ## Typilus
+
+Article link: https://arxiv.org/pdf/2004.10657.pdf  
+
 Gist -- GNN with several types of edges adapted to Python syntaxis and nodes that uses deep similarity learning and KNN to tackle the open-world type suggestion problem, also uses type checker to deal with false positive guesses.
 
 Working time:  
@@ -100,6 +108,9 @@ Pros of Typilus:
   - GNN to capture structural data
 
 ## LambdaNet
+
+Article link: https://openreview.net/pdf?id=Hkx6hANtwH  
+
 Gist-- GNN with several types of hyperedges, adapted to TypeScript syntaxis.  
 
 Noticed problems: 
