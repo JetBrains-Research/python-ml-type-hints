@@ -98,3 +98,24 @@ Pros of Typilus:
   - open-world type suggestion
   - type checker to deal with false positives guesses
   - GNN to capture structural data
+
+## LambdaNet
+Gist-- GNN with several types of hyperedges, adapted to TypeScript syntaxis.  
+
+Noticed problems: 
+ - no comparison with tools supporting open-world type suggestion
+ - no type-checking after predicting (no guarantee that assigned type is consistent)
+ - collapsing generics into base type
+
+Data: 
+  - 300 popular TypeScript projects from Github that contain between 500 to 10000 lines of code and where at least 10% of type annotations are user-defined types
+  - only 2.7% of the code is duplicated, so deduplication is not run
+  - infer types with TypeScript compiler 
+
+Comparison: 
+  - DeepTyper -- LambdaNet outperforms DeepTyper by 14% considering variable declaration (since DeepTyper predicts type for all occurences) when DeepTyper splits words into subtokens
+  - JSNice -- comparing on top-level functions randomly selected from test set, leaving functions containing only library types, thus leaving only 107 function parameters and return types. LambdaNet correctly predicted 77 of them, whereas JSNice only predicted 48
+ 
+ Pluses of LambdaNet:
+  - GNN
+  - open-world type suggestion
