@@ -21,7 +21,7 @@ class TypesExtractor : CliktCommand() {
     private val input: String by option("--input", help = "Path to input").required()
 
     override fun run() {
-        val types = FileTypesExtractor().extractTypesFromDataset(input)
+        val types = FileTypesExtractor().extractTypesFromProject(input)
         println(types)
         exitProcess(0)
     }
