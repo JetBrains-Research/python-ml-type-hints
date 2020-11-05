@@ -19,10 +19,12 @@ class PluginRunner : ApplicationStarter {
 class TypesExtractor : CliktCommand() {
 
     private val input: String by option("--input", help = "Path to input").required()
+    private val output: String by option("--output", help = "Path to output").required()
 
     override fun run() {
-        val types = FileTypesExtractor().extractTypesFromProject(input)
-        println(types)
+        val extractor = FileTypesExtractor()
+        val types = extractor.extractTypesFromProject(input)
+        extractor.printTypes(types, output)
         exitProcess(0)
     }
 }

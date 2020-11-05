@@ -52,8 +52,9 @@ tasks {
         kotlinOptions.jvmTarget = "1.8"
     }
     runIde {
-        val input: String? = "." // currently hardcoded
-        args = listOfNotNull("inferTypes", "--input", input)
+        val input: String? by project
+        val output: String? by project
+        args = listOfNotNull("inferTypes", "--input", input, "--output", output)
         jvmArgs = listOf("-Djava.awt.headless=true")
         maxHeapSize = "20g"
     }

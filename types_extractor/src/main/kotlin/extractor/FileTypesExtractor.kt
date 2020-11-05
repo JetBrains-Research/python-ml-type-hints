@@ -8,11 +8,14 @@ import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiManager
 import com.intellij.psi.PsiRecursiveElementVisitor
 import com.jetbrains.python.documentation.PythonDocumentationProvider
+import com.jetbrains.python.psi.PyFunction
+import com.jetbrains.python.psi.PyTargetExpression
 import com.jetbrains.python.psi.PyTypedElement
 import com.jetbrains.python.psi.types.TypeEvalContext
 import com.jetbrains.python.sdk.flavors.CondaEnvSdkFlavor
 import com.jetbrains.python.statistics.modules
 import java.io.File
+import java.io.FileWriter
 
 class FileTypesExtractor {
     fun extractTypesFromProject(projectPath: String): Map<String, TypedElements> {
@@ -35,8 +38,8 @@ class FileTypesExtractor {
                     val psi = PsiManager.getInstance(project)
                             .findFile(virtualFile) ?: return@iterateChildrenRecursively true
                     val typedElements = TypedElements()
-                    println("project is ${virtualFile.canonicalPath}")
-                    psi.accept(TypesExtractorElementVisitor(typedElements))
+                    println("file is ${project.name}/${virtualFile.name}")
+                    psi.accept(TypesExtractorElementVisitor(typedElements, project.name, virtualFile.name))
                     types[projectPath] = typedElements
                     true
                 }
@@ -45,13 +48,29 @@ class FileTypesExtractor {
 
         return types
     }
+
+    fun printTypes(types: Map<String, TypedElements>, output: String) {
+        val file = File(output)
+        file.createNewFile()
+
+        val writer = file.printWriter()
+        for (entry in types.entries) {
+            val path = entry.key
+            writer.print(path + "\n\n")
+            for (type in entry.value.types) {
+                writer.print(type.key + ":" + type.value + "\n")
+            }
+            writer.print("\n")
+        }
+        writer.flush()
+    }
 }
 
 class TypedElements {
-    private var types: MutableMap<String, String> = mutableMapOf()
+    var types: MutableMap<String, String> = mutableMapOf()
 
-    fun addType(name: String, type: String) {
-        types[name] = type
+    fun addType(name: String, type: String, projectName: String, fileName: String) {
+        types["$projectName/$fileName/$name"] = type
     }
 
     override fun toString(): String {
@@ -59,16 +78,22 @@ class TypedElements {
     }
 }
 
-class TypesExtractorElementVisitor(private val typedElements: TypedElements) : PsiRecursiveElementVisitor() {
+class TypesExtractorElementVisitor(private val typedElements: TypedElements,
+                                   private val fileName: String,
+                                   private val projectName: String) : PsiRecursiveElementVisitor() {
 
     override fun visitElement(element: PsiElement) {
         super.visitElement(element)
 
         // TODO PyTypedElement is not only variables and parameters (docstring for example), need to fix it
-        if (element is PyTypedElement) {
+        if (element is PyTypedElement && (element is PyTargetExpression || element is PyFunction)) {
             val context = TypeEvalContext.userInitiated(element.project, element.containingFile)
-            typedElements.addType(element.name.orEmpty(),
-                    PythonDocumentationProvider.getTypeName(context.getType(element), context))
+            typedElements.addType(
+                    element.name.orEmpty(),
+                    PythonDocumentationProvider.getTypeName(context.getType(element), context),
+                    projectName,
+                    fileName
+            )
         }
     }
 }
