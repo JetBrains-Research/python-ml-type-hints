@@ -20,10 +20,12 @@ class TypesExtractor : CliktCommand() {
 
     private val input: String by option("--input", help = "Path to input").required()
     private val output: String by option("--output", help = "Path to output").required()
+    private val infer: String? by option("--toInfer")
 
     override fun run() {
         val extractor = FileTypesExtractor()
-        val types = extractor.extractTypesFromProject(input)
+        val toInfer = infer == "yes"
+        val types = extractor.extractTypesFromProject(input, toInfer)
         extractor.printTypes(types, output)
         exitProcess(0)
     }

@@ -54,8 +54,9 @@ tasks {
     runIde {
         val input: String? by project
         val output: String? by project
-        args = listOfNotNull("inferTypes", "--input", input, "--output", output)
-        jvmArgs = listOf("-Djava.awt.headless=true")
+        val toInfer: String? by project
+        args = listOfNotNull("inferTypes", "--input", input, "--output", output, "--toInfer", toInfer)
+        jvmArgs = listOf("-Djava.awt.headless=true", "--add-exports", "java.base/jdk.internal.vm=ALL-UNNAMED")
         maxHeapSize = "20g"
     }
     register("inferTypes") {
