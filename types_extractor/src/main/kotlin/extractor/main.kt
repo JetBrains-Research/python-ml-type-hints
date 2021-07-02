@@ -23,9 +23,21 @@ class TypesExtractor : CliktCommand() {
     private val infer: String? by option("--toInfer")
 
     override fun run() {
-        val extractor = FileTypesExtractor()
+        val extractor = FileTypesExtractor(output)
         val toInfer = infer == "yes"
         val types = extractor.extractTypesFromProject(input, toInfer)
+
+//        val (resolved, unresolved, byUs) = extractor.countResolvedImports(input)
+
+//        println("Totally:" +
+//                " resolved ${byUs} imports," +
+//                " unresolved ${unresolved}," +
+//                " resolved before ${resolved}")
+//        println("Out of not resolved: " +
+//                "${byUs / (byUs + unresolved)} were resolved")
+//        println("totally resolved ${(resolved + byUs) / (resolved + byUs + unresolved)}")
+
+
         extractor.printTypes(types, output)
         exitProcess(0)
     }
