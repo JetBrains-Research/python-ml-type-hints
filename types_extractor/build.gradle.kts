@@ -18,6 +18,14 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation("com.github.ajalt:clikt:2.8.0")
+    implementation("org.apache.commons:commons-lang3:3.0")
+    implementation("edu.stanford.nlp:stanford-corenlp:4.2.0")
+    implementation("edu.stanford.nlp:stanford-corenlp:4.2.0:models")
+//    implementation("intoxicant.analytics:coreNlpExtensions:1.0.0")
+//    implementation("org.apache.lucene:lucene-core:7.0.0")
+    implementation("org.slf4j:slf4j-api:+")
+    implementation("com.github.holgerbrandl:krangl:0.16.2")
+
 
     testImplementation("junit:junit:4.11")
     testImplementation(kotlin("test-junit"))
