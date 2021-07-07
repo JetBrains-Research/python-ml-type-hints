@@ -1,0 +1,646 @@
+,author,repo,file,has_type,name,docstring,func_descr,arg_names,arg_types,arg_descrs,return_type,return_expr,return_descr,lineno,full_name,arg_full_names,arg_names_len,arg_types_len
+0,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,index,,,['self'],[''],[''],int,[],,37,__index__,['self'],1,1
+1,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,class,,,['self'],['_T'],[''],Type[_T],[],,48,__class__,['self'],1,1
+2,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,class,,,"['self', 'type']","['', 'Type[object]']","['', '']",None,[],,50,__class__,"['self', '__type']",2,2
+3,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,['self'],[''],[''],None,[],,51,__init__,['self'],1,1
+4,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,new,,,['cl'],[''],[''],Any,[],,52,__new__,['cls'],1,1
+5,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setattr,,,"['self', 'name', 'value']","['', 'str', 'Any']","['', '', '']",None,[],,53,__setattr__,"['self', 'name', 'value']",3,3
+6,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,eq,,,"['self', 'o']","['', 'object']","['', '']",bool,[],,54,__eq__,"['self', 'o']",2,2
+7,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ne,,,"['self', 'o']","['', 'object']","['', '']",bool,[],,55,__ne__,"['self', 'o']",2,2
+8,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,56,__str__,['self'],1,1
+9,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,repr,,,['self'],[''],[''],str,[],,57,__repr__,['self'],1,1
+10,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hash,,,['self'],[''],[''],int,[],,58,__hash__,['self'],1,1
+11,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,format,,,"['self', 'format spec']","['', 'str']","['', '']",str,[],,59,__format__,"['self', 'format_spec']",2,2
+12,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getattribute,,,"['self', 'name']","['', 'str']","['', '']",Any,[],,60,__getattribute__,"['self', 'name']",2,2
+13,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,delattr,,,"['self', 'name']","['', 'str']","['', '']",None,[],,61,__delattr__,"['self', 'name']",2,2
+14,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sizeof,,,['self'],[''],[''],int,[],,62,__sizeof__,['self'],1,1
+15,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,reduce,,,['self'],[''],[''],"Union[str, Tuple[Any, ...]]",[],,63,__reduce__,['self'],1,1
+16,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,reduce ex,,,"['self', 'protocol']","['', 'int']","['', '']","Union[str, Tuple[Any, ...]]",[],,64,__reduce_ex__,"['self', 'protocol']",2,2
+17,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,dir,,,['self'],[''],[''],Iterable[str],[],,65,__dir__,['self'],1,1
+18,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init subclass,,,['cl'],[''],[''],None,[],,67,__init_subclass__,['cls'],1,1
+19,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'f']","['', 'Callable[..., Any]']","['', '']",None,[],,73,__init__,"['self', 'f']",2,2
+20,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,new,,,"['cl', 'args']","['Type[_T]', 'Any']","['', '']",_T,[],,74,__new__,"['cls', 'args']",2,2
+21,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,get,,,"['self', 'obj', 'type']","['', '_T', 'Optional[Type[_T]]']","['', '', '']","Callable[..., Any]",[],,75,__get__,"['self', 'obj', 'type']",3,3
+22,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'f']","['', 'Callable[..., Any]']","['', '']",None,[],,81,__init__,"['self', 'f']",2,2
+23,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,new,,,"['cl', 'args']","['Type[_T]', 'Any']","['', '']",_T,[],,82,__new__,"['cls', 'args']",2,2
+24,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,get,,,"['self', 'obj', 'type']","['', '_T', 'Optional[Type[_T]]']","['', '', '']","Callable[..., Any]",[],,83,__get__,"['self', 'obj', 'type']",3,3
+25,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'o']","['', 'object']","['', '']",None,[],,101,__init__,"['self', 'o']",2,2
+26,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'name', 'base', 'dict']","['', 'str', 'Tuple[type, ...]', 'Dict[str, Any]']","['', '', '', '']",None,[],,103,__init__,"['self', 'name', 'bases', 'dict']",4,4
+27,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,new,,,"['cl', 'o']","['', 'object']","['', '']",type,[],,105,__new__,"['cls', 'o']",2,2
+28,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,new,,,"['cl', 'name', 'base', 'namespace']","['', 'str', 'Tuple[type, ...]', 'Dict[str, Any]']","['', '', '', '']",type,[],,107,__new__,"['cls', 'name', 'bases', 'namespace']",4,4
+29,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,call,,,"['self', 'args']","['', 'Any']","['', '']",Any,[],,108,__call__,"['self', 'args']",2,2
+30,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,subclass,,,['self'],['_TT'],[''],List[_TT],[],,109,__subclasses__,['self'],1,1
+31,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mro,,,['self'],[''],[''],List[type],[],,112,mro,['self'],1,1
+32,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,instancecheck,,,"['self', 'instance']","['', 'Any']","['', '']",bool,[],,113,__instancecheck__,"['self', 'instance']",2,2
+33,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,subclasscheck,,,"['self', 'subclass']","['', 'type']","['', '']",bool,[],,114,__subclasscheck__,"['self', 'subclass']",2,2
+34,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,prepare,,,"['metacls', 'name', 'base']","['', 'str', 'Tuple[type, ...]']","['', '', '']","Mapping[str, Any]",[],,116,__prepare__,"['metacls', '__name', '__bases']",3,3
+35,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 't', 'obj']","['', 'Any', 'Any']","['', '', '']",None,[],,120,__init__,"['self', 't', 'obj']",3,3
+36,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 't']","['', 'Any']","['', '']",None,[],,122,__init__,"['self', 't']",2,2
+37,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,['self'],[''],[''],None,[],,124,__init__,['self'],1,1
+38,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'x']","['', 'Union[Text, bytes, SupportsInt, _SupportsIndex]']","['', '']",None,[],,128,__init__,"['self', 'x']",2,2
+39,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'x', 'base']","['', 'Union[Text, bytes, bytearray]', 'int']","['', '', '']",None,[],,130,__init__,"['self', 'x', 'base']",3,3
+40,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,a integer ratio,,,['self'],[''],[''],"Tuple[int, Literal[1]]",[],,133,as_integer_ratio,['self'],1,1
+41,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,real,,,['self'],[''],[''],int,[],,135,real,['self'],1,1
+42,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,imag,,,['self'],[''],[''],int,[],,137,imag,['self'],1,1
+43,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,numerator,,,['self'],[''],[''],int,[],,139,numerator,['self'],1,1
+44,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,denominator,,,['self'],[''],[''],int,[],,141,denominator,['self'],1,1
+45,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,conjugate,,,['self'],[''],[''],int,[],,142,conjugate,['self'],1,1
+46,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,bit length,,,['self'],[''],[''],int,[],,144,bit_length,['self'],1,1
+47,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,to byte,,,"['self', 'length', 'byteorder']","['', 'int', 'str']","['', '', '']",bytes,[],,145,to_bytes,"['self', 'length', 'byteorder']",3,3
+48,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,from byte,,,"['cl', 'byte', 'byteorder']","['', 'Union[Iterable[int], SupportsBytes]', 'str']","['', '', '']",int,[],,147,from_bytes,"['cls', 'bytes', 'byteorder']",3,3
+49,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,add,,,"['self', 'x']","['', 'int']","['', '']",int,[],,150,__add__,"['self', 'x']",2,2
+50,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sub,,,"['self', 'x']","['', 'int']","['', '']",int,[],,151,__sub__,"['self', 'x']",2,2
+51,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mul,,,"['self', 'x']","['', 'int']","['', '']",int,[],,152,__mul__,"['self', 'x']",2,2
+52,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,floordiv,,,"['self', 'x']","['', 'int']","['', '']",int,[],,153,__floordiv__,"['self', 'x']",2,2
+53,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,truediv,,,"['self', 'x']","['', 'int']","['', '']",float,[],,154,__truediv__,"['self', 'x']",2,2
+54,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mod,,,"['self', 'x']","['', 'int']","['', '']",int,[],,155,__mod__,"['self', 'x']",2,2
+55,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,divmod,,,"['self', 'x']","['', 'int']","['', '']","Tuple[int, int]",[],,156,__divmod__,"['self', 'x']",2,2
+56,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,radd,,,"['self', 'x']","['', 'int']","['', '']",int,[],,157,__radd__,"['self', 'x']",2,2
+57,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rsub,,,"['self', 'x']","['', 'int']","['', '']",int,[],,158,__rsub__,"['self', 'x']",2,2
+58,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rmul,,,"['self', 'x']","['', 'int']","['', '']",int,[],,159,__rmul__,"['self', 'x']",2,2
+59,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rfloordiv,,,"['self', 'x']","['', 'int']","['', '']",int,[],,160,__rfloordiv__,"['self', 'x']",2,2
+60,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rtruediv,,,"['self', 'x']","['', 'int']","['', '']",float,[],,161,__rtruediv__,"['self', 'x']",2,2
+61,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rmod,,,"['self', 'x']","['', 'int']","['', '']",int,[],,162,__rmod__,"['self', 'x']",2,2
+62,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rdivmod,,,"['self', 'x']","['', 'int']","['', '']","Tuple[int, int]",[],,163,__rdivmod__,"['self', 'x']",2,2
+63,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,pow,,,"['self', 'x', 'modulo']","['', 'int', 'Optional[int]']","['', '', '']",Any,[],,164,__pow__,"['self', '__x', '__modulo']",3,3
+64,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rpow,,,"['self', 'x', 'mod']","['', 'int', 'Optional[int]']","['', '', '']",Any,[],,165,__rpow__,"['self', 'x', 'mod']",3,3
+65,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,and,,,"['self', 'n']","['', 'int']","['', '']",int,[],,166,__and__,"['self', 'n']",2,2
+66,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,or,,,"['self', 'n']","['', 'int']","['', '']",int,[],,167,__or__,"['self', 'n']",2,2
+67,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,xor,,,"['self', 'n']","['', 'int']","['', '']",int,[],,168,__xor__,"['self', 'n']",2,2
+68,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lshift,,,"['self', 'n']","['', 'int']","['', '']",int,[],,169,__lshift__,"['self', 'n']",2,2
+69,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rshift,,,"['self', 'n']","['', 'int']","['', '']",int,[],,170,__rshift__,"['self', 'n']",2,2
+70,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rand,,,"['self', 'n']","['', 'int']","['', '']",int,[],,171,__rand__,"['self', 'n']",2,2
+71,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ror,,,"['self', 'n']","['', 'int']","['', '']",int,[],,172,__ror__,"['self', 'n']",2,2
+72,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rxor,,,"['self', 'n']","['', 'int']","['', '']",int,[],,173,__rxor__,"['self', 'n']",2,2
+73,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rlshift,,,"['self', 'n']","['', 'int']","['', '']",int,[],,174,__rlshift__,"['self', 'n']",2,2
+74,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rrshift,,,"['self', 'n']","['', 'int']","['', '']",int,[],,175,__rrshift__,"['self', 'n']",2,2
+75,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,neg,,,['self'],[''],[''],int,[],,176,__neg__,['self'],1,1
+76,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,po,,,['self'],[''],[''],int,[],,177,__pos__,['self'],1,1
+77,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,invert,,,['self'],[''],[''],int,[],,178,__invert__,['self'],1,1
+78,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,trunc,,,['self'],[''],[''],int,[],,179,__trunc__,['self'],1,1
+79,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ceil,,,['self'],[''],[''],int,[],,180,__ceil__,['self'],1,1
+80,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,floor,,,['self'],[''],[''],int,[],,181,__floor__,['self'],1,1
+81,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,round,,,"['self', 'ndigits']","['', 'Optional[int]']","['', '']",int,[],,182,__round__,"['self', 'ndigits']",2,2
+82,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getnewargs,,,['self'],[''],[''],Tuple[int],[],,183,__getnewargs__,['self'],1,1
+83,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,eq,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,185,__eq__,"['self', 'x']",2,2
+84,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ne,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,186,__ne__,"['self', 'x']",2,2
+85,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lt,,,"['self', 'x']","['', 'int']","['', '']",bool,[],,187,__lt__,"['self', 'x']",2,2
+86,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,le,,,"['self', 'x']","['', 'int']","['', '']",bool,[],,188,__le__,"['self', 'x']",2,2
+87,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,gt,,,"['self', 'x']","['', 'int']","['', '']",bool,[],,189,__gt__,"['self', 'x']",2,2
+88,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ge,,,"['self', 'x']","['', 'int']","['', '']",bool,[],,190,__ge__,"['self', 'x']",2,2
+89,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,192,__str__,['self'],1,1
+90,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,float,,,['self'],[''],[''],float,[],,193,__float__,['self'],1,1
+91,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,int,,,['self'],[''],[''],int,[],,194,__int__,['self'],1,1
+92,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ab,,,['self'],[''],[''],int,[],,195,__abs__,['self'],1,1
+93,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hash,,,['self'],[''],[''],int,[],,196,__hash__,['self'],1,1
+94,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,bool,,,['self'],[''],[''],bool,[],,197,__bool__,['self'],1,1
+95,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,index,,,['self'],[''],[''],int,[],,198,__index__,['self'],1,1
+96,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'x']","['', 'Union[SupportsFloat, _SupportsIndex, Text, bytes, bytearray]']","['', '']",None,[],,201,__init__,"['self', 'x']",2,2
+97,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,a integer ratio,,,['self'],[''],[''],"Tuple[int, int]",[],,202,as_integer_ratio,['self'],1,1
+98,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hex,,,['self'],[''],[''],str,[],,203,hex,['self'],1,1
+99,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,be integer,,,['self'],[''],[''],bool,[],,204,is_integer,['self'],1,1
+100,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,fromhex,,,"['cl', 's']","['', 'str']","['', '']",float,[],,206,fromhex,"['cls', '__s']",2,2
+101,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,real,,,['self'],[''],[''],float,[],,209,real,['self'],1,1
+102,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,imag,,,['self'],[''],[''],float,[],,211,imag,['self'],1,1
+103,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,conjugate,,,['self'],[''],[''],float,[],,212,conjugate,['self'],1,1
+104,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,add,,,"['self', 'x']","['', 'float']","['', '']",float,[],,214,__add__,"['self', 'x']",2,2
+105,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sub,,,"['self', 'x']","['', 'float']","['', '']",float,[],,215,__sub__,"['self', 'x']",2,2
+106,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mul,,,"['self', 'x']","['', 'float']","['', '']",float,[],,216,__mul__,"['self', 'x']",2,2
+107,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,floordiv,,,"['self', 'x']","['', 'float']","['', '']",float,[],,217,__floordiv__,"['self', 'x']",2,2
+108,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,truediv,,,"['self', 'x']","['', 'float']","['', '']",float,[],,218,__truediv__,"['self', 'x']",2,2
+109,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mod,,,"['self', 'x']","['', 'float']","['', '']",float,[],,219,__mod__,"['self', 'x']",2,2
+110,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,divmod,,,"['self', 'x']","['', 'float']","['', '']","Tuple[float, float]",[],,220,__divmod__,"['self', 'x']",2,2
+111,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,pow,,,"['self', 'x', 'mod']","['', 'float', 'None']","['', '', '']",float,[],,221,__pow__,"['self', 'x', 'mod']",3,3
+112,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,radd,,,"['self', 'x']","['', 'float']","['', '']",float,[],,222,__radd__,"['self', 'x']",2,2
+113,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rsub,,,"['self', 'x']","['', 'float']","['', '']",float,[],,223,__rsub__,"['self', 'x']",2,2
+114,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rmul,,,"['self', 'x']","['', 'float']","['', '']",float,[],,224,__rmul__,"['self', 'x']",2,2
+115,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rfloordiv,,,"['self', 'x']","['', 'float']","['', '']",float,[],,225,__rfloordiv__,"['self', 'x']",2,2
+116,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rtruediv,,,"['self', 'x']","['', 'float']","['', '']",float,[],,226,__rtruediv__,"['self', 'x']",2,2
+117,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rmod,,,"['self', 'x']","['', 'float']","['', '']",float,[],,227,__rmod__,"['self', 'x']",2,2
+118,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rdivmod,,,"['self', 'x']","['', 'float']","['', '']","Tuple[float, float]",[],,228,__rdivmod__,"['self', 'x']",2,2
+119,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rpow,,,"['self', 'x', 'mod']","['', 'float', 'None']","['', '', '']",float,[],,229,__rpow__,"['self', 'x', 'mod']",3,3
+120,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getnewargs,,,['self'],[''],[''],Tuple[float],[],,230,__getnewargs__,['self'],1,1
+121,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,trunc,,,['self'],[''],[''],int,[],,231,__trunc__,['self'],1,1
+122,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,round,,,"['self', 'ndigits']","['', 'None']","['', '']",int,[],,233,__round__,"['self', 'ndigits']",2,2
+123,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,round,,,"['self', 'ndigits']","['', 'int']","['', '']",float,[],,235,__round__,"['self', 'ndigits']",2,2
+124,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,eq,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,237,__eq__,"['self', 'x']",2,2
+125,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ne,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,238,__ne__,"['self', 'x']",2,2
+126,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lt,,,"['self', 'x']","['', 'float']","['', '']",bool,[],,239,__lt__,"['self', 'x']",2,2
+127,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,le,,,"['self', 'x']","['', 'float']","['', '']",bool,[],,240,__le__,"['self', 'x']",2,2
+128,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,gt,,,"['self', 'x']","['', 'float']","['', '']",bool,[],,241,__gt__,"['self', 'x']",2,2
+129,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ge,,,"['self', 'x']","['', 'float']","['', '']",bool,[],,242,__ge__,"['self', 'x']",2,2
+130,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,neg,,,['self'],[''],[''],float,[],,243,__neg__,['self'],1,1
+131,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,po,,,['self'],[''],[''],float,[],,244,__pos__,['self'],1,1
+132,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,246,__str__,['self'],1,1
+133,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,int,,,['self'],[''],[''],int,[],,247,__int__,['self'],1,1
+134,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,float,,,['self'],[''],[''],float,[],,248,__float__,['self'],1,1
+135,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ab,,,['self'],[''],[''],float,[],,249,__abs__,['self'],1,1
+136,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hash,,,['self'],[''],[''],int,[],,250,__hash__,['self'],1,1
+137,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,bool,,,['self'],[''],[''],bool,[],,251,__bool__,['self'],1,1
+138,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'real', 'imag']","['', 'float', 'float']","['', '', '']",None,[],,255,__init__,"['self', 'real', 'imag']",3,3
+139,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'real']","['', 'Union[str, SupportsComplex, _SupportsIndex]']","['', '']",None,[],,257,__init__,"['self', 'real']",2,2
+140,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,real,,,['self'],[''],[''],float,[],,260,real,['self'],1,1
+141,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,imag,,,['self'],[''],[''],float,[],,262,imag,['self'],1,1
+142,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,conjugate,,,['self'],[''],[''],complex,[],,264,conjugate,['self'],1,1
+143,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,add,,,"['self', 'x']","['', 'complex']","['', '']",complex,[],,266,__add__,"['self', 'x']",2,2
+144,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sub,,,"['self', 'x']","['', 'complex']","['', '']",complex,[],,267,__sub__,"['self', 'x']",2,2
+145,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mul,,,"['self', 'x']","['', 'complex']","['', '']",complex,[],,268,__mul__,"['self', 'x']",2,2
+146,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,pow,,,"['self', 'x', 'mod']","['', 'complex', 'None']","['', '', '']",complex,[],,269,__pow__,"['self', 'x', 'mod']",3,3
+147,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,truediv,,,"['self', 'x']","['', 'complex']","['', '']",complex,[],,270,__truediv__,"['self', 'x']",2,2
+148,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,radd,,,"['self', 'x']","['', 'complex']","['', '']",complex,[],,271,__radd__,"['self', 'x']",2,2
+149,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rsub,,,"['self', 'x']","['', 'complex']","['', '']",complex,[],,272,__rsub__,"['self', 'x']",2,2
+150,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rmul,,,"['self', 'x']","['', 'complex']","['', '']",complex,[],,273,__rmul__,"['self', 'x']",2,2
+151,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rpow,,,"['self', 'x', 'mod']","['', 'complex', 'None']","['', '', '']",complex,[],,274,__rpow__,"['self', 'x', 'mod']",3,3
+152,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rtruediv,,,"['self', 'x']","['', 'complex']","['', '']",complex,[],,275,__rtruediv__,"['self', 'x']",2,2
+153,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,eq,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,277,__eq__,"['self', 'x']",2,2
+154,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ne,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,278,__ne__,"['self', 'x']",2,2
+155,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,neg,,,['self'],[''],[''],complex,[],,279,__neg__,['self'],1,1
+156,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,po,,,['self'],[''],[''],complex,[],,280,__pos__,['self'],1,1
+157,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,282,__str__,['self'],1,1
+158,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,complex,,,['self'],[''],[''],complex,[],,283,__complex__,['self'],1,1
+159,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ab,,,['self'],[''],[''],float,[],,284,__abs__,['self'],1,1
+160,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hash,,,['self'],[''],[''],int,[],,285,__hash__,['self'],1,1
+161,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,bool,,,['self'],[''],[''],bool,[],,286,__bool__,['self'],1,1
+162,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'o']","['', 'object']","['', '']",None,[],,296,__init__,"['self', 'o']",2,2
+163,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'o', 'encode', 'error']","['', 'bytes', 'str', 'str']","['', '', '', '']",None,[],,298,__init__,"['self', 'o', 'encoding', 'errors']",4,4
+164,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,capitalize,,,['self'],[''],[''],str,[],,300,capitalize,['self'],1,1
+165,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,casefold,,,['self'],[''],[''],str,[],,302,casefold,['self'],1,1
+166,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,center,,,"['self', 'width', 'fillchar']","['', 'int', 'str']","['', '', '']",str,[],,303,center,"['self', '__width', '__fillchar']",3,3
+167,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,count,,,"['self', 'x', 'start', 'end']","['', 'Text', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,304,count,"['self', 'x', '__start', '__end']",4,4
+168,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,encode,,,"['self', 'encode', 'error']","['', 'Text', 'Text']","['', '', '']",bytes,[],,305,encode,"['self', 'encoding', 'errors']",3,3
+169,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,endswith,,,"['self', 'suffix', 'start', 'end']","['', 'Union[Text, Tuple[Text, ...]]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",bool,[],,306,endswith,"['self', 'suffix', 'start', 'end']",4,4
+170,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,expandtabs,,,"['self', 'tabsize']","['', 'int']","['', '']",str,[],,308,expandtabs,"['self', 'tabsize']",2,2
+171,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,find,,,"['self', 'sub', 'start', 'end']","['', 'Text', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,309,find,"['self', 'sub', '__start', '__end']",4,4
+172,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,format,,,"['self', 'args']","['', 'object']","['', '']",str,[],,310,format,"['self', 'args']",2,2
+173,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,format map,,,"['self', 'map']","['', 'Mapping[str, Any]']","['', '']",str,[],,311,format_map,"['self', 'map']",2,2
+174,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,index,,,"['self', 'sub', 'start', 'end']","['', 'Text', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,312,index,"['self', 'sub', '__start', '__end']",4,4
+175,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isalnum,,,['self'],[''],[''],bool,[],,313,isalnum,['self'],1,1
+176,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isalpha,,,['self'],[''],[''],bool,[],,314,isalpha,['self'],1,1
+177,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isascii,,,['self'],[''],[''],bool,[],,316,isascii,['self'],1,1
+178,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isdecimal,,,['self'],[''],[''],bool,[],,317,isdecimal,['self'],1,1
+179,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isdigit,,,['self'],[''],[''],bool,[],,318,isdigit,['self'],1,1
+180,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isidentifier,,,['self'],[''],[''],bool,[],,319,isidentifier,['self'],1,1
+181,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,islower,,,['self'],[''],[''],bool,[],,320,islower,['self'],1,1
+182,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isnumeric,,,['self'],[''],[''],bool,[],,321,isnumeric,['self'],1,1
+183,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isprintable,,,['self'],[''],[''],bool,[],,322,isprintable,['self'],1,1
+184,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isspace,,,['self'],[''],[''],bool,[],,323,isspace,['self'],1,1
+185,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,istitle,,,['self'],[''],[''],bool,[],,324,istitle,['self'],1,1
+186,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isupper,,,['self'],[''],[''],bool,[],,325,isupper,['self'],1,1
+187,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,join,,,"['self', 'iterable']","['', 'Iterable[str]']","['', '']",str,[],,326,join,"['self', '__iterable']",2,2
+188,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ljust,,,"['self', 'width', 'fillchar']","['', 'int', 'str']","['', '', '']",str,[],,327,ljust,"['self', '__width', '__fillchar']",3,3
+189,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,low,,,['self'],[''],[''],str,[],,328,lower,['self'],1,1
+190,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lstrip,,,"['self', 'char']","['', 'Optional[str]']","['', '']",str,[],,329,lstrip,"['self', '__chars']",2,2
+191,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,partition,,,"['self', 'sep']","['', 'str']","['', '']","Tuple[str, str, str]",[],,330,partition,"['self', '__sep']",2,2
+192,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,replace,,,"['self', 'old', 'new', 'count']","['', 'str', 'str', 'int']","['', '', '', '']",str,[],,331,replace,"['self', '__old', '__new', '__count']",4,4
+193,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rfind,,,"['self', 'sub', 'start', 'end']","['', 'Text', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,332,rfind,"['self', 'sub', '__start', '__end']",4,4
+194,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rindex,,,"['self', 'sub', 'start', 'end']","['', 'Text', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,333,rindex,"['self', 'sub', '__start', '__end']",4,4
+195,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rjust,,,"['self', 'width', 'fillchar']","['', 'int', 'str']","['', '', '']",str,[],,334,rjust,"['self', '__width', '__fillchar']",3,3
+196,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rpartition,,,"['self', 'sep']","['', 'str']","['', '']","Tuple[str, str, str]",[],,335,rpartition,"['self', '__sep']",2,2
+197,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rsplit,,,"['self', 'sep', 'maxsplit']","['', 'Optional[str]', 'int']","['', '', '']",List[str],[],,336,rsplit,"['self', 'sep', 'maxsplit']",3,3
+198,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rstrip,,,"['self', 'char']","['', 'Optional[str]']","['', '']",str,[],,337,rstrip,"['self', '__chars']",2,2
+199,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,split,,,"['self', 'sep', 'maxsplit']","['', 'Optional[str]', 'int']","['', '', '']",List[str],[],,338,split,"['self', 'sep', 'maxsplit']",3,3
+200,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,splitlines,,,"['self', 'keepends']","['', 'bool']","['', '']",List[str],[],,339,splitlines,"['self', 'keepends']",2,2
+201,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,startswith,,,"['self', 'prefix', 'start', 'end']","['', 'Union[Text, Tuple[Text, ...]]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",bool,[],,340,startswith,"['self', 'prefix', 'start', 'end']",4,4
+202,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,strip,,,"['self', 'char']","['', 'Optional[str]']","['', '']",str,[],,342,strip,"['self', '__chars']",2,2
+203,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,swapcase,,,['self'],[''],[''],str,[],,343,swapcase,['self'],1,1
+204,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,title,,,['self'],[''],[''],str,[],,344,title,['self'],1,1
+205,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,translate,,,"['self', 'table']","['', 'Union[Mapping[int, Union[int, str, None]], Sequence[Union[int, str, None]]]']","['', '']",str,[],,345,translate,"['self', '__table']",2,2
+206,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,upper,,,['self'],[''],[''],str,[],,346,upper,['self'],1,1
+207,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,zfill,,,"['self', 'width']","['', 'int']","['', '']",str,[],,347,zfill,"['self', '__width']",2,2
+208,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,maketrans,,,['x'],"['Union[Dict[int, _T], Dict[str, _T], Dict[Union[str, int], _T]]']",[''],"Dict[int, _T]",[],,350,maketrans,['__x'],1,1
+209,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,maketrans,,,"['x', 'y', 'z']","['str', 'str', 'Optional[str]']","['', '', '']","Dict[int, Union[int, None]]",[],,353,maketrans,"['__x', '__y', '__z']",3,3
+210,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,add,,,"['self', 's']","['', 'str']","['', '']",str,[],,355,__add__,"['self', 's']",2,2
+211,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,contains,,,"['self', 'o']","['', 'Union[str, Text]']","['', '']",bool,[],,357,__contains__,"['self', 'o']",2,2
+212,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,eq,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,358,__eq__,"['self', 'x']",2,2
+213,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ge,,,"['self', 'x']","['', 'Text']","['', '']",bool,[],,359,__ge__,"['self', 'x']",2,2
+214,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 'i']","['', 'Union[int, slice]']","['', '']",str,[],,360,__getitem__,"['self', 'i']",2,2
+215,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,gt,,,"['self', 'x']","['', 'Text']","['', '']",bool,[],,361,__gt__,"['self', 'x']",2,2
+216,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hash,,,['self'],[''],[''],int,[],,362,__hash__,['self'],1,1
+217,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['self'],[''],[''],Iterator[str],[],,363,__iter__,['self'],1,1
+218,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,le,,,"['self', 'x']","['', 'Text']","['', '']",bool,[],,364,__le__,"['self', 'x']",2,2
+219,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,len,,,['self'],[''],[''],int,[],,365,__len__,['self'],1,1
+220,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lt,,,"['self', 'x']","['', 'Text']","['', '']",bool,[],,366,__lt__,"['self', 'x']",2,2
+221,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mod,,,"['self', 'x']","['', 'Any']","['', '']",str,[],,367,__mod__,"['self', 'x']",2,2
+222,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mul,,,"['self', 'n']","['', 'int']","['', '']",str,[],,368,__mul__,"['self', 'n']",2,2
+223,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ne,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,369,__ne__,"['self', 'x']",2,2
+224,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,repr,,,['self'],[''],[''],str,[],,370,__repr__,['self'],1,1
+225,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rmul,,,"['self', 'n']","['', 'int']","['', '']",str,[],,371,__rmul__,"['self', 'n']",2,2
+226,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,372,__str__,['self'],1,1
+227,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getnewargs,,,['self'],[''],[''],Tuple[str],[],,373,__getnewargs__,['self'],1,1
+228,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'ints']","['', 'Iterable[int]']","['', '']",None,[],,378,__init__,"['self', 'ints']",2,2
+229,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'string', 'encode', 'error']","['', 'str', 'str', 'str']","['', '', '', '']",None,[],,380,__init__,"['self', 'string', 'encoding', 'errors']",4,4
+230,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'length']","['', 'int']","['', '']",None,[],,383,__init__,"['self', 'length']",2,2
+231,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,['self'],[''],[''],None,[],,385,__init__,['self'],1,1
+232,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'o']","['', 'SupportsBytes']","['', '']",None,[],,387,__init__,"['self', 'o']",2,2
+233,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,capitalize,,,['self'],[''],[''],bytes,[],,388,capitalize,['self'],1,1
+234,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,center,,,"['self', 'width', 'fillchar']","['', 'int', 'bytes']","['', '', '']",bytes,[],,389,center,"['self', '__width', '__fillchar']",3,3
+235,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,count,,,"['self', 'sub', 'start', 'end']","['', 'Union[bytes, int]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,390,count,"['self', 'sub', 'start', 'end']",4,4
+236,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,decode,,,"['self', 'encode', 'error']","['', 'str', 'str']","['', '', '']",str,[],,391,decode,"['self', 'encoding', 'errors']",3,3
+237,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,endswith,,,"['self', 'suffix']","['', 'Union[bytes, Tuple[bytes, ...]]']","['', '']",bool,[],,392,endswith,"['self', 'suffix']",2,2
+238,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,expandtabs,,,"['self', 'tabsize']","['', 'int']","['', '']",bytes,[],,393,expandtabs,"['self', 'tabsize']",2,2
+239,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,find,,,"['self', 'sub', 'start', 'end']","['', 'Union[bytes, int]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,394,find,"['self', 'sub', 'start', 'end']",4,4
+240,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hex,,,"['self', 'sep', 'byte per sep']","['', 'Union[str, bytes]', 'int']","['', '', '']",str,[],,396,hex,"['self', 'sep', 'bytes_per_sep']",3,3
+241,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hex,,,['self'],[''],[''],str,[],,398,hex,['self'],1,1
+242,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,index,,,"['self', 'sub', 'start', 'end']","['', 'Union[bytes, int]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,399,index,"['self', 'sub', 'start', 'end']",4,4
+243,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isalnum,,,['self'],[''],[''],bool,[],,400,isalnum,['self'],1,1
+244,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isalpha,,,['self'],[''],[''],bool,[],,401,isalpha,['self'],1,1
+245,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isascii,,,['self'],[''],[''],bool,[],,403,isascii,['self'],1,1
+246,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isdigit,,,['self'],[''],[''],bool,[],,404,isdigit,['self'],1,1
+247,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,islower,,,['self'],[''],[''],bool,[],,405,islower,['self'],1,1
+248,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isspace,,,['self'],[''],[''],bool,[],,406,isspace,['self'],1,1
+249,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,istitle,,,['self'],[''],[''],bool,[],,407,istitle,['self'],1,1
+250,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isupper,,,['self'],[''],[''],bool,[],,408,isupper,['self'],1,1
+251,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,join,,,"['self', 'iterable of byte']","['', 'Iterable[Union[ByteString, memoryview]]']","['', '']",bytes,[],,409,join,"['self', '__iterable_of_bytes']",2,2
+252,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ljust,,,"['self', 'width', 'fillchar']","['', 'int', 'bytes']","['', '', '']",bytes,[],,410,ljust,"['self', '__width', '__fillchar']",3,3
+253,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,low,,,['self'],[''],[''],bytes,[],,411,lower,['self'],1,1
+254,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lstrip,,,"['self', 'byte']","['', 'Optional[bytes]']","['', '']",bytes,[],,412,lstrip,"['self', '__bytes']",2,2
+255,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,partition,,,"['self', 'sep']","['', 'bytes']","['', '']","Tuple[bytes, bytes, bytes]",[],,413,partition,"['self', '__sep']",2,2
+256,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,replace,,,"['self', 'old', 'new', 'count']","['', 'bytes', 'bytes', 'int']","['', '', '', '']",bytes,[],,414,replace,"['self', '__old', '__new', '__count']",4,4
+257,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rfind,,,"['self', 'sub', 'start', 'end']","['', 'Union[bytes, int]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,415,rfind,"['self', 'sub', 'start', 'end']",4,4
+258,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rindex,,,"['self', 'sub', 'start', 'end']","['', 'Union[bytes, int]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,416,rindex,"['self', 'sub', 'start', 'end']",4,4
+259,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rjust,,,"['self', 'width', 'fillchar']","['', 'int', 'bytes']","['', '', '']",bytes,[],,417,rjust,"['self', '__width', '__fillchar']",3,3
+260,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rpartition,,,"['self', 'sep']","['', 'bytes']","['', '']","Tuple[bytes, bytes, bytes]",[],,418,rpartition,"['self', '__sep']",2,2
+261,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rsplit,,,"['self', 'sep', 'maxsplit']","['', 'Optional[bytes]', 'int']","['', '', '']",List[bytes],[],,419,rsplit,"['self', 'sep', 'maxsplit']",3,3
+262,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rstrip,,,"['self', 'byte']","['', 'Optional[bytes]']","['', '']",bytes,[],,420,rstrip,"['self', '__bytes']",2,2
+263,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,split,,,"['self', 'sep', 'maxsplit']","['', 'Optional[bytes]', 'int']","['', '', '']",List[bytes],[],,421,split,"['self', 'sep', 'maxsplit']",3,3
+264,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,splitlines,,,"['self', 'keepends']","['', 'bool']","['', '']",List[bytes],[],,422,splitlines,"['self', 'keepends']",2,2
+265,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,startswith,,,"['self', 'prefix', 'start', 'end']","['', 'Union[bytes, Tuple[bytes, ...]]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",bool,[],,423,startswith,"['self', 'prefix', 'start', 'end']",4,4
+266,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,strip,,,"['self', 'byte']","['', 'Optional[bytes]']","['', '']",bytes,[],,429,strip,"['self', '__bytes']",2,2
+267,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,swapcase,,,['self'],[''],[''],bytes,[],,430,swapcase,['self'],1,1
+268,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,title,,,['self'],[''],[''],bytes,[],,431,title,['self'],1,1
+269,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,translate,,,"['self', 'table', 'delete']","['', 'Optional[bytes]', 'bytes']","['', '', '']",bytes,[],,432,translate,"['self', '__table', 'delete']",3,3
+270,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,upper,,,['self'],[''],[''],bytes,[],,433,upper,['self'],1,1
+271,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,zfill,,,"['self', 'width']","['', 'int']","['', '']",bytes,[],,434,zfill,"['self', '__width']",2,2
+272,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,fromhex,,,"['cl', 's']","['', 'str']","['', '']",bytes,[],,436,fromhex,"['cls', '__s']",2,2
+273,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,maketrans,,,"['cl', 'frm', 'to']","['', 'bytes', 'bytes']","['', '', '']",bytes,[],,438,maketrans,"['cls', 'frm', 'to']",3,3
+274,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,len,,,['self'],[''],[''],int,[],,440,__len__,['self'],1,1
+275,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['self'],[''],[''],Iterator[int],[],,441,__iter__,['self'],1,1
+276,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,442,__str__,['self'],1,1
+277,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,repr,,,['self'],[''],[''],str,[],,443,__repr__,['self'],1,1
+278,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,int,,,['self'],[''],[''],int,[],,444,__int__,['self'],1,1
+279,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,float,,,['self'],[''],[''],float,[],,445,__float__,['self'],1,1
+280,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hash,,,['self'],[''],[''],int,[],,446,__hash__,['self'],1,1
+281,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 'i']","['', 'int']","['', '']",int,[],,448,__getitem__,"['self', 'i']",2,2
+282,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 's']","['', 'slice']","['', '']",bytes,[],,450,__getitem__,"['self', 's']",2,2
+283,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,add,,,"['self', 's']","['', 'bytes']","['', '']",bytes,[],,451,__add__,"['self', 's']",2,2
+284,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mul,,,"['self', 'n']","['', 'int']","['', '']",bytes,[],,452,__mul__,"['self', 'n']",2,2
+285,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rmul,,,"['self', 'n']","['', 'int']","['', '']",bytes,[],,453,__rmul__,"['self', 'n']",2,2
+286,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mod,,,"['self', 'value']","['', 'Any']","['', '']",bytes,[],,455,__mod__,"['self', 'value']",2,2
+287,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,contains,,,"['self', 'o']","['', 'Union[int, bytes]']","['', '']",bool,[],,457,__contains__,"['self', 'o']",2,2
+288,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,eq,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,458,__eq__,"['self', 'x']",2,2
+289,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ne,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,459,__ne__,"['self', 'x']",2,2
+290,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lt,,,"['self', 'x']","['', 'bytes']","['', '']",bool,[],,460,__lt__,"['self', 'x']",2,2
+291,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,le,,,"['self', 'x']","['', 'bytes']","['', '']",bool,[],,461,__le__,"['self', 'x']",2,2
+292,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,gt,,,"['self', 'x']","['', 'bytes']","['', '']",bool,[],,462,__gt__,"['self', 'x']",2,2
+293,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ge,,,"['self', 'x']","['', 'bytes']","['', '']",bool,[],,463,__ge__,"['self', 'x']",2,2
+294,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getnewargs,,,['self'],[''],[''],Tuple[bytes],[],,464,__getnewargs__,['self'],1,1
+295,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,['self'],[''],[''],None,[],,468,__init__,['self'],1,1
+296,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'ints']","['', 'Iterable[int]']","['', '']",None,[],,470,__init__,"['self', 'ints']",2,2
+297,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'string', 'encode', 'error']","['', 'Text', 'Text', 'Text']","['', '', '', '']",None,[],,472,__init__,"['self', 'string', 'encoding', 'errors']",4,4
+298,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'length']","['', 'int']","['', '']",None,[],,474,__init__,"['self', 'length']",2,2
+299,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,capitalize,,,['self'],[''],[''],bytearray,[],,475,capitalize,['self'],1,1
+300,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,center,,,"['self', 'width', 'fillchar']","['', 'int', 'bytes']","['', '', '']",bytearray,[],,476,center,"['self', '__width', '__fillchar']",3,3
+301,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,count,,,"['self', 'sub', 'start', 'end']","['', 'Union[bytes, int]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,477,count,"['self', '__sub', '__start', '__end']",4,4
+302,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,copy,,,['self'],[''],[''],bytearray,[],,478,copy,['self'],1,1
+303,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,decode,,,"['self', 'encode', 'error']","['', 'Text', 'Text']","['', '', '']",str,[],,479,decode,"['self', 'encoding', 'errors']",3,3
+304,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,endswith,,,"['self', 'suffix']","['', 'Union[bytes, Tuple[bytes, ...]]']","['', '']",bool,[],,480,endswith,"['self', '__suffix']",2,2
+305,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,expandtabs,,,"['self', 'tabsize']","['', 'int']","['', '']",bytearray,[],,481,expandtabs,"['self', 'tabsize']",2,2
+306,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,find,,,"['self', 'sub', 'start', 'end']","['', 'Union[bytes, int]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,482,find,"['self', '__sub', '__start', '__end']",4,4
+307,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hex,,,['self'],[''],[''],str,[],,484,hex,['self'],1,1
+308,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,index,,,"['self', 'sub', 'start', 'end']","['', 'Union[bytes, int]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,485,index,"['self', '__sub', '__start', '__end']",4,4
+309,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,insert,,,"['self', 'index', 'item']","['', 'int', 'int']","['', '', '']",None,[],,486,insert,"['self', '__index', '__item']",3,3
+310,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isalnum,,,['self'],[''],[''],bool,[],,487,isalnum,['self'],1,1
+311,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isalpha,,,['self'],[''],[''],bool,[],,488,isalpha,['self'],1,1
+312,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isascii,,,['self'],[''],[''],bool,[],,490,isascii,['self'],1,1
+313,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isdigit,,,['self'],[''],[''],bool,[],,491,isdigit,['self'],1,1
+314,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,islower,,,['self'],[''],[''],bool,[],,492,islower,['self'],1,1
+315,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isspace,,,['self'],[''],[''],bool,[],,493,isspace,['self'],1,1
+316,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,istitle,,,['self'],[''],[''],bool,[],,494,istitle,['self'],1,1
+317,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isupper,,,['self'],[''],[''],bool,[],,495,isupper,['self'],1,1
+318,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,join,,,"['self', 'iterable of byte']","['', 'Iterable[Union[ByteString, memoryview]]']","['', '']",bytearray,[],,496,join,"['self', '__iterable_of_bytes']",2,2
+319,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ljust,,,"['self', 'width', 'fillchar']","['', 'int', 'bytes']","['', '', '']",bytearray,[],,497,ljust,"['self', '__width', '__fillchar']",3,3
+320,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,low,,,['self'],[''],[''],bytearray,[],,498,lower,['self'],1,1
+321,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lstrip,,,"['self', 'byte']","['', 'Optional[bytes]']","['', '']",bytearray,[],,499,lstrip,"['self', '__bytes']",2,2
+322,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,partition,,,"['self', 'sep']","['', 'bytes']","['', '']","Tuple[bytearray, bytearray, bytearray]",[],,500,partition,"['self', '__sep']",2,2
+323,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,replace,,,"['self', 'old', 'new', 'count']","['', 'bytes', 'bytes', 'int']","['', '', '', '']",bytearray,[],,501,replace,"['self', '__old', '__new', '__count']",4,4
+324,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rfind,,,"['self', 'sub', 'start', 'end']","['', 'Union[bytes, int]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,502,rfind,"['self', '__sub', '__start', '__end']",4,4
+325,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rindex,,,"['self', 'sub', 'start', 'end']","['', 'Union[bytes, int]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",int,[],,503,rindex,"['self', '__sub', '__start', '__end']",4,4
+326,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rjust,,,"['self', 'width', 'fillchar']","['', 'int', 'bytes']","['', '', '']",bytearray,[],,504,rjust,"['self', '__width', '__fillchar']",3,3
+327,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rpartition,,,"['self', 'sep']","['', 'bytes']","['', '']","Tuple[bytearray, bytearray, bytearray]",[],,505,rpartition,"['self', '__sep']",2,2
+328,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rsplit,,,"['self', 'sep', 'maxsplit']","['', 'Optional[bytes]', 'int']","['', '', '']",List[bytearray],[],,506,rsplit,"['self', 'sep', 'maxsplit']",3,3
+329,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rstrip,,,"['self', 'byte']","['', 'Optional[bytes]']","['', '']",bytearray,[],,507,rstrip,"['self', '__bytes']",2,2
+330,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,split,,,"['self', 'sep', 'maxsplit']","['', 'Optional[bytes]', 'int']","['', '', '']",List[bytearray],[],,508,split,"['self', 'sep', 'maxsplit']",3,3
+331,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,splitlines,,,"['self', 'keepends']","['', 'bool']","['', '']",List[bytearray],[],,509,splitlines,"['self', 'keepends']",2,2
+332,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,startswith,,,"['self', 'prefix', 'start', 'end']","['', 'Union[bytes, Tuple[bytes, ...]]', 'Optional[int]', 'Optional[int]']","['', '', '', '']",bool,[],,510,startswith,"['self', '__prefix', '__start', '__end']",4,4
+333,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,strip,,,"['self', 'byte']","['', 'Optional[bytes]']","['', '']",bytearray,[],,516,strip,"['self', '__bytes']",2,2
+334,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,swapcase,,,['self'],[''],[''],bytearray,[],,517,swapcase,['self'],1,1
+335,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,title,,,['self'],[''],[''],bytearray,[],,518,title,['self'],1,1
+336,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,translate,,,"['self', 'table', 'delete']","['', 'Optional[bytes]', 'bytes']","['', '', '']",bytearray,[],,519,translate,"['self', '__table', 'delete']",3,3
+337,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,upper,,,['self'],[''],[''],bytearray,[],,520,upper,['self'],1,1
+338,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,zfill,,,"['self', 'width']","['', 'int']","['', '']",bytearray,[],,521,zfill,"['self', '__width']",2,2
+339,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,fromhex,,,"['cl', 'string']","['', 'str']","['', '']",bytearray,[],,523,fromhex,"['cls', '__string']",2,2
+340,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,maketrans,,,"['cl', 'frm', 'to']","['', 'bytes', 'bytes']","['', '', '']",bytes,[],,525,maketrans,"['cls', '__frm', '__to']",3,3
+341,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,len,,,['self'],[''],[''],int,[],,527,__len__,['self'],1,1
+342,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['self'],[''],[''],Iterator[int],[],,528,__iter__,['self'],1,1
+343,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,529,__str__,['self'],1,1
+344,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,repr,,,['self'],[''],[''],str,[],,530,__repr__,['self'],1,1
+345,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,int,,,['self'],[''],[''],int,[],,531,__int__,['self'],1,1
+346,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,float,,,['self'],[''],[''],float,[],,532,__float__,['self'],1,1
+347,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 'i']","['', 'int']","['', '']",int,[],,535,__getitem__,"['self', 'i']",2,2
+348,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 's']","['', 'slice']","['', '']",bytearray,[],,537,__getitem__,"['self', 's']",2,2
+349,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setitem,,,"['self', 'i', 'x']","['', 'int', 'int']","['', '', '']",None,[],,539,__setitem__,"['self', 'i', 'x']",3,3
+350,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setitem,,,"['self', 's', 'x']","['', 'slice', 'Union[Iterable[int], bytes]']","['', '', '']",None,[],,541,__setitem__,"['self', 's', 'x']",3,3
+351,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,delitem,,,"['self', 'i']","['', 'Union[int, slice]']","['', '']",None,[],,542,__delitem__,"['self', 'i']",2,2
+352,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,add,,,"['self', 's']","['', 'bytes']","['', '']",bytearray,[],,543,__add__,"['self', 's']",2,2
+353,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iadd,,,"['self', 's']","['', 'Iterable[int]']","['', '']",bytearray,[],,544,__iadd__,"['self', 's']",2,2
+354,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mul,,,"['self', 'n']","['', 'int']","['', '']",bytearray,[],,545,__mul__,"['self', 'n']",2,2
+355,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rmul,,,"['self', 'n']","['', 'int']","['', '']",bytearray,[],,546,__rmul__,"['self', 'n']",2,2
+356,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,imul,,,"['self', 'n']","['', 'int']","['', '']",bytearray,[],,547,__imul__,"['self', 'n']",2,2
+357,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mod,,,"['self', 'value']","['', 'Any']","['', '']",bytes,[],,549,__mod__,"['self', 'value']",2,2
+358,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,contains,,,"['self', 'o']","['', 'Union[int, bytes]']","['', '']",bool,[],,551,__contains__,"['self', 'o']",2,2
+359,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,eq,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,552,__eq__,"['self', 'x']",2,2
+360,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ne,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,553,__ne__,"['self', 'x']",2,2
+361,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lt,,,"['self', 'x']","['', 'bytes']","['', '']",bool,[],,554,__lt__,"['self', 'x']",2,2
+362,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,le,,,"['self', 'x']","['', 'bytes']","['', '']",bool,[],,555,__le__,"['self', 'x']",2,2
+363,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,gt,,,"['self', 'x']","['', 'bytes']","['', '']",bool,[],,556,__gt__,"['self', 'x']",2,2
+364,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ge,,,"['self', 'x']","['', 'bytes']","['', '']",bool,[],,557,__ge__,"['self', 'x']",2,2
+365,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'obj']","['', 'Union[bytes, bytearray, memoryview]']","['', '']",None,[],,575,__init__,"['self', 'obj']",2,2
+366,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,enter,,,['self'],[''],[''],memoryview,[],,576,__enter__,['self'],1,1
+367,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,exit,,,"['self', 'exc type', 'exc val', 'exc tb']","['', 'Optional[Type[BaseException]]', 'Optional[BaseException]', 'Optional[TracebackType]']","['', '', '', '']",None,[],,577,__exit__,"['self', 'exc_type', 'exc_val', 'exc_tb']",4,4
+368,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,cast,,,"['self', 'format', 'shape']","['', 'str', 'Union[List[int], Tuple[int]]']","['', '', '']",memoryview,[],,578,cast,"['self', 'format', 'shape']",3,3
+369,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 'i']","['', 'int']","['', '']",_mv_container_type,[],,581,__getitem__,"['self', 'i']",2,2
+370,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 's']","['', 'slice']","['', '']",memoryview,[],,583,__getitem__,"['self', 's']",2,2
+371,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,contains,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,585,__contains__,"['self', 'x']",2,2
+372,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['self'],[''],[''],Iterator[_mv_container_type],[],,586,__iter__,['self'],1,1
+373,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,len,,,['self'],[''],[''],int,[],,587,__len__,['self'],1,1
+374,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setitem,,,"['self', 's', 'o']","['', 'slice', 'memoryview']","['', '', '']",None,[],,590,__setitem__,"['self', 's', 'o']",3,3
+375,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setitem,,,"['self', 'i', 'o']","['', 'int', 'bytes']","['', '', '']",None,[],,592,__setitem__,"['self', 'i', 'o']",3,3
+376,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setitem,,,"['self', 's', 'o']","['', 'slice', 'Sequence[bytes]']","['', '', '']",None,[],,594,__setitem__,"['self', 's', 'o']",3,3
+377,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,tobytes,,,"['self', 'order']","['', ""Optional[Literal['C', 'F', 'A']]""]","['', '']",bytes,[],,597,tobytes,"['self', 'order']",2,2
+378,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,tobytes,,,['self'],[''],[''],bytes,[],,599,tobytes,['self'],1,1
+379,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,tolist,,,['self'],[''],[''],List[int],[],,600,tolist,['self'],1,1
+380,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,toreadonly,,,['self'],[''],[''],memoryview,[],,602,toreadonly,['self'],1,1
+381,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,release,,,['self'],[''],[''],None,[],,605,release,['self'],1,1
+382,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hex,,,['self'],[''],[''],str,[],,608,hex,['self'],1,1
+383,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'o']","['', 'object']","['', '']",None,[],,611,__init__,"['self', 'o']",2,2
+384,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,and,,,"['self', 'x']","['', 'bool']","['', '']",bool,[],,613,__and__,"['self', 'x']",2,2
+385,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,and,,,"['self', 'x']","['', 'int']","['', '']",int,[],,615,__and__,"['self', 'x']",2,2
+386,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,or,,,"['self', 'x']","['', 'bool']","['', '']",bool,[],,617,__or__,"['self', 'x']",2,2
+387,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,or,,,"['self', 'x']","['', 'int']","['', '']",int,[],,619,__or__,"['self', 'x']",2,2
+388,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,xor,,,"['self', 'x']","['', 'bool']","['', '']",bool,[],,621,__xor__,"['self', 'x']",2,2
+389,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,xor,,,"['self', 'x']","['', 'int']","['', '']",int,[],,623,__xor__,"['self', 'x']",2,2
+390,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rand,,,"['self', 'x']","['', 'bool']","['', '']",bool,[],,625,__rand__,"['self', 'x']",2,2
+391,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rand,,,"['self', 'x']","['', 'int']","['', '']",int,[],,627,__rand__,"['self', 'x']",2,2
+392,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ror,,,"['self', 'x']","['', 'bool']","['', '']",bool,[],,629,__ror__,"['self', 'x']",2,2
+393,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ror,,,"['self', 'x']","['', 'int']","['', '']",int,[],,631,__ror__,"['self', 'x']",2,2
+394,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rxor,,,"['self', 'x']","['', 'bool']","['', '']",bool,[],,633,__rxor__,"['self', 'x']",2,2
+395,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rxor,,,"['self', 'x']","['', 'int']","['', '']",int,[],,635,__rxor__,"['self', 'x']",2,2
+396,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getnewargs,,,['self'],[''],[''],Tuple[int],[],,636,__getnewargs__,['self'],1,1
+397,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'stop']","['', 'Any']","['', '']",None,[],,643,__init__,"['self', 'stop']",2,2
+398,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'start', 'stop', 'step']","['', 'Any', 'Any', 'Any']","['', '', '', '']",None,[],,645,__init__,"['self', 'start', 'stop', 'step']",4,4
+399,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,index,,,"['self', 'len']","['', 'int']","['', '']","Tuple[int, int, int]",[],,647,indices,"['self', 'len']",2,2
+400,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,new,,,"['cl', 'iterable']","['Type[_T]', 'Iterable[_T_co]']","['', '']",_T,[],,650,__new__,"['cls', 'iterable']",2,2
+401,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,len,,,['self'],[''],[''],int,[],,651,__len__,['self'],1,1
+402,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,contains,,,"['self', 'x']","['', 'object']","['', '']",bool,[],,652,__contains__,"['self', 'x']",2,2
+403,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 'x']","['', 'int']","['', '']",_T_co,[],,654,__getitem__,"['self', 'x']",2,2
+404,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 'x']","['', 'slice']","['', '']","Tuple[_T_co, ...]",[],,656,__getitem__,"['self', 'x']",2,2
+405,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['self'],[''],[''],Iterator[_T_co],[],,657,__iter__,['self'],1,1
+406,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lt,,,"['self', 'x']","['', 'Tuple[_T_co, ...]']","['', '']",bool,[],,658,__lt__,"['self', 'x']",2,2
+407,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,le,,,"['self', 'x']","['', 'Tuple[_T_co, ...]']","['', '']",bool,[],,659,__le__,"['self', 'x']",2,2
+408,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,gt,,,"['self', 'x']","['', 'Tuple[_T_co, ...]']","['', '']",bool,[],,660,__gt__,"['self', 'x']",2,2
+409,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ge,,,"['self', 'x']","['', 'Tuple[_T_co, ...]']","['', '']",bool,[],,661,__ge__,"['self', 'x']",2,2
+410,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,add,,,"['self', 'x']","['', 'Tuple[_T_co, ...]']","['', '']","Tuple[_T_co, ...]",[],,662,__add__,"['self', 'x']",2,2
+411,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mul,,,"['self', 'n']","['', 'int']","['', '']","Tuple[_T_co, ...]",[],,663,__mul__,"['self', 'n']",2,2
+412,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rmul,,,"['self', 'n']","['', 'int']","['', '']","Tuple[_T_co, ...]",[],,664,__rmul__,"['self', 'n']",2,2
+413,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,count,,,"['self', 'value']","['', 'Any']","['', '']",int,[],,665,count,"['self', '__value']",2,2
+414,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,index,,,"['self', 'value', 'start', 'stop']","['', 'Any', 'int', 'int']","['', '', '', '']",int,[],,667,index,"['self', '__value', '__start', '__stop']",4,4
+415,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,index,,,"['self', 'value']","['', 'Any']","['', '']",int,[],,669,index,"['self', '__value']",2,2
+416,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,['self'],[''],[''],None,[],,681,__init__,['self'],1,1
+417,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'iterable']","['', 'Iterable[_T]']","['', '']",None,[],,683,__init__,"['self', 'iterable']",2,2
+418,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,clear,,,['self'],[''],[''],None,[],,684,clear,['self'],1,1
+419,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,copy,,,['self'],[''],[''],List[_T],[],,685,copy,['self'],1,1
+420,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,append,,,"['self', 'object']","['', '_T']","['', '']",None,[],,686,append,"['self', '__object']",2,2
+421,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,extend,,,"['self', 'iterable']","['', 'Iterable[_T]']","['', '']",None,[],,687,extend,"['self', '__iterable']",2,2
+422,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,pop,,,"['self', 'index']","['', 'int']","['', '']",_T,[],,688,pop,"['self', '__index']",2,2
+423,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,index,,,"['self', 'value', 'start', 'stop']","['', '_T', 'int', 'int']","['', '', '', '']",int,[],,689,index,"['self', '__value', '__start', '__stop']",4,4
+424,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,count,,,"['self', 'value']","['', '_T']","['', '']",int,[],,690,count,"['self', '__value']",2,2
+425,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,insert,,,"['self', 'index', 'object']","['', 'int', '_T']","['', '', '']",None,[],,691,insert,"['self', '__index', '__object']",3,3
+426,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,remove,,,"['self', 'value']","['', '_T']","['', '']",None,[],,692,remove,"['self', '__value']",2,2
+427,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,reverse,,,['self'],[''],[''],None,[],,693,reverse,['self'],1,1
+428,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sort,,,['self'],[''],[''],None,[],,694,sort,['self'],1,1
+429,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,len,,,['self'],[''],[''],int,[],,696,__len__,['self'],1,1
+430,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['self'],[''],[''],Iterator[_T],[],,697,__iter__,['self'],1,1
+431,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,698,__str__,['self'],1,1
+432,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 'i']","['', 'int']","['', '']",_T,[],,701,__getitem__,"['self', 'i']",2,2
+433,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 's']","['', 'slice']","['', '']",List[_T],[],,703,__getitem__,"['self', 's']",2,2
+434,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setitem,,,"['self', 'i', 'o']","['', 'int', '_T']","['', '', '']",None,[],,705,__setitem__,"['self', 'i', 'o']",3,3
+435,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setitem,,,"['self', 's', 'o']","['', 'slice', 'Iterable[_T]']","['', '', '']",None,[],,707,__setitem__,"['self', 's', 'o']",3,3
+436,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,delitem,,,"['self', 'i']","['', 'Union[int, slice]']","['', '']",None,[],,708,__delitem__,"['self', 'i']",2,2
+437,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,add,,,"['self', 'x']","['', 'List[_T]']","['', '']",List[_T],[],,709,__add__,"['self', 'x']",2,2
+438,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iadd,,,"['self', 'x']","['_S', 'Iterable[_T]']","['', '']",_S,[],,710,__iadd__,"['self', 'x']",2,2
+439,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,mul,,,"['self', 'n']","['', 'int']","['', '']",List[_T],[],,711,__mul__,"['self', 'n']",2,2
+440,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,rmul,,,"['self', 'n']","['', 'int']","['', '']",List[_T],[],,712,__rmul__,"['self', 'n']",2,2
+441,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,imul,,,"['self', 'n']","['_S', 'int']","['', '']",_S,[],,713,__imul__,"['self', 'n']",2,2
+442,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,contains,,,"['self', 'o']","['', 'object']","['', '']",bool,[],,714,__contains__,"['self', 'o']",2,2
+443,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,reverse,,,['self'],[''],[''],Iterator[_T],[],,715,__reversed__,['self'],1,1
+444,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,gt,,,"['self', 'x']","['', 'List[_T]']","['', '']",bool,[],,716,__gt__,"['self', 'x']",2,2
+445,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ge,,,"['self', 'x']","['', 'List[_T]']","['', '']",bool,[],,717,__ge__,"['self', 'x']",2,2
+446,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lt,,,"['self', 'x']","['', 'List[_T]']","['', '']",bool,[],,718,__lt__,"['self', 'x']",2,2
+447,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,le,,,"['self', 'x']","['', 'List[_T]']","['', '']",bool,[],,719,__le__,"['self', 'x']",2,2
+448,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,['self'],[''],[''],None,[],,725,__init__,['self'],1,1
+449,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'map']","['', 'Mapping[_KT, _VT]']","['', '']",None,[],,727,__init__,"['self', 'map']",2,2
+450,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'iterable']","['', 'Iterable[Tuple[_KT, _VT]]']","['', '']",None,[],,729,__init__,"['self', 'iterable']",2,2
+451,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,new,,,"['cl', 'args']","['Type[_T1]', 'Any']","['', '']",_T1,[],,731,__new__,"['cls', 'args']",2,2
+452,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,clear,,,['self'],[''],[''],None,[],,733,clear,['self'],1,1
+453,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,copy,,,['self'],[''],[''],"Dict[_KT, _VT]",[],,734,copy,['self'],1,1
+454,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,popitem,,,['self'],[''],[''],"Tuple[_KT, _VT]",[],,735,popitem,['self'],1,1
+455,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setdefault,,,"['self', 'key', 'default']","['', '_KT', '_VT']","['', '', '']",_VT,[],,736,setdefault,"['self', '__key', '__default']",3,3
+456,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,update,,,"['self', 'm']","['', 'Mapping[_KT, _VT]']","['', '']",None,[],,738,update,"['self', '__m']",2,2
+457,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,update,,,"['self', 'm']","['', 'Iterable[Tuple[_KT, _VT]]']","['', '']",None,[],,740,update,"['self', '__m']",2,2
+458,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,update,,,['self'],[''],[''],None,[],,742,update,['self'],1,1
+459,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,key,,,['self'],[''],[''],KeysView[_KT],[],,743,keys,['self'],1,1
+460,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,value,,,['self'],[''],[''],ValuesView[_VT],[],,744,values,['self'],1,1
+461,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,item,,,['self'],[''],[''],"ItemsView[_KT, _VT]",[],,745,items,['self'],1,1
+462,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,fromkeys,,,"['cl', 'iterable']","['', 'Iterable[_T]']","['', '']","Dict[_T, Any]",[],,748,fromkeys,"['cls', '__iterable']",2,2
+463,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,fromkeys,,,"['cl', 'iterable', 'value']","['', 'Iterable[_T]', '_S']","['', '', '']","Dict[_T, _S]",[],,751,fromkeys,"['cls', '__iterable', '__value']",3,3
+464,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,len,,,['self'],[''],[''],int,[],,752,__len__,['self'],1,1
+465,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 'k']","['', '_KT']","['', '']",_VT,[],,753,__getitem__,"['self', 'k']",2,2
+466,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setitem,,,"['self', 'k', 'v']","['', '_KT', '_VT']","['', '', '']",None,[],,754,__setitem__,"['self', 'k', 'v']",3,3
+467,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,delitem,,,"['self', 'v']","['', '_KT']","['', '']",None,[],,755,__delitem__,"['self', 'v']",2,2
+468,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['self'],[''],[''],Iterator[_KT],[],,756,__iter__,['self'],1,1
+469,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,reverse,,,['self'],[''],[''],Iterator[_KT],[],,758,__reversed__,['self'],1,1
+470,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,759,__str__,['self'],1,1
+471,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'iterable']","['', 'Iterable[_T]']","['', '']",None,[],,763,__init__,"['self', 'iterable']",2,2
+472,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,add,,,"['self', 'element']","['', '_T']","['', '']",None,[],,764,add,"['self', 'element']",2,2
+473,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,clear,,,['self'],[''],[''],None,[],,765,clear,['self'],1,1
+474,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,copy,,,['self'],[''],[''],Set[_T],[],,766,copy,['self'],1,1
+475,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,difference,,,"['self', 's']","['', 'Iterable[Any]']","['', '']",Set[_T],[],,767,difference,"['self', 's']",2,2
+476,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,difference update,,,"['self', 's']","['', 'Iterable[Any]']","['', '']",None,[],,768,difference_update,"['self', 's']",2,2
+477,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,discard,,,"['self', 'element']","['', '_T']","['', '']",None,[],,769,discard,"['self', 'element']",2,2
+478,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,intersection,,,"['self', 's']","['', 'Iterable[Any]']","['', '']",Set[_T],[],,770,intersection,"['self', 's']",2,2
+479,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,intersection update,,,"['self', 's']","['', 'Iterable[Any]']","['', '']",None,[],,771,intersection_update,"['self', 's']",2,2
+480,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isdisjoint,,,"['self', 's']","['', 'Iterable[Any]']","['', '']",bool,[],,772,isdisjoint,"['self', 's']",2,2
+481,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,issubset,,,"['self', 's']","['', 'Iterable[Any]']","['', '']",bool,[],,773,issubset,"['self', 's']",2,2
+482,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,issuperset,,,"['self', 's']","['', 'Iterable[Any]']","['', '']",bool,[],,774,issuperset,"['self', 's']",2,2
+483,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,pop,,,['self'],[''],[''],_T,[],,775,pop,['self'],1,1
+484,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,remove,,,"['self', 'element']","['', '_T']","['', '']",None,[],,776,remove,"['self', 'element']",2,2
+485,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,symmetric difference,,,"['self', 's']","['', 'Iterable[_T]']","['', '']",Set[_T],[],,777,symmetric_difference,"['self', 's']",2,2
+486,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,symmetric difference update,,,"['self', 's']","['', 'Iterable[_T]']","['', '']",None,[],,778,symmetric_difference_update,"['self', 's']",2,2
+487,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,union,,,"['self', 's']","['', 'Iterable[_T]']","['', '']",Set[_T],[],,779,union,"['self', 's']",2,2
+488,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,update,,,"['self', 's']","['', 'Iterable[_T]']","['', '']",None,[],,780,update,"['self', 's']",2,2
+489,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,len,,,['self'],[''],[''],int,[],,781,__len__,['self'],1,1
+490,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,contains,,,"['self', 'o']","['', 'object']","['', '']",bool,[],,782,__contains__,"['self', 'o']",2,2
+491,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['self'],[''],[''],Iterator[_T],[],,783,__iter__,['self'],1,1
+492,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,784,__str__,['self'],1,1
+493,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,and,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",Set[_T],[],,785,__and__,"['self', 's']",2,2
+494,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iand,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",Set[_T],[],,786,__iand__,"['self', 's']",2,2
+495,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,or,,,"['self', 's']","['', 'AbstractSet[_S]']","['', '']","Set[Union[_T, _S]]",[],,787,__or__,"['self', 's']",2,2
+496,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ior,,,"['self', 's']","['', 'AbstractSet[_S]']","['', '']","Set[Union[_T, _S]]",[],,788,__ior__,"['self', 's']",2,2
+497,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sub,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",Set[_T],[],,789,__sub__,"['self', 's']",2,2
+498,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isub,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",Set[_T],[],,790,__isub__,"['self', 's']",2,2
+499,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,xor,,,"['self', 's']","['', 'AbstractSet[_S]']","['', '']","Set[Union[_T, _S]]",[],,791,__xor__,"['self', 's']",2,2
+500,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ixor,,,"['self', 's']","['', 'AbstractSet[_S]']","['', '']","Set[Union[_T, _S]]",[],,792,__ixor__,"['self', 's']",2,2
+501,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,le,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",bool,[],,793,__le__,"['self', 's']",2,2
+502,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lt,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",bool,[],,794,__lt__,"['self', 's']",2,2
+503,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ge,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",bool,[],,795,__ge__,"['self', 's']",2,2
+504,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,gt,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",bool,[],,796,__gt__,"['self', 's']",2,2
+505,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'iterable']","['', 'Iterable[_T_co]']","['', '']",None,[],,800,__init__,"['self', 'iterable']",2,2
+506,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,copy,,,['self'],[''],[''],FrozenSet[_T_co],[],,801,copy,['self'],1,1
+507,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,difference,,,"['self', 's']","['', 'Iterable[object]']","['', '']",FrozenSet[_T_co],[],,802,difference,"['self', 's']",2,2
+508,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,intersection,,,"['self', 's']","['', 'Iterable[object]']","['', '']",FrozenSet[_T_co],[],,803,intersection,"['self', 's']",2,2
+509,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isdisjoint,,,"['self', 's']","['', 'Iterable[_T_co]']","['', '']",bool,[],,804,isdisjoint,"['self', 's']",2,2
+510,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,issubset,,,"['self', 's']","['', 'Iterable[object]']","['', '']",bool,[],,805,issubset,"['self', 's']",2,2
+511,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,issuperset,,,"['self', 's']","['', 'Iterable[object]']","['', '']",bool,[],,806,issuperset,"['self', 's']",2,2
+512,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,symmetric difference,,,"['self', 's']","['', 'Iterable[_T_co]']","['', '']",FrozenSet[_T_co],[],,807,symmetric_difference,"['self', 's']",2,2
+513,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,union,,,"['self', 's']","['', 'Iterable[_T_co]']","['', '']",FrozenSet[_T_co],[],,808,union,"['self', 's']",2,2
+514,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,len,,,['self'],[''],[''],int,[],,809,__len__,['self'],1,1
+515,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,contains,,,"['self', 'o']","['', 'object']","['', '']",bool,[],,810,__contains__,"['self', 'o']",2,2
+516,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['self'],[''],[''],Iterator[_T_co],[],,811,__iter__,['self'],1,1
+517,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,812,__str__,['self'],1,1
+518,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,and,,,"['self', 's']","['', 'AbstractSet[_T_co]']","['', '']",FrozenSet[_T_co],[],,813,__and__,"['self', 's']",2,2
+519,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,or,,,"['self', 's']","['', 'AbstractSet[_S]']","['', '']","FrozenSet[Union[_T_co, _S]]",[],,814,__or__,"['self', 's']",2,2
+520,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sub,,,"['self', 's']","['', 'AbstractSet[_T_co]']","['', '']",FrozenSet[_T_co],[],,815,__sub__,"['self', 's']",2,2
+521,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,xor,,,"['self', 's']","['', 'AbstractSet[_S]']","['', '']","FrozenSet[Union[_T_co, _S]]",[],,816,__xor__,"['self', 's']",2,2
+522,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,le,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",bool,[],,817,__le__,"['self', 's']",2,2
+523,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,lt,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",bool,[],,818,__lt__,"['self', 's']",2,2
+524,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ge,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",bool,[],,819,__ge__,"['self', 's']",2,2
+525,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,gt,,,"['self', 's']","['', 'AbstractSet[object]']","['', '']",bool,[],,820,__gt__,"['self', 's']",2,2
+526,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'iterable', 'start']","['', 'Iterable[_T]', 'int']","['', '', '']",None,[],,823,__init__,"['self', 'iterable', 'start']",3,3
+527,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['self'],[''],[''],"Iterator[Tuple[int, _T]]",[],,824,__iter__,['self'],1,1
+528,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,next,,,['self'],[''],[''],"Tuple[int, _T]",[],,825,__next__,['self'],1,1
+529,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'stop']","['', 'int']","['', '']",None,[],,832,__init__,"['self', 'stop']",2,2
+530,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'start', 'stop', 'step']","['', 'int', 'int', 'int']","['', '', '', '']",None,[],,834,__init__,"['self', 'start', 'stop', 'step']",4,4
+531,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,count,,,"['self', 'value']","['', 'int']","['', '']",int,[],,835,count,"['self', 'value']",2,2
+532,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,index,,,"['self', 'value']","['', 'int']","['', '']",int,[],,836,index,"['self', 'value']",2,2
+533,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,len,,,['self'],[''],[''],int,[],,837,__len__,['self'],1,1
+534,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,contains,,,"['self', 'o']","['', 'object']","['', '']",bool,[],,838,__contains__,"['self', 'o']",2,2
+535,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['self'],[''],[''],Iterator[int],[],,839,__iter__,['self'],1,1
+536,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 'i']","['', 'int']","['', '']",int,[],,841,__getitem__,"['self', 'i']",2,2
+537,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getitem,,,"['self', 's']","['', 'slice']","['', '']",range,[],,843,__getitem__,"['self', 's']",2,2
+538,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,repr,,,['self'],[''],[''],str,[],,844,__repr__,['self'],1,1
+539,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,reverse,,,['self'],[''],[''],Iterator[int],[],,845,__reversed__,['self'],1,1
+540,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'fget', 'fset', 'fdel', 'doc']","['', 'Optional[Callable[[Any], Any]]', 'Optional[Callable[[Any, Any], None]]', 'Optional[Callable[[Any], None]]', 'Optional[str]']","['', '', '', '', '']",None,[],,848,__init__,"['self', 'fget', 'fset', 'fdel', 'doc']",5,5
+541,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getter,,,"['self', 'fget']","['', 'Callable[[Any], Any]']","['', '']",property,[],,852,getter,"['self', 'fget']",2,2
+542,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setter,,,"['self', 'fset']","['', 'Callable[[Any, Any], None]']","['', '']",property,[],,853,setter,"['self', 'fset']",2,2
+543,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,deleter,,,"['self', 'fdel']","['', 'Callable[[Any], None]']","['', '']",property,[],,854,deleter,"['self', 'fdel']",2,2
+544,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,get,,,"['self', 'obj', 'type']","['', 'Any', 'Optional[type]']","['', '', '']",Any,[],,855,__get__,"['self', 'obj', 'type']",3,3
+545,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,set,,,"['self', 'obj', 'value']","['', 'Any', 'Any']","['', '', '']",None,[],,856,__set__,"['self', 'obj', 'value']",3,3
+546,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,delete,,,"['self', 'obj']","['', 'Any']","['', '']",None,[],,857,__delete__,"['self', 'obj']",2,2
+547,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,fget,,,['self'],[''],[''],Any,[],,858,fget,['self'],1,1
+548,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,fset,,,"['self', 'value']","['', 'Any']","['', '']",None,[],,859,fset,"['self', 'value']",2,2
+549,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,fdel,,,['self'],[''],[''],None,[],,860,fdel,['self'],1,1
+550,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ab,,,['x'],['SupportsAbs[_T]'],[''],_T,[],,865,abs,['__x'],1,1
+551,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,all,,,['iterable'],['Iterable[object]'],[''],bool,[],,866,all,['__iterable'],1,1
+552,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,any,,,['iterable'],['Iterable[object]'],[''],bool,[],,867,any,['__iterable'],1,1
+553,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ascii,,,['obj'],['object'],[''],str,[],,868,ascii,['__obj'],1,1
+554,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,bin,,,['number'],"['Union[int, _SupportsIndex]']",[''],str,[],,870,bin,['__number'],1,1
+555,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,breakpoint,,,['args'],['Any'],[''],None,[],,873,breakpoint,['args'],1,1
+556,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,callable,,,['obj'],['object'],[''],bool,[],,874,callable,['__obj'],1,1
+557,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,chr,,,['i'],['int'],[''],str,[],,875,chr,['__i'],1,1
+558,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,fspath,,,['self'],[''],[''],AnyStr,[],,881,__fspath__,['self'],1,1
+559,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,compile,,,"['source', 'filename', 'mode', 'flag', 'dont inherit', 'optimize']","['Union[str, bytes, mod, AST]', 'Union[str, bytes, _PathLike[Any]]', 'str', 'int', 'int', 'int']","['', '', '', '', '', '']",Any,[],,882,compile,"['source', 'filename', 'mode', 'flags', 'dont_inherit', 'optimize']",6,6
+560,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,compile,,,"['source', 'filename', 'mode', 'flag', 'dont inherit', 'optimize']","['Union[str, bytes, mod, AST]', 'Union[str, bytes]', 'str', 'int', 'int', 'int']","['', '', '', '', '', '']",Any,[],,883,compile,"['source', 'filename', 'mode', 'flags', 'dont_inherit', 'optimize']",6,6
+561,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,copyright,,,[],[],[],None,[],,884,copyright,[],0,0
+562,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,credit,,,[],[],[],None,[],,885,credits,[],0,0
+563,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,delattr,,,"['obj', 'name']","['Any', 'Text']","['', '']",None,[],,886,delattr,"['__obj', '__name']",2,2
+564,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,dir,,,['o'],['object'],[''],List[str],[],,887,dir,['__o'],1,1
+565,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,divmod,,,"['x', 'y']","['_N2', '_N2']","['', '']","Tuple[_N2, _N2]",[],,889,divmod,"['__x', '__y']",2,2
+566,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,eval,,,"['source', 'globals', 'local']","['Union[Text, bytes, CodeType]', 'Optional[Dict[str, Any]]', 'Optional[Mapping[str, Any]]']","['', '', '']",Any,[],,890,eval,"['__source', '__globals', '__locals']",3,3
+567,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,exec,,,"['source', 'globals', 'local']","['Union[str, bytes, CodeType]', 'Optional[Dict[str, Any]]', 'Optional[Mapping[str, Any]]']","['', '', '']",Any,[],,891,exec,"['__source', '__globals', '__locals']",3,3
+568,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,exit,,,['code'],['object'],[''],NoReturn,[],,892,exit,['code'],1,1
+569,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,filter,,,"['function', 'iterable']","['None', 'Iterable[Optional[_T]]']","['', '']",Iterator[_T],[],,894,filter,"['__function', '__iterable']",2,2
+570,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,filter,,,"['function', 'iterable']","['Callable[[_T], Any]', 'Iterable[_T]']","['', '']",Iterator[_T],[],,896,filter,"['__function', '__iterable']",2,2
+571,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,format,,,"['value', 'format spec']","['object', 'str']","['', '']",str,[],,897,format,"['__value', '__format_spec']",2,2
+572,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,getattr,,,"['o', 'name', 'default']","['Any', 'Text', 'Any']","['', '', '']",Any,[],,898,getattr,"['__o', 'name', '__default']",3,3
+573,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,globals,,,[],[],[],"Dict[str, Any]",[],,899,globals,[],0,0
+574,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hasattr,,,"['obj', 'name']","['Any', 'Text']","['', '']",bool,[],,900,hasattr,"['__obj', '__name']",2,2
+575,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hash,,,['obj'],['object'],[''],int,[],,901,hash,['__obj'],1,1
+576,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,help,,,['args'],['Any'],[''],None,[],,902,help,['args'],1,1
+577,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,hex,,,['number'],"['Union[int, _SupportsIndex]']",[''],str,[],,903,hex,['__number'],1,1
+578,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,id,,,['obj'],['object'],[''],int,[],,904,id,['__obj'],1,1
+579,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,input,,,['prompt'],['Any'],[''],str,[],,905,input,['__prompt'],1,1
+580,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,['iterable'],['Iterable[_T]'],[''],Iterator[_T],[],,907,iter,['__iterable'],1,1
+581,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,"['function', 'sentinel']","['Callable[[], Optional[_T]]', 'None']","['', '']",Iterator[_T],[],,909,iter,"['__function', '__sentinel']",2,2
+582,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,iter,,,"['function', 'sentinel']","['Callable[[], _T]', 'Any']","['', '']",Iterator[_T],[],,911,iter,"['__function', '__sentinel']",2,2
+583,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,isinstance,,,"['obj', 'class or tuple']","['object', 'Union[type, Tuple[Union[type, Tuple[Any, ...]], ...]]']","['', '']",bool,[],,912,isinstance,"['__obj', '__class_or_tuple']",2,2
+584,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,issubclass,,,"['cl', 'class or tuple']","['type', 'Union[type, Tuple[Union[type, Tuple[Any, ...]], ...]]']","['', '']",bool,[],,913,issubclass,"['__cls', '__class_or_tuple']",2,2
+585,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,len,,,['obj'],['Sized'],[''],int,[],,914,len,['__obj'],1,1
+586,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,license,,,[],[],[],None,[],,915,license,[],0,0
+587,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,local,,,[],[],[],"Dict[str, Any]",[],,916,locals,[],0,0
+588,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,map,,,"['func', 'iter']","['Callable[[_T1], _S]', 'Iterable[_T1]']","['', '']",Iterator[_S],[],,918,map,"['__func', '__iter1']",2,2
+589,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,map,,,"['func', 'iter', 'iter']","['Callable[[_T1, _T2], _S]', 'Iterable[_T1]', 'Iterable[_T2]']","['', '', '']",Iterator[_S],[],,920,map,"['__func', '__iter1', '__iter2']",3,3
+590,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,map,,,"['func', 'iter', 'iter', 'iter']","['Callable[[_T1, _T2, _T3], _S]', 'Iterable[_T1]', 'Iterable[_T2]', 'Iterable[_T3]']","['', '', '', '']",Iterator[_S],[],,923,map,"['__func', '__iter1', '__iter2', '__iter3']",4,4
+591,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,map,,,"['func', 'iter', 'iter', 'iter', 'iter']","['Callable[[_T1, _T2, _T3, _T4], _S]', 'Iterable[_T1]', 'Iterable[_T2]', 'Iterable[_T3]', 'Iterable[_T4]']","['', '', '', '', '']",Iterator[_S],[],,928,map,"['__func', '__iter1', '__iter2', '__iter3', '__iter4']",5,5
+592,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,map,,,"['func', 'iter', 'iter', 'iter', 'iter', 'iter']","['Callable[[_T1, _T2, _T3, _T4, _T5], _S]', 'Iterable[_T1]', 'Iterable[_T2]', 'Iterable[_T3]', 'Iterable[_T4]', 'Iterable[_T5]']","['', '', '', '', '', '']",Iterator[_S],[],,934,map,"['__func', '__iter1', '__iter2', '__iter3', '__iter4', '__iter5']",6,6
+593,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,map,,,"['func', 'iter', 'iter', 'iter', 'iter', 'iter', 'iter', 'iterables']","['Callable[..., _S]', 'Iterable[Any]', 'Iterable[Any]', 'Iterable[Any]', 'Iterable[Any]', 'Iterable[Any]', 'Iterable[Any]', 'Iterable[Any]']","['', '', '', '', '', '', '', '']",Iterator[_S],[],,941,map,"['__func', '__iter1', '__iter2', '__iter3', '__iter4', '__iter5', '__iter6', 'iterables']",8,8
+594,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,max,,,"['arg', 'arg', 'args']","['_T', '_T', '_T']","['', '', '']",_T,[],,950,max,"['__arg1', '__arg2', '_args']",3,3
+595,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,max,,,['iterable'],['Iterable[_T]'],[''],_T,[],,952,max,['__iterable'],1,1
+596,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,max,,,['iterable'],['Iterable[_T]'],[''],"Union[_T, _VT]",[],,954,max,['__iterable'],1,1
+597,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,min,,,"['arg', 'arg', 'args']","['_T', '_T', '_T']","['', '', '']",_T,[],,956,min,"['__arg1', '__arg2', '_args']",3,3
+598,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,min,,,['iterable'],['Iterable[_T]'],[''],_T,[],,958,min,['__iterable'],1,1
+599,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,min,,,['iterable'],['Iterable[_T]'],[''],"Union[_T, _VT]",[],,960,min,['__iterable'],1,1
+600,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,next,,,['i'],['Iterator[_T]'],[''],_T,[],,962,next,['__i'],1,1
+601,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,next,,,"['i', 'default']","['Iterator[_T]', '_VT']","['', '']","Union[_T, _VT]",[],,964,next,"['__i', 'default']",2,2
+602,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,oct,,,['number'],"['Union[int, _SupportsIndex]']",[''],str,[],,965,oct,['__number'],1,1
+603,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,open,,,"['file', 'mode', 'buffering', 'encode', 'error', 'newline', 'closefd', 'opener']","['Union[str, bytes, int, _PathLike[Any]]', 'str', 'int', 'Optional[str]', 'Optional[str]', 'Optional[str]', 'bool', 'Optional[Callable[[str, int], int]]']","['', '', '', '', '', '', '', '']",IO[Any],[],,968,open,"['file', 'mode', 'buffering', 'encoding', 'errors', 'newline', 'closefd', 'opener']",8,8
+604,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,open,,,"['file', 'mode', 'buffering', 'encode', 'error', 'newline', 'closefd', 'opener']","['Union[str, bytes, int]', 'str', 'int', 'Optional[str]', 'Optional[str]', 'Optional[str]', 'bool', 'Optional[Callable[[str, int], int]]']","['', '', '', '', '', '', '', '']",IO[Any],[],,971,open,"['file', 'mode', 'buffering', 'encoding', 'errors', 'newline', 'closefd', 'opener']",8,8
+605,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,ord,,,['c'],"['Union[Text, bytes]']",[''],int,[],,975,ord,['__c'],1,1
+606,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,write,,,"['self', 's']","['', 'str']","['', '']",Any,[],,977,write,"['self', '__s']",2,2
+607,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,print,,,['value'],['object'],[''],None,[],,978,print,['values'],1,1
+608,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,pow,,,"['base', 'exp', 'mod']","['int', 'int', 'None']","['', '', '']",Any,[],,985,pow,"['base', 'exp', 'mod']",3,3
+609,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,pow,,,"['base', 'exp', 'mod']","['int', 'int', 'int']","['', '', '']",int,[],,987,pow,"['base', 'exp', 'mod']",3,3
+610,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,pow,,,"['base', 'exp', 'mod']","['float', 'float', 'None']","['', '', '']",float,[],,989,pow,"['base', 'exp', 'mod']",3,3
+611,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,pow,,,"['base', 'exp', 'mod']","['int', 'int', 'None']","['', '', '']",Any,[],,992,pow,"['__base', '__exp', '__mod']",3,3
+612,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,pow,,,"['base', 'exp', 'mod']","['int', 'int', 'int']","['', '', '']",int,[],,994,pow,"['__base', '__exp', '__mod']",3,3
+613,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,pow,,,"['base', 'exp', 'mod']","['float', 'float', 'None']","['', '', '']",float,[],,996,pow,"['__base', '__exp', '__mod']",3,3
+614,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,quit,,,['code'],['object'],[''],NoReturn,[],,997,quit,['code'],1,1
+615,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,reverse,,,['object'],['Sequence[_T]'],[''],Iterator[_T],[],,999,reversed,['__object'],1,1
+616,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,reverse,,,['object'],['Reversible[_T]'],[''],Iterator[_T],[],,1001,reversed,['__object'],1,1
+617,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,repr,,,['obj'],['object'],[''],str,[],,1002,repr,['__obj'],1,1
+618,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,round,,,['number'],['float'],[''],int,[],,1004,round,['number'],1,1
+619,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,round,,,"['number', 'ndigits']","['float', 'None']","['', '']",int,[],,1006,round,"['number', 'ndigits']",2,2
+620,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,round,,,"['number', 'ndigits']","['float', 'int']","['', '']",float,[],,1008,round,"['number', 'ndigits']",2,2
+621,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,round,,,['number'],['SupportsRound[_T]'],[''],int,[],,1010,round,['number'],1,1
+622,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,round,,,"['number', 'ndigits']","['SupportsRound[_T]', 'None']","['', '']",int,[],,1012,round,"['number', 'ndigits']",2,2
+623,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,round,,,"['number', 'ndigits']","['SupportsRound[_T]', 'int']","['', '']",_T,[],,1014,round,"['number', 'ndigits']",2,2
+624,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,setattr,,,"['obj', 'name', 'value']","['Any', 'Text', 'Any']","['', '', '']",None,[],,1015,setattr,"['__obj', '__name', '__value']",3,3
+625,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sort,,,['iterable'],['Iterable[_T]'],[''],List[_T],[],,1016,sorted,['__iterable'],1,1
+626,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sum,,,['iterable'],['Iterable[_T]'],[''],"Union[_T, int]",[],,1021,sum,['__iterable'],1,1
+627,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sum,,,"['iterable', 'start']","['Iterable[_T]', '_S']","['', '']","Union[_T, _S]",[],,1023,sum,"['__iterable', 'start']",2,2
+628,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sum,,,['iterable'],['Iterable[_T]'],[''],"Union[_T, int]",[],,1026,sum,['__iterable'],1,1
+629,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,sum,,,"['iterable', 'start']","['Iterable[_T]', '_S']","['', '']","Union[_T, _S]",[],,1028,sum,"['__iterable', '__start']",2,2
+630,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,var,,,['object'],['Any'],[''],"Dict[str, Any]",[],,1029,vars,['__object'],1,1
+631,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,zip,,,['iter'],['Iterable[_T1]'],[''],Iterator[Tuple[_T1]],[],,1031,zip,['__iter1'],1,1
+632,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,zip,,,"['iter', 'iter']","['Iterable[_T1]', 'Iterable[_T2]']","['', '']","Iterator[Tuple[_T1, _T2]]",[],,1033,zip,"['__iter1', '__iter2']",2,2
+633,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,zip,,,"['iter', 'iter', 'iter']","['Iterable[_T1]', 'Iterable[_T2]', 'Iterable[_T3]']","['', '', '']","Iterator[Tuple[_T1, _T2, _T3]]",[],,1035,zip,"['__iter1', '__iter2', '__iter3']",3,3
+634,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,zip,,,"['iter', 'iter', 'iter', 'iter']","['Iterable[_T1]', 'Iterable[_T2]', 'Iterable[_T3]', 'Iterable[_T4]']","['', '', '', '']","Iterator[Tuple[_T1, _T2, _T3, _T4]]",[],,1038,zip,"['__iter1', '__iter2', '__iter3', '__iter4']",4,4
+635,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,zip,,,"['iter', 'iter', 'iter', 'iter', 'iter']","['Iterable[_T1]', 'Iterable[_T2]', 'Iterable[_T3]', 'Iterable[_T4]', 'Iterable[_T5]']","['', '', '', '', '']","Iterator[Tuple[_T1, _T2, _T3, _T4, _T5]]",[],,1041,zip,"['__iter1', '__iter2', '__iter3', '__iter4', '__iter5']",5,5
+636,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,zip,,,"['iter', 'iter', 'iter', 'iter', 'iter', 'iter', 'iterables']","['Iterable[Any]', 'Iterable[Any]', 'Iterable[Any]', 'Iterable[Any]', 'Iterable[Any]', 'Iterable[Any]', 'Iterable[Any]']","['', '', '', '', '', '', '']","Iterator[Tuple[Any, ...]]",[],,1044,zip,"['__iter1', '__iter2', '__iter3', '__iter4', '__iter5', '__iter6', 'iterables']",7,7
+637,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,import,,,"['name', 'globals', 'local', 'fromlist', 'level']","['Text', 'Optional[Mapping[str, Any]]', 'Optional[Mapping[str, Any]]', 'Sequence[str]', 'int']","['', '', '', '', '']",Any,[],,1047,__import__,"['name', 'globals', 'locals', 'fromlist', 'level']",5,5
+638,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'args']","['', 'object']","['', '']",None,[],,1065,__init__,"['self', 'args']",2,2
+639,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,str,,,['self'],[''],[''],str,[],,1066,__str__,['self'],1,1
+640,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,repr,,,['self'],[''],[''],str,[],,1067,__repr__,['self'],1,1
+641,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,with traceback,,,"['self', 'tb']","['', 'Optional[TracebackType]']","['', '']",BaseException,[],,1068,with_traceback,"['self', 'tb']",2,2
+642,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'args']","['', 'object']","['', '']",None,[],,1094,__init__,"['self', 'args']",2,2
+643,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'encode', 'object', 'start', 'end', 'reason']","['', 'str', 'bytes', 'int', 'int', 'str']","['', '', '', '', '', '']",None,[],,1160,__init__,"['self', '__encoding', '__object', '__start', '__end', '__reason']",6,6
+644,tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,init,,,"['self', 'encode', 'object', 'start', 'end', 'reason']","['', 'str', 'Text', 'int', 'int', 'str']","['', '', '', '', '', '']",None,[],,1168,__init__,"['self', '__encoding', '__object', '__start', '__end', '__reason']",6,6

@@ -1,0 +1,1000 @@
+,enc,type,count
+0,943,str,20112
+1,869,bool,8648
+2,897,int,8028
+3,216,"Dict[str, Any]",2517
+4,887,float,2329
+5,546,Optional[str],2184
+6,881,dict,1610
+7,958,torch.Tensor,1497
+8,409,List[str],1477
+9,872,bytes,1250
+10,304,HomeAssistant,1111
+11,699,Tensor,1108
+12,918,np.ndarray,1036
+13,541,Optional[int],985
+14,305,HomeAssistantType,964
+15,813,UserProfile,742
+16,165,ConfigEntry,563
+17,205,Dict,502
+18,308,HttpResponse,494
+19,307,HttpRequest,470
+20,121,Callable,465
+21,950,tf.Tensor,421
+22,77,Address,408
+23,927,pd.DataFrame,399
+24,405,List[int],397
+25,558,Path,389
+26,189,DataFrame,353
+27,233,"Dict[str, str]",328
+28,878,datetime,322
+29,540,Optional[float],319
+30,535,Optional[bool],299
+31,594,Realm,279
+32,651,Set[str],262
+33,607,Response,258
+34,921,object,248
+35,602,Request,241
+36,362,"List[Dict[str, Any]]",241
+37,485,"Optional[Dict[str, Any]]",235
+38,899,list,228
+39,164,Config,217
+40,684,T,214
+41,884,ep.Tensor,208
+42,166,ConfigType,201
+43,237,"Dict[str, torch.Tensor]",190
+44,979,typing.Any,179
+45,81,AiohttpClientMocker,177
+46,339,Iterable[str],174
+47,975,tp.Optional[int],171
+48,112,BlockHeaderAPI,171
+49,433,Message,167
+50,114,BlockNumber,161
+51,877,core.HomeAssistant,161
+52,507,Optional[List[str]],155
+53,731,Tuple,153
+54,357,List,146
+55,426,"Mapping[str, Any]",143
+56,38,"""""""Series""""""",141
+57,932,pytest.fixture,139
+58,642,Session,139
+59,685,TP,139
+60,113,BlockIdentifier,137
+61,275,FlaskResponse,130
+62,443,Model,129
+63,10,"""""""DataFrame""""""",128
+64,298,Hash32,127
+65,667,State,122
+66,191,DataPoint,121
+67,85,App,118
+68,963,tp.Any,116
+69,382,List[RaidenService],114
+70,90,ArrayLike,114
+71,712,TokenAmount,113
+72,169,Context,113
+73,857,ast.AST,113
+74,459,NettingChannelState,111
+75,743,"Tuple[int, int]",110
+76,150,Client,110
+77,122,"Callable[..., Any]",107
+78,39,"""""""Settings""""""",102
+79,635,Sequence[str],101
+80,420,MagicMock,101
+81,994,web.Request,100
+82,646,Set[TP],100
+83,143,ChainState,99
+84,925,p.Parameter,99
+85,906,mock.MagicMock,97
+86,315,Index,95
+87,977,tuple,95
+88,536,Optional[bytes],95
+89,711,TokenAddress,95
+90,256,Exception,94
+91,530,Optional[UserProfile],94
+92,360,List[Any],93
+93,669,StateApps,90
+94,586,Query,90
+95,101,BaseComputation,90
+96,188,DataEntry,89
+97,86,AppT,88
+98,34,"""""""QueueDict""""""",86
+99,750,"Tuple[str, str]",86
+100,231,"Dict[str, int]",86
+101,196,DatabaseSchemaEditor,86
+102,788,"Union[int, float]",85
+103,279,FrameOrSeries,82
+104,9,"""""""ContactList""""""",82
+105,421,Manifest,81
+106,254,Event,80
+107,824,VizData,79
+108,810,User,79
+109,56,"""""""ks.Series""""""",78
+110,714,TokenNetworkRegistryAddress,77
+111,519,Optional[Tensor],77
+112,488,Optional[Dict],77
+113,474,Optional[Any],77
+114,876,config_entries.ConfigEntry,76
+115,746,"Tuple[str, ...]",75
+116,438,Mock,75
+117,403,List[dict],72
+118,255,EventT,72
+119,762,URL,72
+120,197,Dataset,72
+121,511,Optional[Realm],72
+122,821,View,72
+123,650,Set[int],71
+124,978,type,70
+125,713,TokenNetworkAddress,70
+126,637,Series,70
+127,217,"Dict[str, Dict[str, Any]]",70
+128,36,"""""""RaidenService""""""",69
+129,870,bool_t,69
+130,374,List[List[str]],69
+131,103,BaseException,68
+132,207,"Dict[Any, Any]",67
+133,619,Scope,66
+134,461,Node,64
+135,400,List[ZerverFieldsT],64
+136,964,tp.ArrayLike,64
+137,753,Type,64
+138,980,typing.Callable,63
+139,345,JSONRPCClient,63
+140,16,"""""""GroupList""""""",63
+141,855,argparse.Namespace,61
+142,539,Optional[dict],61
+143,674,Stream,60
+144,952,timedelta,60
+145,195,DatabaseAPI,60
+146,879,datetime.datetime,59
+147,161,ComputationAPI,59
+148,678,Structure,58
+149,364,List[Dict],58
+150,638,ServerConnectivityInfo,58
+151,623,SecretHash,58
+152,144,ChannelID,58
+153,549,Optional[torch.Tensor],57
+154,911,mx.nd.NDArray,57
+155,933,random.Random,57
+156,845,_Response,57
+157,663,Span,56
+158,826,Vocabulary,56
+159,981,typing.Dict,56
+160,591,RaidenService,56
+161,402,List[bytes],55
+162,492,Optional[Dtype],55
+163,538,Optional[datetime],54
+164,201,Defx,53
+165,152,CodecArg,53
+166,11,"""""""Database""""""",53
+167,363,"List[Dict[str, str]]",53
+168,630,Send,52
+169,596,Receive,52
+170,822,ViewFuncT,52
+171,232,"Dict[str, object]",52
+172,570,Pond,51
+173,747,"Tuple[str, int, Dict[str, str]]",51
+174,118,CALLBACK_TYPE,51
+175,677,StreamT,51
+176,816,VT,50
+177,954,torch.BoolTensor,50
+178,873,click.Context,49
+179,131,"Callable[[], None]",49
+180,487,"Optional[Dict[str, str]]",49
+181,789,"Union[int, str]",49
+182,404,List[float],49
+183,89,ArgumentParser,49
+184,506,Optional[List[int]],48
+185,800,"Union[str, bytes]",48
+186,953,tokenize.TokenInfo,48
+187,654,SignedTransactionAPI,48
+188,649,Set[UniqueId],48
+189,97,Axis,47
+190,916,np.array,47
+191,867,asyncio.AbstractEventLoop,47
+192,14,"""""""Gateway""""""",47
+193,66,APIServer,47
+194,588,QueryObjectDict,47
+195,478,Optional[BaseException],47
+196,742,"Tuple[int, int, int]",47
+197,243,DriveSource,46
+198,410,List[tf.Tensor],46
+199,672,StorageOptions,46
+200,356,Line,46
+201,354,Leaf,44
+202,167,Connection,44
+203,12,"""""""Flow""""""",44
+204,770,"Union[ArrayLike, float]",44
+205,529,"Optional[Union[str, List[str]]]",44
+206,814,V,44
+207,901,logging.Logger,44
+208,657,SimulatedSupervisor,43
+209,424,Mapping,43
+210,26,"""""""Node""""""",43
+211,262,F,43
+212,830,WebSocket,43
+213,592,Random,43
+214,153,CollectionT,42
+215,330,Item,42
+216,115,BlockTimeout,42
+217,331,Iterable,42
+218,399,List[UserProfile],42
+219,573,PondPublicTensor,42
+220,175,Coordinator,42
+221,182,CustomObjectsApi,42
+222,938,socket.socket,42
+223,280,FrameOrSeriesUnion,41
+224,349,K,41
+225,621,Seconds,41
+226,299,Hashable,41
+227,767,"Union['Series', 'DataFrame']",41
+228,691,Task,41
+229,124,"Callable[..., None]",40
+230,18,"""""""Index""""""",40
+231,740,"Tuple[float, float]",40
+232,458,NettingChannelEndState,40
+233,756,Type[Any],40
+234,348,JsonDict,40
+235,306,HomematicipHAP,40
+236,355,LearnerReturnType,39
+237,829,Web3,39
+238,798,"Union[str, Path]",39
+239,605,RequestInterceptor,39
+240,572,PondPrivateTensor,39
+241,351,KT,39
+242,983,typing.List[str],39
+243,634,Sequence[int],39
+244,263,FakeTime,39
+245,44,"""""""Task""""""",38
+246,724,Transformation,38
+247,242,DockerClient,38
+248,49,"""""""Units""""""",38
+249,91,AtomicDatabaseAPI,38
+250,697,TemplateVarsType,38
+251,627,Select,38
+252,109,BlockAPI,38
+253,318,InitializerSpecs,38
+254,837,ZerverFieldsT,37
+255,129,"Callable[[List[Entity], bool], None]",37
+256,54,"""""""datetime""""""",37
+257,84,AnyFunctionDef,37
+258,4,"""""""Axes""""""",37
+259,437,MiningChain,37
+260,241,Doc,37
+261,172,ContractManager,37
+262,52,"""""""WindowList""""""",37
+263,804,"Union[torch.Tensor, Tuple[torch.Tensor, torch.Tensor]]",37
+264,273,Flask,37
+265,407,List[np.ndarray],36
+266,614,RuntimeConfig,36
+267,851,agate.Table,36
+268,230,"Dict[str, float]",36
+269,683,SupportedHashes,36
+270,995,web.Response,36
+271,187,DataCatalog,36
+272,545,Optional[np.ndarray],36
+273,142,ChainID,36
+274,311,IO,36
+275,577,Predictor,35
+276,499,Optional[IndexLabel],35
+277,942,steps.Step,35
+278,957,torch.Size,35
+279,859,ast.Call,35
+280,245,DtypeObj,35
+281,156,CommandLineOptions,35
+282,181,Criterion,34
+283,194,Database,34
+284,394,"List[Tuple[int, int]]",34
+285,31,"""""""PondTensor""""""",34
+286,959,torch.device,34
+287,439,MockConfigEntry,34
+288,46,"""""""Type[Model]""""""",34
+289,967,tp.FloatLoss,34
+290,270,FilePathOrBuffer,34
+291,578,PrivateKey,34
+292,993,web.Application,34
+293,447,ModelPart,34
+294,956,torch.LongTensor,34
+295,158,ComponentFactory,33
+296,802,"Union[str, int]",33
+297,291,GraphQLSchema,33
+298,326,IntOrParameter,33
+299,111,BlockHash,32
+300,185,DType,32
+301,773,"Union[DataFrame, Series]",32
+302,817,ValueOrCallable,32
+303,290,GraphQLResult,32
+304,537,Optional[datetime.datetime],32
+305,208,"Dict[ChannelID, NettingChannelState]",32
+306,969,tp.Iterator[Experiment],32
+307,726,TransitionResult[ChainState],32
+308,390,List[Tensor],32
+309,907,mock.Mock,32
+310,761,Type[T],32
+311,482,Optional[ConfigType],32
+312,661,Snapshot,32
+313,250,Env,31
+314,723,TransactionHash,31
+315,0,"""""""Alert""""""",31
+316,996,web.StreamResponse,31
+317,606,Resolver,31
+318,358,List['Block'],31
+319,427,"Mapping[str, str]",31
+320,296,HaSource,31
+321,481,Optional[Callable],31
+322,444,ModelAndData,31
+323,763,URLTypes,31
+324,617,Scalar,31
+325,908,models.User,31
+326,579,ProducerT,30
+327,936,slice,30
+328,396,"List[Tuple[str, str]]",30
+329,704,Text,30
+330,302,Helper,30
+331,687,TableData,30
+332,912,mx.sym.Symbol,30
+333,848,_T,30
+334,148,ClauseElement,30
+335,622,Secret,29
+336,785,"Union[float, torch.Tensor]",29
+337,745,"Tuple[np.ndarray, np.ndarray]",29
+338,900,logging.LogRecord,29
+339,686,Table,29
+340,843,_NewMeta,29
+341,735,"Tuple[Optional[str], Any]",28
+342,21,"""""""MasterKey""""""",28
+343,718,Trade,28
+344,515,Optional[Sequence[str]],28
+345,425,"Mapping[TP, int]",28
+346,960,torch.dtype,28
+347,917,np.dtype,28
+348,589,QuerySet,28
+349,193,DataUpdateCoordinator,28
+350,670,StateChange,28
+351,935,set,28
+352,522,Optional[TracebackType],28
+353,246,Element,28
+354,6,"""""""BlockManager""""""",27
+355,483,Optional[Context],27
+356,721,Trainer,27
+357,98,Balance,27
+358,392,List[Token],27
+359,43,"""""""Styler""""""",27
+360,134,CallbackContext,27
+361,707,Time,27
+362,676,StreamResponse,27
+363,323,Instance,27
+364,846,_Settings,27
+365,929,pd.Series,27
+366,466,Nvim,27
+367,105,BaseRequest,27
+368,366,List[Event],27
+369,104,BaseRelation,27
+370,568,Pipeline,27
+371,391,List[TokenAddress],27
+372,510,Optional[Path],26
+373,590,RPC,26
+374,332,Iterable[Any],26
+375,491,Optional[DtypeObj],26
+376,639,ServiceCall,26
+377,820,Version,26
+378,758,Type[MODEL],26
+379,353,LN,26
+380,337,Iterable[State],26
+381,875,config.RawConfig,26
+382,281,FrameType,26
+383,710,Token,26
+384,653,Signature,25
+385,490,Optional[DtypeArg],25
+386,412,List[vocab.Vocab],25
+387,151,ClientSession,25
+388,463,NodeType,25
+389,67,ASGIApp,25
+390,809,Update,25
+391,117,CALLABLE_T,25
+392,970,tp.List[float],25
+393,703,TestingContext,25
+394,221,"Dict[str, Integration]",25
+395,253,EvalReturnType,24
+396,966,"tp.Dict[str, tp.Any]",24
+397,705,TextIO,24
+398,584,ProxyManager,24
+399,45,"""""""TxWindow""""""",24
+400,286,GlobalInfo,24
+401,60,"""""""prefect.engine.state.State""""""",24
+402,157,CommandParser,24
+403,525,Optional[Type[BaseException]],24
+404,198,DateType,24
+405,609,Result,23
+406,752,"Tuple[torch.Tensor, torch.Tensor]",23
+407,701,Term,23
+408,20,"""""""KeyList""""""",23
+409,926,pathlib.Path,23
+410,562,PaymentAmount,23
+411,836,XYZ,23
+412,501,Optional[Iterable[str]],23
+413,72,AbstractTensor,23
+414,582,ProjectMetadata,23
+415,839,_AppT,23
+416,226,"Dict[str, Result]",23
+417,327,Integration,23
+418,571,PondMaskedTensor,23
+419,702,TestClient,23
+420,269,FileBlock,23
+421,574,PondTensor,23
+422,984,typing.Optional[str],22
+423,240,DistributionOutput,22
+424,928,pd.DatetimeIndex,22
+425,218,"Dict[str, Dict[str, int]]",22
+426,688,TableName,22
+427,228,"Dict[str, any]",22
+428,266,Field,22
+429,285,GitRepoManagerClient,22
+430,434,MessageAPI,22
+431,33,"""""""QuerySet[MODEL]""""""",22
+432,741,"Tuple[int, ...]",22
+433,58,"""""""ks.Series[str]""""""",22
+434,909,mx.Context,22
+435,795,"Union[str, List[str]]",22
+436,725,TransitionResult,22
+437,119,CDPSession,21
+438,581,Project,21
+439,898,int128,21
+440,671,StateType,21
+441,168,ConsumerT,21
+442,347,JournalDBCheckpoint,21
+443,818,Variable,21
+444,732,"Tuple[Any, ...]",21
+445,236,"Dict[str, tf.Tensor]",21
+446,748,"Tuple[str, int]",21
+447,138,CanonicalIdentifier,21
+448,976,tp.Sequence[Optim],21
+449,555,Params,21
+450,465,Nonce,21
+451,847,_SubQuery,21
+452,30,"""""""Point2""""""",21
+453,94,AutomationActionType,21
+454,76,AddonStopper,21
+455,429,Match[str],21
+456,350,K8SAPIClient,20
+457,891,httputil.HTTPServerRequest,20
+458,293,GroupIntegrationRegistry,20
+459,472,Optional[AbstractFactory],20
+460,309,HybridBlock,20
+461,946,sublime.Edit,20
+462,889,httputil.HTTPHeaders,20
+463,344,JSON,20
+464,944,str_t,20
+465,680,SubmitMocks,20
+466,128,"Callable[[DecoratedCallable], DecoratedCallable]",20
+467,268,File,20
+468,23,"""""""Model""""""",20
+469,633,Sequence[Any],20
+470,283,Future,20
+471,593,ReaderHelper,20
+472,779,"Union[Unit, Point2, Point3]",20
+473,662,SourceFile,20
+474,440,MockFixture,20
+475,860,ast.ClassDef,20
+476,871,bytearray,20
+477,57,"""""""ks.Series[bool]""""""",20
+478,861,ast.Compare,19
+479,222,"Dict[str, List[Any]]",19
+480,267,FieldDescriptorT,19
+481,479,"Optional[Callable[[Any], None]]",19
+482,446,ModelField,19
+483,78,AddressHex,19
+484,806,"Union[torch.Tensor, float]",19
+485,445,ModelDescriptionAndData,19
+486,259,Explanation,19
+487,133,"Callable[[tf.Tensor], tf.Tensor]",19
+488,316,IndexedTokenList,19
+489,557,PartitionAssignorT,19
+490,516,Optional[State],19
+491,136,CancelMocks,19
+492,640,ServiceCallType,19
+493,665,SqlaTable,19
+494,5,"""""""BaseDatasource""""""",19
+495,961,torch.nn.Module,19
+496,668,StateAPI,19
+497,930,pd.Timestamp,19
+498,862,ast.If,19
+499,50,"""""""User""""""",19
+500,852,aiohttp.ClientSession,19
+501,213,"Dict[int, Set[int]]",18
+502,934,requests.Response,18
+503,282,FuncT,18
+504,738,"Tuple[Tensor, Tensor]",18
+505,504,Optional[List[Tuple]],18
+506,416,LogType,18
+507,110,BlockExpiration,18
+508,251,Environment,18
+509,947,sublime.View,18
+510,284,FutureMessage,18
+511,982,"typing.Dict[str, typing.Any]",18
+512,548,Optional[torch.BoolTensor],18
+513,336,Iterable[ServiceT],18
+514,991,uuid.UUID,18
+515,717,TracebackType,18
+516,853,ap.BaseActivity,18
+517,17,"""""""HomeAssistant""""""",18
+518,696,Template,18
+519,517,Optional[Stream],18
+520,274,FlaskClient,18
+521,922,ondisk.DNode,18
+522,923,opentracing.Span,18
+523,383,List[RouteState],18
+524,715,TokenNetworkState,18
+525,422,ManifestNode,18
+526,563,PaymentID,18
+527,768,"Union['Series', 'Index']",17
+528,15,"""""""GradientDescentTrainer""""""",17
+529,377,List[Message],17
+530,322,InstaloaderContext,17
+531,301,HeadersArg,17
+532,955,torch.FloatTensor,17
+533,503,"Optional[List[Dict[str, Any]]]",17
+534,509,Optional[NpDtype],17
+535,176,Coroutine,17
+536,3,"""""""ArrayManager""""""",17
+537,160,CompressionOptions,17
+538,595,ReceiptAPI,17
+539,51,"""""""UserInput""""""",17
+540,199,DecodedEvent,17
+541,618,SchemaT,17
+542,475,Optional[Awaitable[None]],17
+543,784,"Union[float, int]",17
+544,387,List[StateChange],17
+545,682,SupportedEncryption,17
+546,62,A,17
+547,338,Iterable[int],17
+548,441,Mocker,17
+549,369,List[Index],16
+550,819,Vector3Like,16
+551,2,"""""""Application""""""",16
+552,776,"Union[Scalar, 'Series']",16
+553,744,"Tuple[int, str]",16
+554,560,Pattern,16
+555,534,Optional[ast.AST],16
+556,533,Optional[_ExcInfo],16
+557,265,FeedDict,16
+558,367,List[Future],16
+559,96,Awaitable[RecordMetadata],16
+560,414,LockedTransferSignedState,16
+561,811,UserGroup,16
+562,904,metrics.Batch,16
+563,88,Args,16
+564,239,Distribution,16
+565,19,"""""""Iterable[Model]""""""",16
+566,214,"Dict[int, int]",16
+567,797,"Union[str, PathLike]",16
+568,951,tf.Variable,16
+569,137,Candidate,16
+570,580,Profile,16
+571,352,Key,16
+572,321,Inspector,16
+573,224,"Dict[str, List[str]]",16
+574,71,AbstractStreamWriter,16
+575,498,Optional[HeadersArg],16
+576,569,Point2,16
+577,389,List[Stream],16
+578,850,_bytes,15
+579,716,TopicT,15
+580,361,List[Block],15
+581,757,Type[ChainAPI],15
+582,998,yaml.nodes.Node,15
+583,179,Credentials,15
+584,107,BigQueryRelation,15
+585,902,markdown.Markdown,15
+586,791,"Union[int, torch.device]",15
+587,833,WithdrawAmount,15
+588,450,Molecule,15
+589,378,List[NettingChannelState],15
+590,632,Sequence,15
+591,500,Optional[Index],15
+592,264,FeeAmount,15
+593,385,List[ScanJob],15
+594,709,TlsVersionEnum,15
+595,893,httpx.Response,15
+596,495,Optional[FrameType],15
+597,375,List[LogMessage],15
+598,547,Optional[timedelta],15
+599,838,ZhaDeviceType,15
+600,384,List[Run],15
+601,892,httpx.Request,15
+602,883,dt.datetime,15
+603,575,Ports,15
+604,854,argparse.ArgumentParser,14
+605,32,"""""""Project""""""",14
+606,827,WLEDDataUpdateCoordinator,14
+607,722,TransactionContextAPI,14
+608,328,InteractMocks,14
+609,467,OT,14
+610,163,ConditionTransform,14
+611,145,ChannelT,14
+612,340,Iterator,14
+613,146,ChromecastInfo,14
+614,341,Iterator[Port],14
+615,319,InitiatorPaymentState,14
+616,162,ConditionCheckerType,14
+617,415,Locksroot,14
+618,914,nn.Module,14
+619,24,"""""""ModelField""""""",14
+620,126,"Callable[[Any], Any]",14
+621,700,TensorboardManager,14
+622,247,EmailMessage,14
+623,628,SelectionSpec,14
+624,794,"Union[str, Iterable[str]]",14
+625,885,ep.TensorType,14
+626,962,torch.optim.Optimizer,14
+627,559,PathLike,14
+628,365,List[Dimension],14
+629,988,"typing.Union[str, bytes]",14
+630,997,websocket_api.ActiveConnection,14
+631,673,StrOrURL,14
+632,234,"Dict[str, tf.DType]",14
+633,526,"Optional[Union[ArrayLike, Number]]",14
+634,781,"Union[bool, str]",14
+635,660,Slice,14
+636,620,SearchStrategy[Ex],14
+637,782,"Union[bytes, str]",14
+638,880,datetime.timedelta,14
+639,1,"""""""App""""""",14
+640,346,JSON_TYPE,14
+641,801,"Union[str, int, Resample]",14
+642,520,Optional[Text],14
+643,87,Application,14
+644,528,"Optional[Union[int, Iterable]]",14
+645,99,BalanceHash,14
+646,7,"""""""CIMultiDict[str]""""""",14
+647,141,ChainGaps,14
+648,303,HelperTestSource,14
+649,708,TimeSeriesSlice,14
+650,941,st.SearchStrategy[np.dtype],14
+651,82,Alert,13
+652,95,Awaitable,13
+653,29,"""""""Pipeline""""""",13
+654,775,"Union[Path, str]",13
+655,874,condition.ConditionCheckerType,13
+656,564,PaymentWithFeeAmount,13
+657,235,"Dict[str, tf.TensorShape]",13
+658,542,Optional[list],13
+659,212,"Dict[Tuple[int, int, int], float]",13
+660,229,"Dict[str, bool]",13
+661,314,IdMapper,13
+662,186,Dashboard,13
+663,598,RecordMetadata,13
+664,882,dt,13
+665,554,P,13
+666,636,SerializedSQLiteStorage,13
+667,413,LockedAmount,13
+668,379,List[Node],13
+669,65,ABY3PrivateTensor,13
+670,257,Exchange,13
+671,469,OpenHeadersArg,13
+672,505,Optional[List[float]],13
+673,252,EvalFnType,13
+674,418,LoopState,13
+675,652,Shape,13
+676,436,MessageSentCallback,13
+677,211,"Dict[Tuple[TokenNetworkAddress, Address], NettingChannelState]",13
+678,987,"typing.Union[ClauseElement, str]",13
+679,787,"Union[int, Tuple[int, int]]",13
+680,868,behave.runner.Context,13
+681,248,Engine,13
+682,690,TargetAddress,13
+683,53,"""""""_CodeWriter""""""",13
+684,432,MediatorTransferState,13
+685,949,tf.Operation,13
+686,945,str_type,13
+687,805,"Union[torch.Tensor, float, Tuple[float, float], List[float]]",13
+688,13,"""""""Future[None]""""""",13
+689,831,WindowSetT,13
+690,865,ast.Try,13
+691,473,Optional[Address],13
+692,300,Headers,13
+693,803,"Union[tf.Tensor, np.ndarray]",13
+694,484,Optional[Dataset],13
+695,297,HaUpdater,13
+696,174,ControllerData,13
+697,973,tp.List[str],13
+698,219,"Dict[str, Dict[str, str]]",13
+699,937,socket.AddressFamily,13
+700,940,ssl.SSLContext,13
+701,170,ContextConfig,12
+702,397,"List[Tuple[str, torch.nn.Parameter]]",12
+703,370,List[Instance],12
+704,457,NL,12
+705,371,List[Leaf],12
+706,514,Optional[Sequence[Hashable]],12
+707,513,Optional[ScanCommandExtraArguments],12
+708,913,nn.HybridBlock,12
+709,675,StreamReader,12
+710,74,AdapterRequiredConfig,12
+711,706,TfTensor,12
+712,73,AccountState,12
+713,812,UserId,12
+714,27,"""""""OnionService""""""",12
+715,808,Unit,12
+716,910,mx.gluon.HybridBlock,12
+717,430,MatrixTransport,12
+718,258,ExecutionContext,12
+719,532,Optional[WindowSize],12
+720,295,HTTPResponse,12
+721,381,List[Path],12
+722,108,Block,12
+723,597,Recipient,12
+724,858,ast.BoolOp,12
+725,990,utils.SendSecretRevealInNode,12
+726,448,ModelType,12
+727,209,"Dict[Edge, State]",12
+728,759,Type[ModelT],12
+729,780,"Union[bool, Tuple[float, float]]",12
+730,992,vol.Schema,12
+731,583,ProtectionReturn,12
+732,626,Seed,12
+733,317,Info,12
+734,423,Mapper,12
+735,832,WindowWrapperT,12
+736,666,StarlineDevice,12
+737,393,"List[Tuple[List[str], Dict[str, Any]]]",12
+738,796,"Union[str, None]",12
+739,25,"""""""MultiIndex""""""",12
+740,603,RequestContext,12
+741,737,"Tuple[Tensor, Tensor, Tensor]",12
+742,521,Optional[TimeRange],11
+743,524,"Optional[Tuple[str, str]]",11
+744,456,NDArrayBackedExtensionArrayT,11
+745,518,Optional[T],11
+746,200,DefaultStat,11
+747,431,MediaSourceItem,11
+748,523,"Optional[Tuple[float, float]]",11
+749,531,Optional[User],11
+750,751,"Tuple[tf.Tensor, tf.Tensor]",11
+751,462,NodeNetworkStateMap,11
+752,729,TransitionResult[NettingChannelState],11
+753,359,List[Address],11
+754,986,typing.Type[BaseException],11
+755,764,UiServer,11
+756,719,TradeList,11
+757,849,_WebHandler,11
+758,679,SubmitExperimentMocks,11
+759,203,Device,11
+760,178,CreateUserMock,11
+761,59,"""""""l1_block_model.L1BlockModel""""""",11
+762,644,Set[Any],11
+763,130,"Callable[[], Any]",11
+764,223,"Dict[str, List[Dict[str, Any]]]",11
+765,177,CountStat,11
+766,149,CliStateMocks,11
+767,576,PositiveSemidefiniteKernel,11
+768,835,XKNX,11
+769,451,MonitoringServiceAddress,11
+770,287,GraphQLField,11
+771,335,Iterable[DataEntry],11
+772,289,GraphQLResolveInfo,11
+773,48,"""""""Union[Type[Model], Model]""""""",11
+774,585,Q,11
+775,828,Web,11
+776,398,List[Tuple],11
+777,825,Vocab,11
+778,616,SamplingState,11
+779,333,Iterable[BlockHeaderAPI],11
+780,565,PendingLocksState,11
+781,471,Optional['DataFrame'],11
+782,658,SimulationServer,11
+783,70,AbstractSet[str],11
+784,79,AgentT,11
+785,610,Room,11
+786,411,List[torch.Tensor],11
+787,556,ParsedMacro,11
+788,276,FolderFinder,11
+789,730,TransportT,11
+790,543,Optional[mx.nd.NDArray],11
+791,68,AbstractRoute,11
+792,739,"Tuple[ep.Tensor, ep.Tensor]",11
+793,915,nodes,11
+794,777,"Union[Sequence[Message], Message]",11
+795,896,inspect.Signature,11
+796,512,Optional[Response],11
+797,648,"Set[Tuple[str, str]]",11
+798,334,Iterable[Callable],10
+799,695,TaskTiming,10
+800,863,ast.ImportFrom,10
+801,888,gen_typing.TestProvider,10
+802,600,ReplyToArg,10
+803,692,TaskArg,10
+804,442,Mode,10
+805,693,TaskID,10
+806,449,ModuleType,10
+807,890,httputil.HTTPMessageDelegate,10
+808,856,argparse._SubParsersAction,10
+809,244,Dtype,10
+810,28,"""""""Optional[Type[BaseException]]""""""",10
+811,494,Optional[Exception],10
+812,132,"Callable[[list], None]",10
+813,971,tp.List[int],10
+814,83,AnyCallable,10
+815,220,"Dict[str, Dict]",10
+816,486,"Optional[Dict[str, bool]]",10
+817,968,tp.Iterable[tp.Any],10
+818,544,Optional[mx.sym.Symbol],10
+819,173,Controller,10
+820,664,SplitterReturnType,10
+821,388,List[State],10
+822,47,"""""""URL""""""",10
+823,733,"Tuple[List[Tuple], Optional[List[spark.Column]], bool, Optional[Tuple]]",10
+824,792,"Union[str, Callable]",10
+825,292,Greenlet,10
+826,799,"Union[str, Pattern]",10
+827,190,DataLoader,10
+828,771,"Union[Callable, Set[str], str]",10
+829,972,tp.List[p.Parameter],10
+830,493,Optional[Element],10
+831,480,"Optional[Callable[[Post], bool]]",10
+832,629,Self,10
+833,225,"Dict[str, Optional[str]]",10
+834,778,"Union[Structure, Molecule]",10
+835,736,"Tuple[Tensor, Tensor, List[Tensor]]",10
+836,75,AdditionalHash,10
+837,502,Optional[List[Any]],10
+838,656,SimulatedGoogle,10
+839,561,Pattern[str],10
+840,272,FixtureSmartContracts,10
+841,689,TableT,10
+842,55,"""""""ks.DataFrame""""""",10
+843,206,"Dict['core.Edge', 'state.State']",10
+844,497,Optional[Hashable],10
+845,625,SecretRegistryAddress,10
+846,783,"Union[float, Tuple[float, float]]",10
+847,386,List[Slice],10
+848,550,Optional[torch.device],10
+849,294,HTTPRequest,10
+850,261,ExtractorFnType,10
+851,123,"Callable[..., HttpResponse]",10
+852,202,Dependant,10
+853,905,metrics.Client,10
+854,324,InstanceSampler,10
+855,106,Baseplate,10
+856,320,InitiatorTransferState,10
+857,841,_HandlerType,10
+858,612,RouteState,10
+859,920,np.recarray,10
+860,749,"Tuple[str, str, str]",10
+861,147,Ciphertext,10
+862,834,X,10
+863,342,Iterator[str],10
+864,931,pluginhandler.PluginHandler,10
+865,310,IDM,10
+866,681,SuccessOrError,10
+867,227,"Dict[str, Set[str]]",10
+868,93,AttentionLoopState,10
+869,476,Optional[Axis],10
+870,939,spark.Column,10
+871,100,BalanceProofSignedState,10
+872,210,"Dict[QueueIdentifier, List[Message]]",10
+873,615,SafeLineLoader,10
+874,92,Attendable,10
+875,435,MessageID,9
+876,754,TypeInfo,9
+877,120,Cache,9
+878,116,BoundsInput,9
+879,527,"Optional[Union[float, datetime.timedelta]]",9
+880,69,AbstractSet[int],9
+881,551,Optional[type],9
+882,260,ExtensionArray,9
+883,755,Type['Model'],9
+884,552,Optional[tzinfo],9
+885,553,OrderedDict,9
+886,249,Entry,9
+887,238,DiscoveryInfoType,9
+888,769,"Union[Any, Tuple]",9
+889,604,RequestHandler,9
+890,772,"Union[Criterion, T]",9
+891,760,Type[Self],9
+892,271,FirmataPinType,9
+893,774,"Union[Dict, Tuple]",9
+894,125,"Callable[..., str]",9
+895,766,Union['PublicKey'],9
+896,765,"Union['DataFrame', 'Series']",9
+897,80,AggFuncType,9
+898,102,BaseDBAsyncClient,9
+899,127,"Callable[[Any], None]",9
+900,464,NonSourceCompiledNode,9
+901,508,Optional[Message],9
+902,313,IT,9
+903,41,"""""""SparseArray""""""",9
+904,815,V1Secret,9
+905,477,Optional[BaseDBAsyncClient],9
+906,40,"""""""Size""""""",9
+907,823,ViewMocks,9
+908,454,"MutableMapping[str, Any]",9
+909,215,"Dict[int, str]",9
+910,312,IO[str],9
+911,840,_Deco,9
+912,277,Forecast,9
+913,470,Optimizer,9
+914,842,_InfoDict,9
+915,468,OneToNAddress,9
+916,154,Collection[Feature],9
+917,844,_Q,9
+918,325,Int64Index,9
+919,37,"""""""Realm""""""",9
+920,720,TrainEnv,9
+921,140,ChainDatabaseAPI,9
+922,139,ChainAPI,9
+923,42,"""""""Storage""""""",9
+924,864,ast.Subscript,9
+925,64,ABY3,9
+926,63,ABI,9
+927,61,"""""""transaction_model.TransactionModel""""""",9
+928,566,PendingMessage,9
+929,567,PermissionLookup,9
+930,496,Optional[Gender],9
+931,734,"Tuple[Optional[spark.Column], Optional[int], Optional[int]]",9
+932,786,"Union[int, List[int]]",9
+933,790,"Union[int, tf.Tensor]",9
+934,489,Optional[DiscoveryInfoType],9
+935,288,GraphQLObjectType,9
+936,866,ast.expr,9
+937,452,MultiIndex,9
+938,587,QueryFn,9
+939,453,MultitaskClassifier,9
+940,135,CancelExperimentMocks,9
+941,807,UniqueId,9
+942,793,"Union[str, ChannelT]",9
+943,599,RegistryEntry,9
+944,985,"typing.Tuple[str, Highlights]",9
+945,8,"""""""ClientRequest""""""",9
+946,406,List[mx.nd.NDArray],9
+947,419,MODEL,9
+948,204,Dialect,9
+949,965,"tp.Callable[..., tp.Any]",9
+950,159,Composition,9
+951,376,List[MediationPairState],9
+952,408,List[range],9
+953,613,RoutingMode,9
+954,919,np.random.RandomState,9
+955,373,List[List[int]],9
+956,428,Markup,9
+957,974,tp.Loss,9
+958,417,Logger,9
+959,611,RouteDef,9
+960,624,SecretRegistry,9
+961,659,SlackToZulipUserIDT,9
+962,180,Creds,9
+963,989,utils.Selector,9
+964,895,inference.TranslatorOutput,9
+965,608,RestartNode,9
+966,694,TaskTags,9
+967,948,system_health.SystemHealthRegistration,9
+968,643,Set,9
+969,192,DataType,9
+970,401,List[bool],9
+971,894,inference.TranslatorInput,9
+972,631,SentenceId,9
+973,343,JSHandle,9
+974,886,flask.Flask,9
+975,171,ContextValue,9
+976,641,ServiceT,9
+977,999,zha_typing.ChannelPoolType,9
+978,395,"List[Tuple[str, Any]]",9
+979,329,IntermediateNode,8
+980,380,List[Optional[str]],8
+981,903,markdown.util.Registry,8
+982,35,"""""""Queue[Any]""""""",8
+983,655,Signer,8
+984,278,FormData,8
+985,460,NetworkTimeout,8
+986,155,Column,8
+987,727,TransitionResult[InitiatorPaymentState],8
+988,601,ReportSchedule,8
+989,728,TransitionResult[MediatorTransferState],8
+990,645,Set[Point2],8
+991,183,CustomerPlan,8
+992,22,"""""""MessageLog""""""",8
+993,368,List[HashTimeLockState],8
+994,698,Templates,8
+995,372,List[List[TensorDict]],8
+996,184,DB,8
+997,647,Set[Task],8
+998,455,NAUTAAppNames,8

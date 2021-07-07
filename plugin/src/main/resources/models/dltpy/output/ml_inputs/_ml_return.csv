@@ -1,0 +1,2 @@
+file,name,docstring,func_descr,return_type,return_descr,lineno,full_name,arg_full_names,arg_names_len,arg_types_len,return_type_t,return_type_enc,arg_names_str,return_expr_str
+./project/tmp_author__tmp_repo/tmp.py,to snake case,convert give word snake case,convert give word snake case,bool,,154,to_snake_case,"['word', 'case']",2,2,bool,869,word case,snake case upper snake case low

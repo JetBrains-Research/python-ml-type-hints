@@ -1,0 +1,3 @@
+func_name,arg_name,arg_type,arg_comment,lineno,file,full_name,arg_type_t,arg_type_enc
+to snake case,word,bool,,154,./project/tmp_author__tmp_repo/tmp.py,word,bool,869
+to snake case,case,bool,,154,./project/tmp_author__tmp_repo/tmp.py,case,bool,869
