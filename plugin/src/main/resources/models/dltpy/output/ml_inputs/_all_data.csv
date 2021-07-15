@@ -1,2 +1,0 @@
-author,repo,file,has_type,name,docstring,func_descr,arg_names,arg_types,arg_descrs,return_type,return_expr,return_descr,lineno,full_name,arg_full_names,arg_names_len,arg_types_len
-tmp_author,tmp_repo,./project/tmp_author__tmp_repo/tmp.py,True,to snake case,convert give word snake case,convert give word snake case,"['word', 'case']","['', 'str']","['', '']",str,"['snake case upper', 'snake case low']",,154,to_snake_case,"['word', 'case']",2,2
