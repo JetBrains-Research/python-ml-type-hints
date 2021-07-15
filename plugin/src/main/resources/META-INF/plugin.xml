@@ -1,6 +1,6 @@
 <idea-plugin>
     <id>com.github.skuzi.simplepycharmplugin</id>
-    <name>no-annotation-inspection</name>
+    <name>No-Annotation-Inspection</name>
     <vendor>skuzi</vendor>
 
     <!-- Product and plugin compatibility requirements -->
@@ -29,11 +29,11 @@
                          enabledByDefault="true"
                          groupBundle="messages.InspectionsBundle"
                          level="WARNING"
-                         implementationClass="com.github.skuzi.simplepycharmplugin.NoAnnotationInspection"/>
+                         implementationClass="plugin.NoAnnotationInspection"/>
     </extensions>
     
     <extensions defaultExtensionNs="Pythonid">
-    <typeProvider implementation="com.github.skuzi.simplepycharmplugin.typing.PyGuessTypeProvider"/>
+    <typeProvider implementation="plugin.typing.PyGuessTypeProvider"/>
     </extensions>
 
 </idea-plugin>
