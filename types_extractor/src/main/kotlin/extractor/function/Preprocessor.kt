@@ -12,31 +12,31 @@ import java.util.*
 class Preprocessor {
     fun preprocess(function: Function): Function {
         return Function(
-                name = processIdentifier(function.name),
-                returnType = function.returnType,
-                returnExpr = function.returnExpr.map {
-                    val str = it.replace("return", "")
-                    processIdentifier(str)
-                },
-                returnDescr = processSentence(function.returnDescr),
-                lineNumber = function.lineNumber,
-                fnDescription = processSentence(function.returnDescr),
-                argTypes = function.argTypes,
-                argOccurrences = function.argOccurrences.map(this::processSentence),
-                argNames = function.argNames.map(this::processIdentifier),
-                argDescriptions = function.argDescriptions.map(this::processSentence),
-                docstring = processSentence(function.docstring),
-                usages = function.usages
+            name = processIdentifier(function.name),
+            returnType = function.returnType,
+            returnExpr = function.returnExpr.map {
+                val str = it.replace("return", "")
+                processIdentifier(str)
+            },
+            returnDescr = processSentence(function.returnDescr),
+            lineNumber = function.lineNumber,
+            fnDescription = processSentence(function.returnDescr),
+            argTypes = function.argTypes,
+            argOccurrences = function.argOccurrences.map(this::processSentence),
+            argNames = function.argNames.map(this::processIdentifier),
+            argDescriptions = function.argDescriptions.map(this::processSentence),
+            docstring = processSentence(function.docstring),
+            usages = function.usages
         )
     }
 
     fun processSentence(sentence: String?): String? {
         val reducer = listOf(
-                ::replaceDigitsWithSpace,
-                ::removePunctuationAndLinebreaks,
-                ::tokenize,
-                ::lemmatize,
-                ::removeStopWords
+            ::replaceDigitsWithSpace,
+            ::removePunctuationAndLinebreaks,
+            ::tokenize,
+            ::lemmatize,
+            ::removeStopWords
         )
 
         return reducer.fold(sentence, { acc, f -> acc?.let { f(it) } })
@@ -44,17 +44,17 @@ class Preprocessor {
 
     fun processIdentifier(sentence: String): String {
         val reducer = listOf(
-                ::replaceDigitsWithSpace,
-                ::removePunctuationAndLinebreaks,
-                ::tokenize,
-                ::lemmatize
+            ::replaceDigitsWithSpace,
+            ::removePunctuationAndLinebreaks,
+            ::tokenize,
+            ::lemmatize
         )
 
         return reducer.fold(sentence, { acc, f -> f(acc) })
     }
 
     companion object {
-//        private val pipeline: StanfordCoreNLP
+        //        private val pipeline: StanfordCoreNLP
         private val props = Properties()
 
 
@@ -65,15 +65,15 @@ class Preprocessor {
         }
 
         fun replaceDigitsWithSpace(sentence: String) =
-                sentence.replace(Regex("[0-9]+"), " ")
+            sentence.replace(Regex("[0-9]+"), " ")
 
         fun removePunctuationAndLinebreaks(sentence: String) =
-                sentence
-                        .replace(Regex("[^A-Za-z0-9]+"), " ")
-                        .filterNot { it == '\n' || it == '\r' }
+            sentence
+                .replace(Regex("[^A-Za-z0-9]+"), " ")
+                .filterNot { it == '\n' || it == '\r' }
 
         fun tokenize(sentence: String) =
-                convertCamelcase(sentence.replace('_', ' '))
+            convertCamelcase(sentence.replace('_', ' '))
 
         fun lemmatize(sentence: String): String {
 //            val doc = CoreDocument(sentence)
@@ -83,8 +83,7 @@ class Preprocessor {
             try {
                 val sent = Sentence(sentence)
                 return sent.lemmas(props).joinToString(" ")
-            }
-            catch (e: Exception) {
+            } catch (e: Exception) {
                 println("string is $sentence")
                 throw e
             }

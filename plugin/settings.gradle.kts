@@ -1,1 +1,1 @@
-rootProject.name = "simple-pycharm-plugin"
+//rootProject.name = "plugin"

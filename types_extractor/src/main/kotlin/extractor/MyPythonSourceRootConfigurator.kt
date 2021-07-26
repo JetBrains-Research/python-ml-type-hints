@@ -26,7 +26,7 @@ class MyPythonSourceRootConfigurator {
                     return@iterateChildrenRecursively true
                 }
                 val psi = PsiManager.getInstance(project)
-                        .findFile(virtualFile) ?: return@iterateChildrenRecursively true
+                    .findFile(virtualFile) ?: return@iterateChildrenRecursively true
                 visitor.curFile = virtualFile
                 psi.accept(visitor)
 
@@ -50,7 +50,7 @@ class MyPythonSourceRootConfigurator {
                     return@iterateChildrenRecursively true
                 }
                 val psi = PsiManager.getInstance(project)
-                        .findFile(virtualFile) ?: return@iterateChildrenRecursively true
+                    .findFile(virtualFile) ?: return@iterateChildrenRecursively true
                 psi.accept(visitor)
 
                 true
@@ -147,7 +147,7 @@ class MyPythonSourceRootConfigurator {
             } catch (e: NullPointerException) {
             }
 
-            val module = findImportee(root, curFile, import)?: findImporteeDfs(root, curFile, import)
+            val module = findImportee(root, curFile, import) ?: findImporteeDfs(root, curFile, import)
 
             sourceRoots.add(module)
         }
@@ -171,10 +171,10 @@ class MyPythonSourceRootConfigurator {
                 if (module != null && module.parent != root) {
                     return module.parent
                 } else {
-                   val newModule = findImporteeDfs(child, file, importName)
-                   if (newModule != null) {
-                       return newModule
-                   }
+                    val newModule = findImporteeDfs(child, file, importName)
+                    if (newModule != null) {
+                        return newModule
+                    }
                 }
             }
             return null

@@ -5,7 +5,10 @@ import plugin.quickfix.ParametersListQuickFix
 import com.intellij.codeInspection.ProblemsHolder
 import com.intellij.psi.PsiElement
 import com.jetbrains.python.inspections.PyInspection
-import com.jetbrains.python.psi.*
+import com.jetbrains.python.psi.PyAssignmentStatement
+import com.jetbrains.python.psi.PyElementVisitor
+import com.jetbrains.python.psi.PyFunction
+import com.jetbrains.python.psi.PyTupleExpression
 
 /**
  * Inspection to detect variable declarations without type annotations
@@ -33,9 +36,10 @@ class NoAnnotationInspection : PyInspection() {
                     return
                 }
 
-                //if (element is PyTargetExpression && element.parent !is PyImportStatement && element.annotationValue == null) {
-                //    holder.registerProblem(element, DESCRIPTION, TargetQuickFix())
-                //}
+                // if (element is PyTargetExpression && element.parent !is PyImportStatement
+                // && element.annotationValue == null) {
+                //     holder.registerProblem(element, DESCRIPTION, TargetQuickFix())
+                // }
 
                 if (element is PyFunction) {
                     if (element.parameterList.parameters.any { it.asNamed!!.annotationValue == null }) {

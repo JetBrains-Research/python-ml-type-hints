@@ -1,1 +1,1 @@
-rootProject.name = "typesextractor"
+//rootProject.name = "extractor"

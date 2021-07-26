@@ -12,7 +12,7 @@ import com.jetbrains.python.psi.types.TypeEvalContext
 class PyGuessTypeProvider : PyTypeProviderBase() {
 
     override fun getParameterType(param: PyNamedParameter, func: PyFunction, context: TypeEvalContext): Ref<PyType>? {
-        val type: String = "str" //TypePredictor.predictDLTPy(param.containingFile, listOf(param.name!!)).next()
+        val type: String = "str" // TypePredictor.predictDLTPy(param.containingFile, listOf(param.name!!)).next()
         return Ref.create(PyTypeParser.getTypeByName(param, type, context))
     }
 

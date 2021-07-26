@@ -1,25 +1,19 @@
 package plugin.predictors
 
-import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiFile
-import com.jetbrains.python.psi.PyElement
-import com.jetbrains.python.psi.PyParameterList
 import com.lordcodes.turtle.ShellLocation
-import com.lordcodes.turtle.ShellRunException
 import com.lordcodes.turtle.shellRun
 import krangl.DataFrame
 import krangl.eq
 import krangl.readCSV
-import java.io.BufferedReader
 import java.nio.file.Paths
 
-class TypePredictor {
-
+class TypePredictor private constructor() {
 
     companion object {
-        private const val DEFAULT_PATH =
-            "/home/kuzyaka/Documents/projects/diploma/simple-pycharm-plugin/src/main/resources/models"
-        private const val TYPE4PY_PATH = "type4py/type4py"
+        private val DEFAULT_PATH =
+            this.javaClass.getResource("/models")!!.path
+        private const val TYPE4PY_PATH = "type4py"
         private const val DLTPY_PATH = "dltpy"
         private const val DEFAULT_PROJECT_DIRECTORY = "project"
         private const val TMP_AUTHOR = "tmp_author"
@@ -62,7 +56,9 @@ class TypePredictor {
                 Paths.get(DEFAULT_PATH, TYPE4PY_PATH, DEFAULT_OUTPUT_DIRECTORY, PREDICTIONS_FILE).toFile()
             )
             val pred =
-                parameters.map { parameter -> predictions.filter { it["name"] eq parameter }["prediction"][0] as String }
+                parameters.map { parameter ->
+                    predictions.filter { it["name"] eq parameter }["prediction"][0] as String
+                }
 
             return pred.iterator()
         }
@@ -99,12 +95,18 @@ class TypePredictor {
             val predictions =
                 DataFrame.readCSV(Paths.get(DEFAULT_PATH, DLTPY_PATH, "output", PREDICTIONS_FILE).toFile())
             val pred =
-                parameters.map { parameter -> predictions.filter { it["name"] eq parameter }["prediction"][0] as String }
+                parameters.map { parameter ->
+                    predictions.filter { it["name"] eq parameter }["prediction"][0] as String
+                }
 
             projectFile.delete()
 
             return pred.iterator()
         }
+
+        /*fun predictKInference(psiFile: PsiFile, parameters: List<String>): Iterator<String> {
+            return listOf("").iterator()
+        }*/
 
         /*fun loadTypes() {
             val outputDirectory = Paths.get(DEFAULT_PATH, DEFAULT_OUTPUT_DIRECTORY).toFile()
@@ -118,7 +120,4 @@ class TypePredictor {
             println(output)
         }*/
     }
-
-
 }
-
