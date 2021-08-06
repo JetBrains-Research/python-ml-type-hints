@@ -1,4 +1,4 @@
-package extractor
+package extractor.configurers
 
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.application.runWriteAction
