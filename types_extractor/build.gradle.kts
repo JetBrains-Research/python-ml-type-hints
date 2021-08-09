@@ -49,3 +49,16 @@ open class IOCliTask : org.jetbrains.intellij.tasks.RunIdeTask() {
         standardOutput = System.`out`
     }
 }
+
+tasks {
+    register<IOCliTask>("inferTypes") {
+        dependsOn("buildPlugin")
+        args = listOfNotNull(
+            runner,
+            input?.let { "--input $it" },
+            output?.let { "--output $it" },
+            toInfer?.let { "--toInfer $it" },
+            envName?.let { "--envName $it" }
+        )
+    }
+}
