@@ -25,18 +25,27 @@ val platformDownloadSources: String by project
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 
+open class IOCliTask : org.jetbrains.intellij.tasks.RunIdeTask() {
+    // Name of the runner
+    @get:Input
+    val runner: String? by project
 
-tasks {
-    runIde {
-        val input: String? by project
-        val output: String? by project
-        val toInfer: String? by project
-        val envName: String? by project
-        args = listOfNotNull("inferTypes", "--input", input, "--output", output, "--toInfer", toInfer, "--envName", envName)
-        jvmArgs = listOf("-Djava.awt.headless=true", "--add-exports", "java.base/jdk.internal.vm=ALL-UNNAMED")
+    // Path to the directory containing projects for the dataset
+    val input: String? by project
+    //Path to the output directory
+    val output: String? by project
+    val toInfer: String? by project
+    val envName: String? by project
+
+    init {
+        jvmArgs = listOf(
+            "-Djava.awt.headless=true",
+            "--add-exports",
+            "java.base/jdk.internal.vm=ALL-UNNAMED",
+            "-Djdk.module.illegalAccess.silent=true"
+        )
         maxHeapSize = "20g"
-    }
-    register("inferTypes") {
-        dependsOn(runIde)
+        standardInput = System.`in`
+        standardOutput = System.`out`
     }
 }
