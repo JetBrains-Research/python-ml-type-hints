@@ -31,14 +31,18 @@ allprojects {
         mavenCentral()
         jcenter()
         maven(url = "https://packages.jetbrains.team/maven/p/ki/maven")
+        maven(url = "https://jitpack.io")
+
     }
     dependencies {
 //        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.0")
         implementation(platform("org.jetbrains.kotlin:kotlin-reflect:1.5.10"))
 //        implementation("com.lordcodes.turtle:turtle:0.5.0")
-//        implementation("com.github.holgerbrandl:krangl:0.16.1")
         implementation(kotlin("stdlib-jdk8"))
         implementation("io.kinference:inference:0.1.3")
+        implementation("org.jetbrains.kotlinx:dataframe:0.8.0-dev-285-0.10.0.72")
+        implementation("org.apache.commons:commons-csv:1.8")
+
     }
 
     // Configure gradle-intellij-plugin plugin.
