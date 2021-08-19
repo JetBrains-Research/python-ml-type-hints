@@ -101,27 +101,35 @@ class MyPythonSourceRootConfigurer {
 
         override fun visitPyImportStatement(node: PyImportStatement) {
             node.importElements.filterNot { it.importedQName == null }.forEach {
-                val resolved = it.multiResolve()
-                if (resolved.isNotEmpty()) {
-                    preResolved++
-                }
+                try {
+                    val resolved = it.multiResolve()
+                    if (resolved.isNotEmpty()) {
+                        preResolved++
+                    }
 
-                val module = findImportee(root, curFile, it.importedQName!!)
-                sourceRoots.add(module)
+                    val module = findImportee(root, curFile, it.importedQName!!)
+                    sourceRoots.add(module)
+                } catch (e: NullPointerException) {
+                    // Occurs somewhere in resolution of qualified name
+                }
             }
         }
 
         override fun visitPyFromImportStatement(node: PyFromImportStatement) {
             val import = node.importSourceQName ?: return
-            val resolved = node.resolveImportSource()
-            if (resolved != null) {
-                preResolved++
-                return
+            try {
+                val resolved = node.resolveImportSource()
+                if (resolved != null) {
+                    preResolved++
+                    return
+                }
+
+                val module = findImportee(root, curFile, import) ?: findImporteeDfs(root, curFile, import)
+
+                sourceRoots.add(module)
+            } catch (e: NullPointerException) {
+                // Occurs somewhere in resolution of qualified name
             }
-
-            val module = findImportee(root, curFile, import) ?: findImporteeDfs(root, curFile, import)
-
-            sourceRoots.add(module)
         }
 
         private fun findImportee(root: VirtualFile, file: VirtualFile, importName: QualifiedName): VirtualFile? {

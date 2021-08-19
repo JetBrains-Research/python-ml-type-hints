@@ -1,13 +1,14 @@
 package extractor.utils
 
-import java.io.File
-import java.io.IOException
+import com.intellij.util.io.exists
 import java.nio.file.Files
 import java.nio.file.Path
 
-fun createFilesInDir(dirPath: String, vararg files: String) {
-    Files.createDirectory(Path.of(dirPath))
+fun createFiles(vararg files: Path) {
     files.forEach { file ->
-        Files.createFile(Path.of(dirPath, file))
+        Files.createDirectories(file.parent)
+        if (!file.exists()) {
+            Files.createFile(file)
+        }
     }
 }

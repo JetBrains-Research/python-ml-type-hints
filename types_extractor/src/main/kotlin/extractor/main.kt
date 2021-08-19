@@ -1,9 +1,8 @@
 package extractor
 
 import com.github.ajalt.clikt.core.CliktCommand
+import com.github.ajalt.clikt.parameters.arguments.argument
 import com.intellij.openapi.application.ApplicationStarter
-import com.github.ajalt.clikt.parameters.options.option
-import com.github.ajalt.clikt.parameters.options.required
 import extractor.workers.FileTypesExtractor
 import extractor.workers.ProjectTypeInferrer
 import kotlin.system.exitProcess
@@ -20,17 +19,16 @@ class PluginRunner : ApplicationStarter {
 
 class TypesExtractor : CliktCommand() {
 
-    private val input: String by option("--input", help = "Path to input").required()
-    private val output: String by option("--output", help = "Path to output").required()
-    private val infer: String? by option("--toInfer")
-    private val envName: String by option("--envName").required()
+    private val input: String by argument(help = "Path to input")
+    private val output: String by argument(help = "Path to output")
+    private val infer: String? by argument()
+    private val envName: String by argument()
 
     override fun run() {
         val extractor = FileTypesExtractor(output)
         val inferrer = ProjectTypeInferrer(output)
-        val toInfer = infer == "yes"
         extractor.extractTypesFromProjectsInDir(input, envName)
-        val types = inferrer.inferTypes(input, toInfer, envName)
+        val types = inferrer.inferTypes(input, envName)
 
         inferrer.printTypes(types, output)
         exitProcess(0)

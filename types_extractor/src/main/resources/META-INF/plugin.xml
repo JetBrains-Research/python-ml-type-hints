@@ -1,0 +1,16 @@
+<idea-plugin>
+    <id>aaa</id>
+    <name>inferTypes</name>
+    <vendor email="sergey.kuzmin@jetbrains.com">JetBrains Research</vendor>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.python</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+        <appStarter implementation="extractor.PluginRunner"/>
+    </extensions>
+
+</idea-plugin>

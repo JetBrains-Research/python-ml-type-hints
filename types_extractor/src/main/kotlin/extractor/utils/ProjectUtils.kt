@@ -60,5 +60,5 @@ fun traverseProject(project: Project, processFile: (psi: PsiFile, filePath: Stri
 }
 
 fun isPythonFile(virtualFile: VirtualFile): Boolean {
-    return (virtualFile.extension != "py" || virtualFile.canonicalPath == null)
+    return virtualFile.extension == "py" && virtualFile.canonicalPath != null
 }

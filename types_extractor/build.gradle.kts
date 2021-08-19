@@ -7,14 +7,9 @@ dependencies {
     implementation("org.apache.commons:commons-lang3:3.0")
     implementation("edu.stanford.nlp:stanford-corenlp:4.2.0")
     implementation("edu.stanford.nlp:stanford-corenlp:4.2.0:models")
-//    implementation("intoxicant.analytics:coreNlpExtensions:1.0.0")
-//    implementation("org.apache.lucene:lucene-core:7.0.0")
     implementation("org.slf4j:slf4j-api:+")
-    implementation("com.github.holgerbrandl:krangl:0.16.2")
 
 
-//    testImplementation("junit:junit:4.11")
-//    testImplementation(kotlin("test-junit"))
 
 //    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.10.0")
 }
@@ -51,14 +46,14 @@ open class IOCliTask : org.jetbrains.intellij.tasks.RunIdeTask() {
 }
 
 tasks {
-    register<IOCliTask>("inferTypes") {
+    register<IOCliTask>("runInferTypes") {
         dependsOn("buildPlugin")
         args = listOfNotNull(
             runner,
-            input?.let { "--input $it" },
-            output?.let { "--output $it" },
-            toInfer?.let { "--toInfer $it" },
-            envName?.let { "--envName $it" }
+            input,
+            output,
+            toInfer,
+            envName
         )
     }
 }
