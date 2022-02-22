@@ -1,12 +1,13 @@
 package plugin.quickfix
 
-import plugin.predictors.TypePredictor
 import com.intellij.codeInspection.LocalQuickFix
 import com.intellij.codeInspection.ProblemDescriptor
 import com.intellij.openapi.project.Project
 import com.jetbrains.python.psi.LanguageLevel
 import com.jetbrains.python.psi.PyElementGenerator
 import com.jetbrains.python.psi.PyParameterList
+import extractor.function.FunctionExtractor
+import plugin.predictors.TypePredictor
 
 /**
  * Quick fix for functions where at least one parameter is not type annotated
@@ -25,24 +26,27 @@ class ParametersListQuickFix : LocalQuickFix {
         if (parameterList !is PyParameterList) {
             return
         }
+        val function = parameterList.containingFunction ?: return
 
         val generator = PyElementGenerator.getInstance(project)
         val newParameterList = generator.createParameterList(LanguageLevel.PYTHON38, "()")
 
-        val parameters = parameterList.parameters.map { it.asNamed?.name!! }.filter { it != "self" }
-        val newParameters = TypePredictor.predictDLTPy(parameterList.containingFile, parameters)
+        val extractor = FunctionExtractor()
+        function.accept(extractor)
+        val newParameters = (if (function.containingClass == null) mapOf() else mapOf("self" to "")) +
+                TypePredictor.predictParameters(extractor.functions.first())
 
-        parameterList.parameters.forEach {
+        function.parameterList.parameters.forEach { old ->
             newParameterList.addParameter(
                 generator.createParameter(
-                    it.name!!,
-                    it.defaultValueText,
-                    it.asNamed?.annotationValue ?: if (it.name!! == "self") null else newParameters.next(),
+                    old.name!!,
+                    old.defaultValueText,
+                    old.asNamed?.annotationValue ?: if (old.isSelf) null else newParameters[old.name!!],
                     LanguageLevel.PYTHON38
                 )
             )
         }
 
-        parameterList.replace(newParameterList)
+        function.parameterList.replace(newParameterList)
     }
 }

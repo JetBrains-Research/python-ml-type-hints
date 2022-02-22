@@ -1,7 +1,5 @@
 package plugin
 
-import plugin.quickfix.AssignmentQuickFix
-import plugin.quickfix.ParametersListQuickFix
 import com.intellij.codeInspection.ProblemsHolder
 import com.intellij.psi.PsiElement
 import com.jetbrains.python.inspections.PyInspection
@@ -9,6 +7,8 @@ import com.jetbrains.python.psi.PyAssignmentStatement
 import com.jetbrains.python.psi.PyElementVisitor
 import com.jetbrains.python.psi.PyFunction
 import com.jetbrains.python.psi.PyTupleExpression
+import plugin.quickfix.AssignmentQuickFix
+import plugin.quickfix.ParametersListQuickFix
 
 /**
  * Inspection to detect variable declarations without type annotations
@@ -42,7 +42,10 @@ class NoAnnotationInspection : PyInspection() {
                 // }
 
                 if (element is PyFunction) {
-                    if (element.parameterList.parameters.any { it.asNamed!!.annotationValue == null }) {
+                    if (element.parameterList.parameters
+                            .filter { !it.isSelf }
+                            .any { it.asNamed!!.annotationValue == null }
+                    ) {
                         holder.registerProblem(element.parameterList, DESCRIPTION, ParametersListQuickFix())
                     }
 

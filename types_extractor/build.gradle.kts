@@ -8,7 +8,7 @@ dependencies {
     implementation("edu.stanford.nlp:stanford-corenlp:4.2.0")
     implementation("edu.stanford.nlp:stanford-corenlp:4.2.0:models")
     implementation("org.slf4j:slf4j-api:+")
-
+    api("io.kinference", "inference-core", "0.1.10")
 
 
 //    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.10.0")

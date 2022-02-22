@@ -3,15 +3,10 @@ package extractor.workers
 import extractor.function.Function
 import extractor.function.FunctionExtractor
 import extractor.function.Preprocessor
-import extractor.utils.createFiles
-import extractor.utils.forEachProjectInDir
-import extractor.utils.setupProject
-import extractor.utils.traverseProject
+import extractor.utils.*
 import org.jetbrains.dataframe.DataFrame
-import org.jetbrains.dataframe.add
 import org.jetbrains.dataframe.io.writeCSV
 import org.jetbrains.dataframe.plus
-import org.jetbrains.dataframe.toDataFrameByProperties
 import java.nio.file.Paths
 
 class FileTypesExtractor(val output: String) {
@@ -69,17 +64,7 @@ class FileTypesExtractor(val output: String) {
         avlTypes: List<String>,
         oldDf: DataFrame<Any?>?
     ): DataFrame<Any?> {
-        val df = functions.toDataFrameByProperties()
-        val newDf = df.add {
-            "author" { project }
-            "file" { file }
-            "repo" { project }
-            "variables" { listOf<String>() }
-            "variableTypes" { listOf<String>() }
-            "avalTypes" { avlTypes }
-            "argNamesLen" { (get("argNames") as List<*>).size }
-            "argTypesLen" { (get("argTypes") as List<*>).size }
-        }
+        val newDf = addMeaningfulColumnsToFunctions(project, file, functions, avlTypes)
 
         return if (oldDf == null) newDf else oldDf + newDf
     }

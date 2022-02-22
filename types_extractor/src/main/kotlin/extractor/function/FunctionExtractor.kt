@@ -39,12 +39,12 @@ class FunctionExtractor : PyRecursiveElementVisitor() {
         val parameterNames = parameters.map { it?.name.orEmpty() }
 
         val body = function.statementList.statements
-            .map {
-                it.text
+            .map { statement ->
+                statement.text
                     .split("\\s+".toRegex())
-                    .map { it.replace("""^[,\.]|[,\.]$""".toRegex(), "") }
+                    .map { it.replace("""^[,.]|[,.]$""".toRegex(), "") }
                     .map { it.filter { it.isLetterOrDigit() } }
-                    .filter { it.any { it.isLetterOrDigit() } }
+                    .filter { it -> it.any { it.isLetterOrDigit() } }
             }
             .filter { it.isNotEmpty() }
         val argOccurrences = parameterNames //findOccurrences(body, parameterNames, 5)
@@ -56,9 +56,9 @@ class FunctionExtractor : PyRecursiveElementVisitor() {
                 Function(
                     name = function.name.orEmpty(),
                     docstring = docstring,
-                    argDescriptions = structuredDocstring?.parameters?.map {
-                        function.structuredDocString?.getParamDescription(it).orEmpty()
-                    } ?: ArrayList(parameterNames.size),
+                    argDescriptions = parameterNames.map {
+                        structuredDocstring?.getParamDescription(it).orEmpty()
+                    },
                     argNames = parameterNames,
                     argOccurrences = argOccurrences,
                     argTypes = parameterTypes,

@@ -4,11 +4,11 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 plugins {
     id("java")
     id("idea")
-    id("org.jetbrains.kotlin.jvm") version "1.4.10" apply true
+    id("org.jetbrains.kotlin.jvm") version "1.6.0" apply true
     id("org.jetbrains.intellij") version "1.1.3" apply true
     id("org.jetbrains.changelog") version "0.5.0"
-//    id("io.gitlab.arturbosch.detekt") version "1.17.0" apply true
-//    id("org.jlleitschuh.gradle.ktlint") version "9.4.0"
+    id("io.gitlab.arturbosch.detekt") version "1.17.0" apply true
+    id("org.jlleitschuh.gradle.ktlint") version "9.4.0"
 }
 
 // Import variables from gradle.properties file
@@ -25,7 +25,7 @@ allprojects {
         plugin("kotlin")
         plugin("idea")
         plugin("org.jetbrains.intellij")
-//        plugin("io.gitlab.arturbosch.detekt")
+        plugin("io.gitlab.arturbosch.detekt")
     }
     repositories {
         mavenCentral()
@@ -35,14 +35,11 @@ allprojects {
 
     }
     dependencies {
-//        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.0")
-        implementation(platform("org.jetbrains.kotlin:kotlin-reflect:1.5.10"))
-//        implementation("com.lordcodes.turtle:turtle:0.5.0")
-        implementation(kotlin("stdlib-jdk8"))
-        implementation("io.kinference:inference:0.1.3")
+        detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.0")
+        implementation(platform("org.jetbrains.kotlin:kotlin-reflect:1.6.0"))
+        api("io.kinference", "inference-core", "0.1.10")
         implementation("org.jetbrains.kotlinx:dataframe:0.8.0-dev-285-0.10.0.72")
         implementation("org.apache.commons:commons-csv:1.8")
-
     }
 
     // Configure gradle-intellij-plugin plugin.
@@ -57,7 +54,7 @@ allprojects {
 
 // Configure detekt plugin.
 // Read more: https://detekt.github.io/detekt/kotlindsl.html
-    /*detekt {
+    detekt {
         config = files("./detekt-config.yml")
         buildUponDefaultConfig = true
 
@@ -67,7 +64,6 @@ allprojects {
             txt.enabled = false
         }
     }
-*/
     tasks {
         // Set the compatibility versions to 1.8
         withType<JavaCompile> {
@@ -80,19 +76,11 @@ allprojects {
             }
         }
 
-//        withType<Detekt> {
-//            jvmTarget = "11"
-//        }
+        withType<io.gitlab.arturbosch.detekt.Detekt> {
+            jvmTarget = "11"
+        }
 
         withType<org.jetbrains.intellij.tasks.BuildSearchableOptionsTask>()
             .forEach { it.enabled = false }
     }
-/*    val compileKotlin: KotlinCompile by tasks
-    compileKotlin.kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    val compileTestKotlin: KotlinCompile by tasks
-    compileTestKotlin.kotlinOptions {
-        jvmTarget = "1.8"
-    }*/
 }
