@@ -1,6 +1,5 @@
 package extractor.function
 
-
 data class Function(
     val name: String,
     val docstring: String,

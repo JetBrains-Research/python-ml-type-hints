@@ -1,4 +1,4 @@
-//import io.gitlab.arturbosch.detekt.Detekt
+import io.gitlab.arturbosch.detekt.Detekt
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
@@ -32,7 +32,6 @@ allprojects {
         jcenter()
         maven(url = "https://packages.jetbrains.team/maven/p/ki/maven")
         maven(url = "https://jitpack.io")
-
     }
     dependencies {
         detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.0")
@@ -76,7 +75,7 @@ allprojects {
             }
         }
 
-        withType<io.gitlab.arturbosch.detekt.Detekt> {
+        withType<Detekt> {
             jvmTarget = "11"
         }
 

@@ -1,9 +1,8 @@
-package data_preparation
+package datapreparation
 
 import com.intellij.util.castSafelyTo
 import javax.json.Json
 import javax.json.JsonString
-
 
 object TypeEmbedder {
     private fun loadTypesFrom(path: String) =

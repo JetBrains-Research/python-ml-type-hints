@@ -2,9 +2,9 @@
 
 package plugin.predictors
 
-import data_preparation.TypeEmbedder
-import data_preparation.createParameterDatapoints
-import data_preparation.createReturnDatapoint
+import datapreparation.TypeEmbedder
+import datapreparation.createParameterDatapoints
+import datapreparation.createReturnDatapoint
 import extractor.function.Function
 import io.kinference.core.KIEngine
 import io.kinference.core.data.tensor.KITensor
@@ -12,7 +12,7 @@ import io.kinference.core.data.tensor.asTensor
 import io.kinference.ndarray.arrays.MutableFloatNDArray
 import kotlin.time.ExperimentalTime
 
-class TypePredictor {
+class TypePredictor private constructor() {
     companion object {
         val model =
             KIEngine.loadModel(this::class.java.classLoader.getResourceAsStream("/models/model.onnx").readBytes())

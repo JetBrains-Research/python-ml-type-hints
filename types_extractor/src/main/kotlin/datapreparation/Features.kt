@@ -1,4 +1,4 @@
-package data_preparation
+package datapreparation
 
 enum class FeatureType {
     DATAPOINT_TYPE,

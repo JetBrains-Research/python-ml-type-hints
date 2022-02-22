@@ -1,4 +1,4 @@
-package data_preparation
+package datapreparation
 
 import extractor.function.Function
 

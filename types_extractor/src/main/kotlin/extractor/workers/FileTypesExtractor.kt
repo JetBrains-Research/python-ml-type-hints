@@ -3,7 +3,11 @@ package extractor.workers
 import extractor.function.Function
 import extractor.function.FunctionExtractor
 import extractor.function.Preprocessor
-import extractor.utils.*
+import extractor.utils.addMeaningfulColumnsToFunctions
+import extractor.utils.createFiles
+import extractor.utils.forEachProjectInDir
+import extractor.utils.setupProject
+import extractor.utils.traverseProject
 import org.jetbrains.dataframe.DataFrame
 import org.jetbrains.dataframe.io.writeCSV
 import org.jetbrains.dataframe.plus
@@ -38,8 +42,6 @@ class FileTypesExtractor(val output: String) {
 
                 val extracted = functionExtractor.functions
                 val avlTypes = functionExtractor.avalTypes
-
-
 
                 functions = addFunctionsToDf(
                     projectDir,

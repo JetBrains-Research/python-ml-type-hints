@@ -1,7 +1,6 @@
-package data_preparation
+package datapreparation
 
 import java.util.*
-
 
 object W2V {
     val codeModel: Map<String, FloatArray> = loadW2VModel("code.txt")

@@ -6,7 +6,6 @@ import org.apache.lucene.analysis.standard.StandardAnalyzer
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute
 import java.util.*
 
-
 class Preprocessor {
     fun preprocess(function: Function): Function {
         return Function(
@@ -56,7 +55,6 @@ class Preprocessor {
     companion object {
         private val props = Properties()
 
-
         init {
             props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,depparse,coref,kbp,quote,stopword")
         }
@@ -73,8 +71,9 @@ class Preprocessor {
             convertCamelcase(sentence.replace('_', ' '))
 
         fun lemmatize(sentence: String): String {
-            if (sentence.filter { it.isLetterOrDigit() } == "")
+            if (sentence.filter { it.isLetterOrDigit() } == "") {
                 return ""
+            }
             try {
                 val sent = Sentence(sentence)
                 return sent.lemmas(props).joinToString(" ")

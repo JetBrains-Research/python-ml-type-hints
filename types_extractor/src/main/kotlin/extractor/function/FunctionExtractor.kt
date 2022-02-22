@@ -5,7 +5,14 @@ import com.intellij.psi.PsiElement
 import com.intellij.usageView.UsageInfo
 import com.intellij.util.containers.addIfNotNull
 import com.jetbrains.python.codeInsight.PyPsiIndexUtil
-import com.jetbrains.python.psi.*
+import com.jetbrains.python.psi.PyCallExpression
+import com.jetbrains.python.psi.PyClass
+import com.jetbrains.python.psi.PyElement
+import com.jetbrains.python.psi.PyFunction
+import com.jetbrains.python.psi.PyImportStatementBase
+import com.jetbrains.python.psi.PyRecursiveElementVisitor
+import com.jetbrains.python.psi.PyReturnStatement
+import com.jetbrains.python.psi.PyTargetExpression
 import kotlin.math.max
 import kotlin.math.min
 
@@ -47,9 +54,7 @@ class FunctionExtractor : PyRecursiveElementVisitor() {
                     .filter { it -> it.any { it.isLetterOrDigit() } }
             }
             .filter { it.isNotEmpty() }
-        val argOccurrences = parameterNames //findOccurrences(body, parameterNames, 5)
-
-
+        val argOccurrences = parameterNames // findOccurrences(body, parameterNames, 5)
 
         functions.add(
             preprocessor.preprocess(
@@ -81,7 +86,6 @@ class FunctionExtractor : PyRecursiveElementVisitor() {
         for (name in parameterNames) {
             val hasOccurred = false
             for (line in body) {
-//                println(line)
                 if (name in line) {
                     val loc = line.indexOf(name)
                     occurrences.add(
@@ -99,14 +103,9 @@ class FunctionExtractor : PyRecursiveElementVisitor() {
     }
 
     private fun getCaller(usageInfo: UsageInfo?): PsiElement? {
-        var element: PsiElement? = usageInfo?.element?.parent ?: return null
+        var element: PsiElement = usageInfo?.element?.parent ?: return null
 
-        /*while (element != null && ) {
-            element = element.parent
-        }*/
-
-        while (element != null && (element !is PyTargetExpression && element !is PyCallExpression && element !is PyReturnStatement)) {
-            // println(element.javaClass)
+        while (element !is PyTargetExpression && element !is PyCallExpression && element !is PyReturnStatement) {
             element = element.parent
         }
 

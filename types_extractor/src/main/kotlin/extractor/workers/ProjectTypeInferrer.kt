@@ -4,7 +4,13 @@ import com.intellij.openapi.util.text.StringUtil
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiRecursiveElementVisitor
 import com.jetbrains.python.documentation.PythonDocumentationProvider
-import com.jetbrains.python.psi.*
+import com.jetbrains.python.psi.PyAnnotationOwner
+import com.jetbrains.python.psi.PyFunction
+import com.jetbrains.python.psi.PyImportElement
+import com.jetbrains.python.psi.PyNamedParameter
+import com.jetbrains.python.psi.PyParameter
+import com.jetbrains.python.psi.PyTargetExpression
+import com.jetbrains.python.psi.PyTypedElement
 import com.jetbrains.python.psi.types.TypeEvalContext
 import extractor.elements.ElementInfo
 import extractor.elements.ElementType
@@ -54,35 +60,34 @@ class InferringElementVisitor(
         ) {
             val context = TypeEvalContext.userInitiated(element.project, element.containingFile)
             val line = StringUtil.offsetToLineNumber(element.containingFile.text, element.textOffset)
-            val type = when (element) {
-                is PyFunction -> try {
-                    element.getReturnStatementType(context)?.name
-                } catch (e: Exception) {
-                    "Any"
-                }
-                else -> try {
-                    PythonDocumentationProvider.getTypeName(context.getType(element as PyTypedElement), context)
-                } catch (e: Exception) {
-                    "Any"
-                }
-            }
-            val annotation = element.annotationValue
+            val type = getElementType(element, context)
+            val annotation = element.annotationValue ?: "Any"
+
             val elementType: ElementType = when (element) {
                 is PyParameter -> ElementType.PARAMETER
                 is PyFunction -> ElementType.FUNCTION
                 is PyTargetExpression -> ElementType.VARIABLE
                 else -> ElementType.NONE
             }
+
             val path = element.containingFile.virtualFile.path
-            typedElements.add(ElementInfo(
-                (element as PyTypedElement).name.orEmpty(),
-                type ?: "Any",
-                annotation ?: "Any",
-                path,
-                line,
-                elementType
-            )
+            typedElements.add(
+                ElementInfo((element as PyTypedElement).name.orEmpty(), type, annotation, path, line, elementType)
             )
         }
     }
+
+    private fun getElementType(element: PyAnnotationOwner, context: TypeEvalContext) =
+        when (element) {
+            is PyFunction -> try {
+                element.getReturnStatementType(context)?.name ?: "Any"
+            } catch (e: Exception) {
+                "Any"
+            }
+            else -> try {
+                PythonDocumentationProvider.getTypeName(context.getType(element as PyTypedElement), context)
+            } catch (e: Exception) {
+                "Any"
+            }
+        }
 }

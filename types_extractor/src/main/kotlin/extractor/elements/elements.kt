@@ -1,17 +1,5 @@
 package extractor.elements
 
-class TypedElements {
-    var types: MutableList<ElementInfo> = mutableListOf()
-
-    fun addType(name: String, type: String, annotation: String, filePath: String, line: Int, elementType: ElementType) {
-        types.add(ElementInfo(name, type, annotation, filePath, line, elementType))
-    }
-
-    override fun toString(): String {
-        return types.toString()
-    }
-}
-
 class ElementInfo(
     val name: String,
     val type: String,

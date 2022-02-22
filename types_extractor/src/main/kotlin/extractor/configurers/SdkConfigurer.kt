@@ -11,10 +11,7 @@ import com.jetbrains.python.sdk.PythonSdkType
 import com.jetbrains.python.sdk.pythonSdk
 import com.jetbrains.python.statistics.modules
 
-class SdkConfigurer(
-        private val project: Project,
-        private val projectManager: ProjectRootManager
-) {
+class SdkConfigurer(private val project: Project, private val projectManager: ProjectRootManager) {
     private fun createSdk(sdkPath: String): Sdk {
         val sdk = PyDetectedSdk(sdkPath)
         println("Created SDK: $sdk")
@@ -43,4 +40,3 @@ class SdkConfigurer(
         PythonSdkType.getInstance().setupSdkPaths(sdk)
     }
 }
-

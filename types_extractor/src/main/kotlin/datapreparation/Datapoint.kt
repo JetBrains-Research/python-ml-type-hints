@@ -1,4 +1,4 @@
-package data_preparation
+package datapreparation
 
 import io.kinference.ndarray.Strides
 import io.kinference.ndarray.arrays.FloatNDArray
@@ -52,7 +52,7 @@ sealed interface Datapoint {
                         datapoint[position++] = word
                 }
                 FeatureType.PADDING -> {
-                    for (i in 0 until feature.vectorLength) {
+                    (0 until feature.vectorLength).forEach {
                         datapoint[position++] = FloatArray(w2vLength) { 0F }
                     }
                 }
@@ -63,7 +63,6 @@ sealed interface Datapoint {
         }
         return FloatNDArray(FloatTiledArray(datapoint), Strides(intArrayOf(1, 55, 14)))
     }
-
 
     fun toBePredicted(): IntArray {
         val predictType = IntArray(numberOfTypes) { 0 }
@@ -110,4 +109,3 @@ class ParameterDatapoint(
     override fun datapointTypeVector() =
         FloatArray(w2vLength) { 0F }.apply { this[0] = 1F }
 }
-

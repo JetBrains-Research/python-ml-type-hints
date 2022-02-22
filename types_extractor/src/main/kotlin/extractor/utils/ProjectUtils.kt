@@ -24,7 +24,7 @@ fun forEachProjectInDir(dirPath: String, doAction: (project: Project, projectDir
 }
 
 fun setupProject(project: Project, envName: String, projectPath: String):
-        Pair<SdkConfigurer, MyPythonSourceRootConfigurer> {
+    Pair<SdkConfigurer, MyPythonSourceRootConfigurer> {
     val projectManager = ProjectRootManager.getInstance(project)
     val mySdkPaths =
         CondaEnvSdkFlavor.getInstance().suggestHomePaths(project.modules[0], UserDataHolderBase())

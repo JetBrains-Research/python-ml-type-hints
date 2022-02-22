@@ -6,8 +6,10 @@ import com.intellij.openapi.project.Project
 import com.intellij.openapi.roots.ModuleRootManager
 import com.intellij.openapi.util.Comparing
 import com.intellij.openapi.vfs.VirtualFile
-import com.jetbrains.python.psi.*
 import com.intellij.psi.util.QualifiedName
+import com.jetbrains.python.psi.PyFromImportStatement
+import com.jetbrains.python.psi.PyImportStatement
+import com.jetbrains.python.psi.PyRecursiveElementVisitor
 import extractor.utils.traverseProject
 
 class MyPythonSourceRootConfigurer {
@@ -16,29 +18,13 @@ class MyPythonSourceRootConfigurer {
     var totalUnresolved: Int = 0
 
     fun configureProject(project: Project, baseDir: VirtualFile) {
-//        val projectManager = ProjectRootManager.getInstance(project)
         val visitor = ImportVisitor(baseDir)
 
         traverseProject(project) { psi, _ ->
             visitor.curFile = psi.virtualFile
             psi.accept(visitor)
         }
-
-        /*projectManager.contentRoots.forEach { root ->
-            VfsUtilCore.iterateChildrenRecursively(root, null) { virtualFile ->
-                if (virtualFile.extension != "py" || virtualFile.canonicalPath == null) {
-                    return@iterateChildrenRecursively true
-                }
-                val psi = PsiManager.getInstance(project)
-                    .findFile(virtualFile) ?: return@iterateChildrenRecursively true
-                visitor.curFile = virtualFile
-                psi.accept(visitor)
-
-                true
-            }
-        }*/
         totalPreResolved += visitor.preResolved
-
 
         visitor.sourceRoots.filterNotNull().forEach {
             addSourceRoot(project, baseDir, it, false)
@@ -46,23 +32,11 @@ class MyPythonSourceRootConfigurer {
     }
 
     fun countImports(project: Project) {
-//        val projectManager = ProjectRootManager.getInstance(project)
         val visitor = CountingVisitor()
         traverseProject(project) { psi, _ ->
             psi.accept(visitor)
         }
-        /*projectManager.contentRoots.forEach { root ->
-            VfsUtilCore.iterateChildrenRecursively(root, null) { virtualFile ->
-                if (virtualFile.extension != "py" || virtualFile.canonicalPath == null) {
-                    return@iterateChildrenRecursively true
-                }
-                val psi = PsiManager.getInstance(project)
-                    .findFile(virtualFile) ?: return@iterateChildrenRecursively true
-                psi.accept(visitor)
 
-                true
-            }
-        }*/
         totalResolved += visitor.totalResolved
         totalUnresolved += visitor.totalUnresolved
     }

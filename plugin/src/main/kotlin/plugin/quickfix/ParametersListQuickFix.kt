@@ -34,7 +34,7 @@ class ParametersListQuickFix : LocalQuickFix {
         val extractor = FunctionExtractor()
         function.accept(extractor)
         val newParameters = (if (function.containingClass == null) mapOf() else mapOf("self" to "")) +
-                TypePredictor.predictParameters(extractor.functions.first())
+            TypePredictor.predictParameters(extractor.functions.first())
 
         function.parameterList.parameters.forEach { old ->
             newParameterList.addParameter(
