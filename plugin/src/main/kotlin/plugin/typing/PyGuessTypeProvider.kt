@@ -26,7 +26,7 @@ class PyGuessTypeProvider : PyTypeProviderBase() {
         return Ref.create(
             PyTypeParser.getTypeByName(
                 param,
-                if (type == null || type == "other") "Any" else type,
+                if (type == null || type == "other") (context.getType(param)?.name ?: "Any") else type,
                 context
             )
         )
@@ -46,7 +46,12 @@ class PyGuessTypeProvider : PyTypeProviderBase() {
         val function = extractor.functions.first()
 
         val type = TypePredictor.predictReturnType(function)
-        println(type)
-        return Ref.create(PyTypeParser.getTypeByName(callable, if (type == "other") "Any" else type, context))
+        return Ref.create(
+            PyTypeParser.getTypeByName(
+                callable,
+                if (type == "other") (context.getReturnType(callable)?.name ?: "Any") else type,
+                context
+            )
+        )
     }
 }
