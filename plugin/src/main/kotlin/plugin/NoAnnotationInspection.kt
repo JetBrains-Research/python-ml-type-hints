@@ -6,8 +6,11 @@ import com.jetbrains.python.inspections.PyInspection
 import com.jetbrains.python.psi.PyAssignmentStatement
 import com.jetbrains.python.psi.PyElementVisitor
 import com.jetbrains.python.psi.PyFunction
+import com.jetbrains.python.psi.PyNamedParameter
+import com.jetbrains.python.psi.PyParameterList
 import com.jetbrains.python.psi.PyTupleExpression
 import plugin.quickfix.AssignmentQuickFix
+import plugin.quickfix.FunctionQuickFix
 import plugin.quickfix.ParametersListQuickFix
 
 /**
@@ -27,31 +30,44 @@ class NoAnnotationInspection : PyInspection() {
             override fun visitElement(element: PsiElement) {
                 super.visitElement(element)
 
-                if (element is PyAssignmentStatement &&
-                    element.annotationValue == null &&
-                    isSingleVariable(element) &&
-                    element.assignedValue != null
-                ) {
-                    holder.registerProblem(element, DESCRIPTION, AssignmentQuickFix())
-                    return
+                if (element is PyAssignmentStatement) {
+                    registerForAssignment(element)
                 }
 
-                // if (element is PyTargetExpression && element.parent !is PyImportStatement
-                // && element.annotationValue == null) {
-                //     holder.registerProblem(element, DESCRIPTION, TargetQuickFix())
-                // }
-
                 if (element is PyFunction) {
-                    if (element.parameterList.parameters
-                            .filter { !it.isSelf }
-                            .any { it.asNamed!!.annotationValue == null }
-                    ) {
-                        holder.registerProblem(element.parameterList, DESCRIPTION, ParametersListQuickFix())
-                    }
+                    registerForParameterList(element.parameterList)
+                    registerForFunctionReturn(element)
+                }
+            }
 
-                    // TODO untyped function declaration
+            private fun registerForAssignment(assignment: PyAssignmentStatement) {
+                if (assignment.annotationValue == null &&
+                    isSingleVariable(assignment) &&
+                    assignment.assignedValue != null
+                ) {
+                    holder.registerProblem(assignment, DESCRIPTION, AssignmentQuickFix())
+                }
+            }
 
-                    return
+            private fun registerForFunctionReturn(function: PyFunction) {
+                val nameIdentifier = function.nameIdentifier ?: return
+                if (function.annotation == null) {
+                    holder.registerProblem(
+                        function,
+                        nameIdentifier.textRange.shiftLeft(function.textRange.startOffset),
+                        DESCRIPTION,
+                        FunctionQuickFix()
+                    )
+                }
+            }
+
+            private fun registerForParameterList(parameterList: PyParameterList) {
+                if (parameterList.parameters
+                        .filter { !it.isSelf }
+                        .filterIsInstance<PyNamedParameter>()
+                        .any { it.annotationValue == null }
+                ) {
+                    holder.registerProblem(parameterList, DESCRIPTION, ParametersListQuickFix())
                 }
             }
         }
