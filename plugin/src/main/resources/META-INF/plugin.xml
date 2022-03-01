@@ -1,0 +1,39 @@
+<idea-plugin>
+    <id>com.github.skuzi.simplepycharmplugin</id>
+    <name>No-Annotation-Inspection</name>
+    <vendor>skuzi</vendor>
+
+    <!-- Product and plugin compatibility requirements -->
+    <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.python</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!--
+                        displayName= The string to be shown in the Preferences | Editor | Inspections panel
+                        The displayName gets registered to identify this inspection.
+                        Can be localized using key= and bundle= attributes instead.
+                        groupPath= Defines the outermost grouping for this inspection in
+                        the Preferences | Editor | Inspections panel. Not localized.
+                        groupBundle= Name of *.bundle file to translate groupKey.
+                        In this case reuse an IntelliJ Platform bundle file from intellij.platform.resources.en
+                        groupKey= Key to use for translation subgroup name using groupBundle file.
+                        In this case reuse the IntelliJ Platform subcategory "Probable bugs"
+                        enabledByDefault= Inspection state when Inspections panel is created.
+                        level= The default level of error found by this inspection, e.g. INFO, ERROR, etc.
+        -->
+        <localInspection language="Python"
+                         displayName="No type annotation inspection"
+                         groupKey="group.names.probable.bugs"
+                         groupPath="Python"
+                         enabledByDefault="true"
+                         groupBundle="messages.InspectionsBundle"
+                         level="WARNING"
+                         implementationClass="plugin.NoAnnotationInspection"/>
+    </extensions>
+    
+    <extensions defaultExtensionNs="Pythonid">
+    <typeProvider implementation="plugin.typing.PyGuessTypeProvider"/>
+    </extensions>
+
+</idea-plugin>
