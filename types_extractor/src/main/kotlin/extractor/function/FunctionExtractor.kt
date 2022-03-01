@@ -2,17 +2,17 @@ package extractor.function
 
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.psi.PsiElement
+import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.usageView.UsageInfo
 import com.intellij.util.containers.addIfNotNull
 import com.jetbrains.python.codeInsight.PyPsiIndexUtil
-import com.jetbrains.python.psi.PyCallExpression
 import com.jetbrains.python.psi.PyClass
 import com.jetbrains.python.psi.PyElement
+import com.jetbrains.python.psi.PyExpressionStatement
 import com.jetbrains.python.psi.PyFunction
 import com.jetbrains.python.psi.PyImportStatementBase
 import com.jetbrains.python.psi.PyRecursiveElementVisitor
 import com.jetbrains.python.psi.PyReturnStatement
-import com.jetbrains.python.psi.PyTargetExpression
 import kotlin.math.max
 import kotlin.math.min
 
@@ -72,7 +72,7 @@ class FunctionExtractor : PyRecursiveElementVisitor() {
                     returnDescr = structuredDocstring?.returnDescription.orEmpty(),
                     returnExpr = getReturnStatements(function),
                     returnType = function.annotationValue.orEmpty(),
-                    usages = listOf(), // findUsages(function).map { it.text }
+                    usages = findUsages(function).map { it.text },
                     fullName = function.name.orEmpty(),
                     argFullNames = parameterNames
                 )
@@ -103,17 +103,12 @@ class FunctionExtractor : PyRecursiveElementVisitor() {
     }
 
     private fun getCaller(usageInfo: UsageInfo?): PsiElement? {
-        var element: PsiElement = usageInfo?.element?.parent ?: return null
+        val element: PsiElement = usageInfo?.element ?: return null
 
-        while (element !is PyTargetExpression && element !is PyCallExpression && element !is PyReturnStatement) {
-            element = element.parent
-        }
-
-        while (element is PyCallExpression) {
-            element = element.parent
-        }
-
-        return element
+        return PsiTreeUtil.getTopmostParentOfType(
+            element,
+            PyExpressionStatement::class.java
+        )
     }
 
     private fun getReturnStatements(element: PyFunction): List<String> {
