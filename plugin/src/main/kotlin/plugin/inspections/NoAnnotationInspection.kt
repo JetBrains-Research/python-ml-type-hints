@@ -1,4 +1,4 @@
-package plugin
+package plugin.inspections
 
 import com.intellij.codeInspection.ProblemsHolder
 import com.intellij.psi.PsiElement
@@ -51,7 +51,9 @@ class NoAnnotationInspection : PyInspection() {
 
             private fun registerForFunctionReturn(function: PyFunction) {
                 val nameIdentifier = function.nameIdentifier ?: return
-                if (function.annotation == null) {
+                if (function.annotation == null &&
+                    !function.containingClass?.multiFindInitOrNew(false, null).orEmpty().contains(function)
+                ) {
                     holder.registerProblem(
                         function,
                         nameIdentifier.textRange.shiftLeft(function.textRange.startOffset),
