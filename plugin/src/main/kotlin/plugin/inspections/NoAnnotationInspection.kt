@@ -9,6 +9,7 @@ import com.jetbrains.python.psi.PyFunction
 import com.jetbrains.python.psi.PyNamedParameter
 import com.jetbrains.python.psi.PyParameterList
 import com.jetbrains.python.psi.PyTupleExpression
+import com.jetbrains.python.psi.PyUtil
 import plugin.quickfix.AssignmentQuickFix
 import plugin.quickfix.FunctionQuickFix
 import plugin.quickfix.ParametersListQuickFix
@@ -52,7 +53,7 @@ class NoAnnotationInspection : PyInspection() {
             private fun registerForFunctionReturn(function: PyFunction) {
                 val nameIdentifier = function.nameIdentifier ?: return
                 if (function.annotation == null &&
-                    !function.containingClass?.multiFindInitOrNew(false, null).orEmpty().contains(function)
+                    !PyUtil.isInitOrNewMethod(function)
                 ) {
                     holder.registerProblem(
                         function,
