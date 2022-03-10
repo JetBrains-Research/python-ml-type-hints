@@ -17,6 +17,7 @@ import com.jetbrains.python.psi.PyNamedParameter
 import com.jetbrains.python.psi.PyReferenceExpression
 import com.jetbrains.python.psi.types.PyTypeParser
 import extractor.function.FunctionExtractor
+import extractor.utils.checkEqual
 import plugin.predictors.TypePredictor
 
 class MLCompletionContributor : CompletionContributor() {
@@ -50,23 +51,32 @@ class MLCompletionContributor : CompletionContributor() {
                 is PyFunction -> {
                     val extractor = FunctionExtractor()
                     element.accept(extractor)
-                    val type = TypePredictor.predictReturnType(extractor.functions.first())
-                    val pyType = PyTypeParser.getTypeByName(element, type) ?: return
-                    pyType.getCompletionVariants(prefix, element, context)
-                        .filterIsInstance(LookupElement::class.java)
-                        .forEach(result::addElement)
+                    val types = TypePredictor.predictReturnType(extractor.functions.first {
+                        checkEqual(element, it)
+                    }, topN = 3)
+                    types.forEach { type ->
+                        val pyType = PyTypeParser.getTypeByName(element, type) ?: return@forEach
+                        pyType.getCompletionVariants(prefix, element, context)
+                            .filterIsInstance(LookupElement::class.java)
+                            .forEach(result::addElement)
+                    }
                 }
                 is PyNamedParameter -> {
                     val extractor = FunctionExtractor()
-                    PsiTreeUtil.getParentOfType(element, PyFunction::class.java)?.accept(extractor)
+                    val function = PsiTreeUtil.getParentOfType(element, PyFunction::class.java)
+                    function?.accept(extractor)
                     if (extractor.functions.isEmpty()) {
                         return
                     }
-                    val type = TypePredictor.predictParameters(extractor.functions.first())[element.name] ?: return
-                    val pyType = PyTypeParser.getTypeByName(element, type) ?: return
-                    pyType.getCompletionVariants(prefix, parameters.position, context)
-                        .filterIsInstance(LookupElement::class.java)
-                        .forEach(result::addElement)
+                    val types = TypePredictor.predictParameters(extractor.functions.first {
+                        checkEqual(function, it)
+                    }, topN = 3)[element.name] ?: return
+                    types.forEach { type ->
+                        val pyType = PyTypeParser.getTypeByName(element, type) ?: return@forEach
+                        pyType.getCompletionVariants(prefix, parameters.position, context)
+                            .filterIsInstance(LookupElement::class.java)
+                            .forEach(result::addElement)
+                    }
                 }
                 else -> return
             }

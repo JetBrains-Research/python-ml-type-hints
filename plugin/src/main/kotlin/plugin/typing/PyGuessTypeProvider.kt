@@ -22,7 +22,7 @@ class PyGuessTypeProvider : PyTypeProviderBase() {
         val function = extractor.functions.first()
 
         val type =
-            TypePredictor.predictParameters(function)[param.name!!]
+            TypePredictor.predictParameters(function)[param.name!!]?.first()
         return Ref.create(
             PyTypeParser.getTypeByName(
                 param,
@@ -45,7 +45,7 @@ class PyGuessTypeProvider : PyTypeProviderBase() {
         callable.accept(extractor)
         val function = extractor.functions.first()
 
-        val type = TypePredictor.predictReturnType(function)
+        val type = TypePredictor.predictReturnType(function).first()
         return Ref.create(
             PyTypeParser.getTypeByName(
                 callable,
