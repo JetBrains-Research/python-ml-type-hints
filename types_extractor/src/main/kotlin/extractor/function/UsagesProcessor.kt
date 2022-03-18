@@ -1,9 +1,11 @@
 package extractor.function
 
+import com.intellij.find.findUsages.FindUsagesHandlerBase
 import com.intellij.psi.PsiElement
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.usageView.UsageInfo
-import com.jetbrains.python.codeInsight.PyPsiIndexUtil
+import com.jetbrains.python.findUsages.PyFunctionFindUsagesHandler
+import com.jetbrains.python.findUsages.PyPsiFindUsagesHandlerFactory
 import com.jetbrains.python.psi.LanguageLevel
 import com.jetbrains.python.psi.PyAssignmentStatement
 import com.jetbrains.python.psi.PyAugAssignmentStatement
@@ -13,15 +15,32 @@ import com.jetbrains.python.psi.PyExpressionStatement
 import com.jetbrains.python.psi.PyFunction
 import com.jetbrains.python.psi.PyRecursiveElementVisitor
 import com.jetbrains.python.psi.PyReturnStatement
+import com.jetbrains.python.psi.search.PySuperMethodsSearch
+import com.jetbrains.python.psi.types.TypeEvalContext
 
 class UsagesProcessor {
     fun findUsages(function: PyFunction): Collection<PsiElement> {
         return try {
-            PyPsiIndexUtil.findUsages(function, false).mapNotNull { getCaller(it) }
+            findUsagesInternal(function).mapNotNull { getCaller(it) }
         } catch (e: NullPointerException) {
             println("couldn't find usages for function ${function.text}")
             listOf()
         }
+    }
+
+    private fun findUsagesInternal(function: PyFunction): List<UsageInfo?> {
+        val usages: MutableList<UsageInfo> = ArrayList()
+        val handler = createFindUsagesHandler(function)
+        val elementsToProcess: List<PsiElement> = listOf(*handler.primaryElements, *handler.secondaryElements)
+        for (e in elementsToProcess) {
+            handler.processElementUsages(e, { usageInfo: UsageInfo ->
+                if (!usageInfo.isNonCodeUsage) {
+                    usages.add(usageInfo)
+                }
+                true
+            }, FindUsagesHandlerBase.createFindUsagesOptions(function.project, null))
+        }
+        return usages
     }
 
     private fun getCaller(usageInfo: UsageInfo?): PsiElement? {
@@ -116,6 +135,21 @@ class UsagesProcessor {
                 return
             }
         }
+    }
+
+    private fun createFindUsagesHandler(function: PyFunction): FindUsagesHandlerBase {
+        val context = TypeEvalContext.userInitiated(function.project, null)
+        val superMethods = PySuperMethodsSearch.search(function, true, context).findAll()
+        if (superMethods.isNotEmpty()) {
+            val next = superMethods.iterator().next()
+            if (next is PyFunction && !PyPsiFindUsagesHandlerFactory.isInObject(next)) {
+                val allMethods: MutableList<PsiElement> = ArrayList()
+                allMethods.add(function)
+                allMethods.addAll(superMethods)
+                return PyFunctionFindUsagesHandler(function, allMethods)
+            }
+        }
+        return PyFunctionFindUsagesHandler(function)
     }
 }
 
