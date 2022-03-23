@@ -8,7 +8,7 @@ object W2V {
     val languageModel: Map<String, FloatArray> = loadW2VModel("lang.txt")
 
     private fun loadW2VModel(dir: String): Map<String, FloatArray> {
-        val scanner = Scanner(this::class.java.getResourceAsStream("/w2v_models/$dir"))
+        val scanner = Scanner(this::class.java.getResourceAsStream("/w2v_models/$dir")).useLocale(Locale.US)
         val numberOfWords = scanner.nextInt()
         val vectorLength = scanner.nextInt()
         return mutableMapOf<String, FloatArray>().apply {
