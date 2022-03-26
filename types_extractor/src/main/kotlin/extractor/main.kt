@@ -28,9 +28,9 @@ class TypesExtractor : CliktCommand() {
         val extractor = FileTypesExtractor(output)
         val inferrer = ProjectTypeInferrer(output)
         extractor.extractTypesFromProjectsInDir(input, envName)
-        val types = inferrer.inferTypes(input, envName)
+//        val types = inferrer.inferTypes(input, envName)
 
-        inferrer.printTypes(types, output)
+//        inferrer.printTypes(types, output)
         exitProcess(0)
     }
 }
