@@ -6,6 +6,7 @@ import com.intellij.codeInsight.completion.CompletionProvider
 import com.intellij.codeInsight.completion.CompletionResultSet
 import com.intellij.codeInsight.completion.CompletionType
 import com.intellij.codeInsight.lookup.LookupElement
+import com.intellij.openapi.project.DumbAware
 import com.intellij.patterns.PlatformPatterns.psiElement
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.util.ProcessingContext
@@ -20,7 +21,7 @@ import extractor.function.FunctionExtractor
 import extractor.utils.checkEqual
 import plugin.predictors.TypePredictor
 
-class MLCompletionContributor : CompletionContributor() {
+class MLCompletionContributor : CompletionContributor(), DumbAware {
     init {
         // TODO fix completion list not appearing when typing first time
         extend(CompletionType.BASIC,
@@ -37,10 +38,12 @@ class MLCompletionContributor : CompletionContributor() {
             result: CompletionResultSet,
         ) {
             val original = parameters.originalPosition ?: return
+            println("captured is  ${original.text} of class ${original.javaClass}")
             val element = PsiTreeUtil
                 .getParentOfType(original, PyReferenceExpression::class.java)
                 ?.firstChild.castSafelyTo<PyReferenceExpression>()
                 ?.reference?.resolve() ?: return
+            println("reference is ${element.text} of class ${element.javaClass}")
 
             val prefix = original.containingFile.text.substring(original.textOffset, parameters.offset)
             if (element is PyAnnotationOwner && element.annotation != null) {
@@ -78,9 +81,7 @@ class MLCompletionContributor : CompletionContributor() {
                             .forEach(result::addElement)
                     }
                 }
-                else -> return
             }
         }
-
     }
 }
