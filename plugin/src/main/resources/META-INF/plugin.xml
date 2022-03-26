@@ -31,7 +31,7 @@
                          level="WARNING"
                          implementationClass="plugin.inspections.NoAnnotationInspection"/>
         <completion.contributor language="Python"
-                                implementationClass="plugin.typing.MLCompletionContributor" order="last"/>
+                                implementationClass="plugin.typing.MLCompletionContributor" order="first"/>
 
     </extensions>
 

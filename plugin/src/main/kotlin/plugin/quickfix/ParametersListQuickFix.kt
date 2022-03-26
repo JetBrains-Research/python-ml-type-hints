@@ -41,24 +41,17 @@ class ParametersListQuickFix : LocalQuickFix {
         function.accept(extractor)
         val newParameters =
             (if (function.parameterList.parameters.none { it.isSelf }) mapOf() else mapOf("self" to listOf(""))) +
-                TypePredictor.predictParameters(extractor.functions.first { checkEqual(function, it) })
+                TypePredictor.predictParameters(extractor.functions.first { checkEqual(function, it) }, 3)
 
         val context = TypeEvalContext.userInitiated(project, function.containingFile)
 
         function.parameterList.parameters.forEach { old ->
-            newParameterList.addParameter(
-                generator.createParameter(
-                    old.name!!,
-                    old.defaultValueText,
-                    old.asNamed?.annotationValue
-                        ?: if (old.isSelf) null else newParameters[old.name!!]?.firstOrNull {
-                            typeCheck(old,
-                                it,
-                                context)
-                        },
-                    LanguageLevel.PYTHON38
-                )
-            )
+            newParameterList.addParameter(generator.createParameter(old.name!!,
+                old.defaultValueText,
+                old.asNamed?.annotationValue ?: if (old.isSelf) null else newParameters[old.name!!]?.firstOrNull {
+                    typeCheck(old, it, context)
+                },
+                LanguageLevel.PYTHON38))
         }
 
         function.parameterList.replace(newParameterList)
@@ -71,8 +64,8 @@ class ParametersListQuickFix : LocalQuickFix {
             val predictedType = PyTypeParser.getTypeByName(parameter, parameterType)
             val expectedType = parameter.getArgumentType(context)
             if (!PyTypeChecker.match(expectedType, predictedType, context)) {
-                println("In function ${parameter.name} couldn't perform typecheck " +
-                    "of expected type ${expectedType?.name} and predicted type ${predictedType?.name}")
+                println("In parameter ${parameter.name} couldn't perform typecheck of expected type ${expectedType?.name}" +
+                    " and predicted type ${predictedType?.name}")
                 false
             } else {
                 true
