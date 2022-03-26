@@ -21,9 +21,15 @@ import com.jetbrains.python.psi.types.TypeEvalContext
 class UsagesProcessor {
     fun findUsages(function: PyFunction): Collection<PsiElement> {
         return try {
-            findUsagesInternal(function).mapNotNull { getCaller(it) }
+            findUsagesInternal(function).mapNotNull {
+                try {
+                    getCaller(it)
+                } catch (e: NullPointerException) {
+                    return@mapNotNull null
+                }
+            }
         } catch (e: NullPointerException) {
-            println("couldn't find usages for function ${function.text}")
+            println("couldn't find usages for function ${function.name}")
             listOf()
         }
     }
@@ -34,10 +40,14 @@ class UsagesProcessor {
         val elementsToProcess: List<PsiElement> = listOf(*handler.primaryElements, *handler.secondaryElements)
         for (e in elementsToProcess) {
             handler.processElementUsages(e, { usageInfo: UsageInfo ->
-                if (!usageInfo.isNonCodeUsage) {
-                    usages.add(usageInfo)
+                try {
+                    if (!usageInfo.isNonCodeUsage) {
+                        usages.add(usageInfo)
+                    }
+                    true
+                } catch (_: NullPointerException) {
+                    false
                 }
-                true
             }, FindUsagesHandlerBase.createFindUsagesOptions(function.project, null))
         }
         return usages
@@ -117,8 +127,6 @@ class UsagesProcessor {
 
                 assignment.leftHandSideExpression!!.replace(it.first)
                 assignment.assignedValue!!.replace(it.second)
-
-                println(assignment.text)
                 assignment
             }
     }
