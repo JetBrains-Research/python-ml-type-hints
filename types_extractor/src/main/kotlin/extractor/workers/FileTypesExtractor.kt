@@ -34,6 +34,7 @@ class FileTypesExtractor(val output: String) {
 
             var functions: DataFrame<Any?>? = null
             traverseProject(project) { psi, filePath ->
+                println("processing ${psi.name}, progress")
                 val functionExtractor = FunctionExtractor()
                 val preprocessor = Preprocessor()
 
