@@ -1,40 +1,30 @@
-package extractor
+package extractor.configurers
 
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.module.ModuleManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.roots.ModuleRootManager
-import com.intellij.openapi.roots.ProjectRootManager
 import com.intellij.openapi.util.Comparing
-import com.intellij.openapi.vfs.VfsUtilCore
 import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.psi.PsiManager
-import com.jetbrains.python.psi.*
 import com.intellij.psi.util.QualifiedName
+import com.jetbrains.python.psi.PyFromImportStatement
+import com.jetbrains.python.psi.PyImportStatement
+import com.jetbrains.python.psi.PyRecursiveElementVisitor
+import extractor.utils.traverseProject
 
-class MyPythonSourceRootConfigurator {
-    public var totalPreResolved: Int = 0
-    public var totalResolved: Int = 0
-    public var totalUnresolved: Int = 0
+class MyPythonSourceRootConfigurer {
+    var totalPreResolved: Int = 0
+    var totalResolved: Int = 0
+    var totalUnresolved: Int = 0
 
     fun configureProject(project: Project, baseDir: VirtualFile) {
-        val projectManager = ProjectRootManager.getInstance(project)
         val visitor = ImportVisitor(baseDir)
-        projectManager.contentRoots.forEach { root ->
-            VfsUtilCore.iterateChildrenRecursively(root, null) { virtualFile ->
-                if (virtualFile.extension != "py" || virtualFile.canonicalPath == null) {
-                    return@iterateChildrenRecursively true
-                }
-                val psi = PsiManager.getInstance(project)
-                    .findFile(virtualFile) ?: return@iterateChildrenRecursively true
-                visitor.curFile = virtualFile
-                psi.accept(visitor)
 
-                true
-            }
+        traverseProject(project) { psi, _ ->
+            visitor.curFile = psi.virtualFile
+            psi.accept(visitor)
         }
         totalPreResolved += visitor.preResolved
-
 
         visitor.sourceRoots.filterNotNull().forEach {
             addSourceRoot(project, baseDir, it, false)
@@ -42,20 +32,11 @@ class MyPythonSourceRootConfigurator {
     }
 
     fun countImports(project: Project) {
-        val projectManager = ProjectRootManager.getInstance(project)
         val visitor = CountingVisitor()
-        projectManager.contentRoots.forEach { root ->
-            VfsUtilCore.iterateChildrenRecursively(root, null) { virtualFile ->
-                if (virtualFile.extension != "py" || virtualFile.canonicalPath == null) {
-                    return@iterateChildrenRecursively true
-                }
-                val psi = PsiManager.getInstance(project)
-                    .findFile(virtualFile) ?: return@iterateChildrenRecursively true
-                psi.accept(visitor)
-
-                true
-            }
+        traverseProject(project) { psi, _ ->
+            psi.accept(visitor)
         }
+
         totalResolved += visitor.totalResolved
         totalUnresolved += visitor.totalUnresolved
     }
@@ -66,36 +47,23 @@ class MyPythonSourceRootConfigurator {
 
         override fun visitPyImportStatement(node: PyImportStatement) {
             super.visitPyImportStatement(node)
-            val import = node.importElements
-            for (i in import.indices) {
-                if (import[i].importedQName == null) {
-                    continue
-                }
-
-                try {
-                    val resolved = import[i].multiResolve()
-                    if (resolved.isEmpty()) {
-                        totalUnresolved++
-                        println(import[i].importedQName)
-                    } else {
-                        totalResolved++
-                    }
-                } catch (e: NullPointerException) {
+            node.importElements.filterNot { it.importedQName == null }.forEach {
+                val resolved = it.multiResolve()
+                if (resolved.isEmpty()) {
+                    totalUnresolved++
+                } else {
+                    totalResolved++
                 }
             }
         }
 
         override fun visitPyFromImportStatement(node: PyFromImportStatement) {
             super.visitPyFromImportStatement(node)
-            try {
-                val resolved = node.resolveImportSourceCandidates()
-                if (resolved.isNotEmpty()) {
-                    totalResolved++
-                } else {
-                    totalUnresolved++
-                    println(node.text)
-                }
-            } catch (e: NullPointerException) {
+            val resolved = node.resolveImportSourceCandidates()
+            if (resolved.isNotEmpty()) {
+                totalResolved++
+            } else {
+                totalUnresolved++
             }
         }
     }
@@ -106,34 +74,19 @@ class MyPythonSourceRootConfigurator {
         var preResolved: Int = 0
 
         override fun visitPyImportStatement(node: PyImportStatement) {
-            val import = node.importElements
-            val toResolve = MutableList(import.size) { true }
-
-            for (i in import.indices) {
-                if (import[i].importedQName == null) {
-                    continue
-                }
-
+            node.importElements.filterNot { it.importedQName == null }.forEach {
                 try {
-                    val resolved = import[i].multiResolve()
+                    val resolved = it.multiResolve()
                     if (resolved.isNotEmpty()) {
                         preResolved++
-                        toResolve[i] = false
                     }
+
+                    val module = findImportee(root, curFile, it.importedQName!!)
+                    sourceRoots.add(module)
                 } catch (e: NullPointerException) {
-
+                    // Occurs somewhere in resolution of qualified name
                 }
             }
-
-            import.forEach {
-                if (it.importedQName == null) {
-                    return@forEach
-                }
-                val module = findImportee(root, curFile, it.importedQName!!)
-                sourceRoots.add(module)
-            }
-
-
         }
 
         override fun visitPyFromImportStatement(node: PyFromImportStatement) {
@@ -144,18 +97,19 @@ class MyPythonSourceRootConfigurator {
                     preResolved++
                     return
                 }
+
+                val module = findImportee(root, curFile, import) ?: findImporteeDfs(root, curFile, import)
+
+                sourceRoots.add(module)
             } catch (e: NullPointerException) {
+                // Occurs somewhere in resolution of qualified name
             }
-
-            val module = findImportee(root, curFile, import) ?: findImporteeDfs(root, curFile, import)
-
-            sourceRoots.add(module)
         }
 
         private fun findImportee(root: VirtualFile, file: VirtualFile, importName: QualifiedName): VirtualFile? {
             var newFile = file
             do {
-                val module = tryTraverse(root, newFile, importName)
+                val module = tryTraverse(newFile, importName)
                 if (module != null && module.parent != root) {
                     return module.parent
                 }
@@ -167,7 +121,7 @@ class MyPythonSourceRootConfigurator {
 
         private fun findImporteeDfs(root: VirtualFile, file: VirtualFile, importName: QualifiedName): VirtualFile? {
             for (child in root.children) {
-                val module = tryTraverse(root, child, importName)
+                val module = tryTraverse(child, importName)
                 if (module != null && module.parent != root) {
                     return module.parent
                 } else {
@@ -180,8 +134,7 @@ class MyPythonSourceRootConfigurator {
             return null
         }
 
-        private fun tryTraverse(root: VirtualFile, file: VirtualFile, importName: QualifiedName): VirtualFile? {
-            file.toNioPath().toList()
+        private fun tryTraverse(file: VirtualFile, importName: QualifiedName): VirtualFile? {
             val moduleDir = file.findFileByRelativePath(importName.join("/"))
             val moduleFile = file.findFileByRelativePath(importName.join("/") + ".py")
             return moduleDir ?: moduleFile

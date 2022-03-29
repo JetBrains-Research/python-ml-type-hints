@@ -1,12 +1,19 @@
 package plugin.quickfix
 
-import plugin.predictors.TypePredictor
 import com.intellij.codeInspection.LocalQuickFix
 import com.intellij.codeInspection.ProblemDescriptor
 import com.intellij.openapi.project.Project
 import com.jetbrains.python.psi.LanguageLevel
 import com.jetbrains.python.psi.PyElementGenerator
+import com.jetbrains.python.psi.PyNamedParameter
+import com.jetbrains.python.psi.PyParameter
 import com.jetbrains.python.psi.PyParameterList
+import com.jetbrains.python.psi.types.PyTypeChecker
+import com.jetbrains.python.psi.types.PyTypeParser
+import com.jetbrains.python.psi.types.TypeEvalContext
+import extractor.function.FunctionExtractor
+import extractor.utils.checkEqual
+import plugin.predictors.TypePredictor
 
 /**
  * Quick fix for functions where at least one parameter is not type annotated
@@ -25,24 +32,45 @@ class ParametersListQuickFix : LocalQuickFix {
         if (parameterList !is PyParameterList) {
             return
         }
+        val function = parameterList.containingFunction ?: return
 
         val generator = PyElementGenerator.getInstance(project)
         val newParameterList = generator.createParameterList(LanguageLevel.PYTHON38, "()")
 
-        val parameters = parameterList.parameters.map { it.asNamed?.name!! }.filter { it != "self" }
-        val newParameters = TypePredictor.predictDLTPy(parameterList.containingFile, parameters)
+        val extractor = FunctionExtractor()
+        function.accept(extractor)
+        val newParameters =
+            (if (function.parameterList.parameters.none { it.isSelf }) mapOf() else mapOf("self" to listOf(""))) +
+                TypePredictor.predictParameters(extractor.functions.first { checkEqual(function, it) }, 3)
 
-        parameterList.parameters.forEach {
-            newParameterList.addParameter(
-                generator.createParameter(
-                    it.name!!,
-                    it.defaultValueText,
-                    it.asNamed?.annotationValue ?: if (it.name!! == "self") null else newParameters.next(),
-                    LanguageLevel.PYTHON38
-                )
-            )
+        val context = TypeEvalContext.userInitiated(project, function.containingFile)
+
+        function.parameterList.parameters.forEach { old ->
+            newParameterList.addParameter(generator.createParameter(old.name!!,
+                old.defaultValueText,
+                old.asNamed?.annotationValue ?: if (old.isSelf) null else newParameters[old.name!!]?.firstOrNull {
+                    typeCheck(old, it, context)
+                },
+                LanguageLevel.PYTHON38))
         }
 
-        parameterList.replace(newParameterList)
+        function.parameterList.replace(newParameterList)
+    }
+
+    private fun typeCheck(parameter: PyParameter, parameterType: String, context: TypeEvalContext): Boolean {
+        return if (parameter !is PyNamedParameter) {
+            false
+        } else {
+            val predictedType = PyTypeParser.getTypeByName(parameter, parameterType)
+            val expectedType = parameter.getArgumentType(context)
+            if (!PyTypeChecker.match(expectedType, predictedType, context)) {
+                println("In parameter ${parameter.name} couldn't perform typecheck of expected type ${expectedType?.name}" +
+                    " and predicted type ${predictedType?.name}")
+                false
+            } else {
+                true
+            }
+        }
+
     }
 }

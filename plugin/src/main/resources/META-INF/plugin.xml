@@ -29,11 +29,15 @@
                          enabledByDefault="true"
                          groupBundle="messages.InspectionsBundle"
                          level="WARNING"
-                         implementationClass="plugin.NoAnnotationInspection"/>
+                         implementationClass="plugin.inspections.NoAnnotationInspection"/>
+        <completion.contributor language="Python"
+                                implementationClass="plugin.typing.MLCompletionContributor" order="first"/>
+
     </extensions>
-    
+
     <extensions defaultExtensionNs="Pythonid">
-    <typeProvider implementation="plugin.typing.PyGuessTypeProvider"/>
+        <!--    <typeProvider implementation="plugin.typing.PyGuessTypeProvider" order="last"/>-->
+
     </extensions>
 
 </idea-plugin>

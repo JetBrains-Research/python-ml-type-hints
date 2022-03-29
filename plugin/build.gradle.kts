@@ -23,20 +23,5 @@ version = rootProject.version
 //}
 dependencies {
     implementation("com.lordcodes.turtle:turtle:0.5.0")
-    implementation("com.github.holgerbrandl:krangl:0.16.1")
-//    implementation(kotlin("stdlib-jdk8"))
-//    implementation("io.kinference:inference:0.1.3")
     implementation(project(":types_extractor"))
 }
-
-// Configure gradle-intellij-plugin plugin.
-// Read more: https://github.com/JetBrains/gradle-intellij-plugin
-
-//tasks {
-//     Set the compatibility versions to 1.8
-//    withType<JavaCompile> {
-//        sourceCompatibility = "1.8"
-//        targetCompatibility = "1.8"
-//    }
-//}
-

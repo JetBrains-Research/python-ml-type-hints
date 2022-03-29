@@ -1,13 +1,10 @@
 package extractor.function
 
-import edu.stanford.nlp.pipeline.CoreDocument
-import org.apache.commons.lang.StringUtils
-import edu.stanford.nlp.pipeline.StanfordCoreNLP
 import edu.stanford.nlp.simple.Sentence
+import org.apache.commons.lang.StringUtils
 import org.apache.lucene.analysis.standard.StandardAnalyzer
 import org.apache.lucene.analysis.tokenattributes.CharTermAttribute
 import java.util.*
-
 
 class Preprocessor {
     fun preprocess(function: Function): Function {
@@ -26,11 +23,13 @@ class Preprocessor {
             argNames = function.argNames.map(this::processIdentifier),
             argDescriptions = function.argDescriptions.map(this::processSentence),
             docstring = processSentence(function.docstring),
-            usages = function.usages
+            usages = function.usages,
+            fullName = function.name,
+            argFullNames = function.argNames
         )
     }
 
-    fun processSentence(sentence: String?): String? {
+    fun processSentence(sentence: String): String {
         val reducer = listOf(
             ::replaceDigitsWithSpace,
             ::removePunctuationAndLinebreaks,
@@ -39,7 +38,7 @@ class Preprocessor {
             ::removeStopWords
         )
 
-        return reducer.fold(sentence, { acc, f -> acc?.let { f(it) } })
+        return reducer.fold(sentence) { acc, f -> f(acc) }
     }
 
     fun processIdentifier(sentence: String): String {
@@ -50,18 +49,14 @@ class Preprocessor {
             ::lemmatize
         )
 
-        return reducer.fold(sentence, { acc, f -> f(acc) })
+        return reducer.fold(sentence) { acc, f -> f(acc) }
     }
 
     companion object {
-        //        private val pipeline: StanfordCoreNLP
         private val props = Properties()
 
-
         init {
-//            props.setProperty("customAnnotatorClass.stopword", "intoxicant.analytics.coreNlp.StopwordAnnotator")
             props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,depparse,coref,kbp,quote,stopword")
-//            pipeline = StanfordCoreNLP(props)
         }
 
         fun replaceDigitsWithSpace(sentence: String) =
@@ -76,10 +71,9 @@ class Preprocessor {
             convertCamelcase(sentence.replace('_', ' '))
 
         fun lemmatize(sentence: String): String {
-//            val doc = CoreDocument(sentence)
-//            pipeline.annotate(doc)
-            if (sentence.filter { it.isLetterOrDigit() } == "")
+            if (sentence.filter { it.isLetterOrDigit() } == "") {
                 return ""
+            }
             try {
                 val sent = Sentence(sentence)
                 return sent.lemmas(props).joinToString(" ")
@@ -101,10 +95,6 @@ class Preprocessor {
             }
             return res.trim()
         }
-
-        /*fun getWordnetPos(tag: String): String {
-
-        }*/
 
         fun convertCamelcase(sentence: String): String {
             return StringUtils.splitByCharacterTypeCamelCase(sentence).joinToString(" ")
