@@ -21,7 +21,6 @@ class TypesExtractor : CliktCommand() {
 
     private val input: String by argument(help = "Path to input")
     private val output: String by argument(help = "Path to output")
-    private val infer: String? by argument()
     private val envName: String by argument()
 
     override fun run() {

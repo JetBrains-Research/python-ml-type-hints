@@ -29,7 +29,6 @@ open class IOCliTask : org.jetbrains.intellij.tasks.RunIdeTask() {
     val input: String? by project
     //Path to the output directory
     val output: String? by project
-    val toInfer: String? by project
     val envName: String? by project
 
     init {
@@ -52,7 +51,6 @@ tasks {
             runner,
             input,
             output,
-            toInfer,
             envName
         )
     }
