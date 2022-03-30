@@ -3,6 +3,7 @@ package extractor.utils
 import extractor.function.Function
 import org.jetbrains.dataframe.DataFrame
 import org.jetbrains.dataframe.add
+import org.jetbrains.dataframe.plus
 import org.jetbrains.dataframe.toDataFrameByProperties
 
 fun addMeaningfulColumnsToFunctions(
@@ -22,4 +23,16 @@ fun addMeaningfulColumnsToFunctions(
         "argNamesLen" { (get("argNames") as List<*>).size }
         "argTypesLen" { (get("argTypes") as List<*>).size }
     }
+}
+
+fun addFunctionsToDf(
+    project: String,
+    file: String,
+    functions: List<Function>,
+    avlTypes: List<String>,
+    oldDf: DataFrame<Any?>?
+): DataFrame<Any?> {
+    val newDf = addMeaningfulColumnsToFunctions(project, file, functions, avlTypes)
+
+    return if (oldDf == null) newDf else oldDf + newDf
 }

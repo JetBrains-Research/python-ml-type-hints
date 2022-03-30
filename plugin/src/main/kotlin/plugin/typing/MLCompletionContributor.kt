@@ -6,6 +6,7 @@ import com.intellij.codeInsight.completion.CompletionProvider
 import com.intellij.codeInsight.completion.CompletionResultSet
 import com.intellij.codeInsight.completion.CompletionType
 import com.intellij.codeInsight.lookup.LookupElement
+import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.DumbAware
 import com.intellij.patterns.PlatformPatterns.psiElement
 import com.intellij.psi.util.PsiTreeUtil
@@ -32,18 +33,20 @@ class MLCompletionContributor : CompletionContributor(), DumbAware {
     }
 
     private class MLCompletionProvider : CompletionProvider<CompletionParameters>() {
+        private val logger = thisLogger()
+
         override fun addCompletions(
             parameters: CompletionParameters,
             context: ProcessingContext,
             result: CompletionResultSet,
         ) {
-            val original = parameters.originalPosition ?: return
-            println("captured is  ${original.text} of class ${original.javaClass}")
+            val original = parameters.position
+            logger.debug("captured is  ${original.text} of class ${original.javaClass}")
             val element = PsiTreeUtil
                 .getParentOfType(original, PyReferenceExpression::class.java)
                 ?.firstChild.castSafelyTo<PyReferenceExpression>()
                 ?.reference?.resolve() ?: return
-            println("reference is ${element.text} of class ${element.javaClass}")
+            logger.debug("reference is ${element.text} of class ${element.javaClass}")
 
             val prefix = original.containingFile.text.substring(original.textOffset, parameters.offset)
             if (element is PyAnnotationOwner && element.annotation != null) {
@@ -52,7 +55,7 @@ class MLCompletionContributor : CompletionContributor(), DumbAware {
 
             when (element) {
                 is PyFunction -> {
-                    val extractor = FunctionExtractor()
+                    val extractor = FunctionExtractor(element.project, element.containingFile)
                     element.accept(extractor)
                     val types = TypePredictor.predictReturnType(extractor.functions.first {
                         checkEqual(element, it)
@@ -65,7 +68,7 @@ class MLCompletionContributor : CompletionContributor(), DumbAware {
                     }
                 }
                 is PyNamedParameter -> {
-                    val extractor = FunctionExtractor()
+                    val extractor = FunctionExtractor(element.project, element.containingFile)
                     val function = PsiTreeUtil.getParentOfType(element, PyFunction::class.java)
                     function?.accept(extractor)
                     if (extractor.functions.isEmpty()) {

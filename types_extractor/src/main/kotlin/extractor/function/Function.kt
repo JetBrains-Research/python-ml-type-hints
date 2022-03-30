@@ -14,5 +14,7 @@ data class Function(
     val lineNumber: Int,
     val usages: Collection<String>,
     val fullName: String,
-    val argFullNames: List<String>
+    val argFullNames: List<String>,
+    val returnTypePredicted: String,
+    val argsTypesPredicted: List<String>
 )

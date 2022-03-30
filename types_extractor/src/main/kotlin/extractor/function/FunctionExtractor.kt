@@ -1,6 +1,8 @@
 package extractor.function
 
+import com.intellij.openapi.project.Project
 import com.intellij.openapi.util.text.StringUtil
+import com.intellij.psi.PsiFile
 import com.intellij.util.containers.addIfNotNull
 import com.jetbrains.python.psi.PyClass
 import com.jetbrains.python.psi.PyElement
@@ -8,13 +10,16 @@ import com.jetbrains.python.psi.PyFunction
 import com.jetbrains.python.psi.PyImportStatementBase
 import com.jetbrains.python.psi.PyRecursiveElementVisitor
 import com.jetbrains.python.psi.PyReturnStatement
+import com.jetbrains.python.psi.types.TypeEvalContext
 import kotlin.math.max
 import kotlin.math.min
 
-class FunctionExtractor : PyRecursiveElementVisitor() {
+class FunctionExtractor(private val context: TypeEvalContext) : PyRecursiveElementVisitor() {
     val functions: MutableList<Function> = mutableListOf()
     val avalTypes: MutableList<String> = mutableListOf()
     private val preprocessor = Preprocessor()
+
+    constructor(project: Project, file: PsiFile): this(TypeEvalContext.userInitiated(project, file))
 
     override fun visitPyElement(node: PyElement) {
         super.visitPyElement(node)
@@ -70,7 +75,9 @@ class FunctionExtractor : PyRecursiveElementVisitor() {
                     returnType = function.annotationValue.orEmpty(),
                     usages = usagesProcessor.findUsages(function).map { it.text },
                     fullName = function.name.orEmpty(),
-                    argFullNames = parameterNames
+                    argFullNames = parameterNames,
+                    returnTypePredicted = context.getReturnType(function)?.name.orEmpty(),
+                    argsTypesPredicted = parameters.map { it?.let { context.getType(it)?.name }.orEmpty() }
                 )
             )
         )

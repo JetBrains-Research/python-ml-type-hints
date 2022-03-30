@@ -1,6 +1,7 @@
 package extractor.function
 
 import com.intellij.find.findUsages.FindUsagesHandlerBase
+import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.psi.PsiElement
 import com.intellij.psi.util.PsiTreeUtil
 import com.intellij.usageView.UsageInfo
@@ -19,6 +20,8 @@ import com.jetbrains.python.psi.search.PySuperMethodsSearch
 import com.jetbrains.python.psi.types.TypeEvalContext
 
 class UsagesProcessor {
+    private val logger = thisLogger()
+
     fun findUsages(function: PyFunction): Collection<PsiElement> {
         return try {
             findUsagesInternal(function).mapNotNull {
@@ -29,7 +32,7 @@ class UsagesProcessor {
                 }
             }
         } catch (e: NullPointerException) {
-            println("couldn't find usages for function ${function.name}")
+            logger.warn("couldn't find usages for function ${function.name}")
             listOf()
         }
     }
@@ -91,7 +94,7 @@ class UsagesProcessor {
                 else -> null
             }
         } catch (e: NullPointerException) {
-            println("couldn't find function call for ${element.text}")
+            logger.warn("couldn't find function call for ${element.text}")
             return null
         }
     }

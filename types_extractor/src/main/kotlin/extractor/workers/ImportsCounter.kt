@@ -1,11 +1,14 @@
 package extractor.workers
 
+import com.intellij.openapi.diagnostic.thisLogger
 import extractor.utils.forEachProjectInDir
 import extractor.utils.setupProject
 
 class ImportsCounter {
+    val logger = thisLogger()
+
     fun countResolvedImports(dirPath: String, envName: String): ResolutionResult {
-        println("Counting imports for $dirPath")
+        logger.debug("Counting imports for $dirPath")
         val time = System.currentTimeMillis()
         var totalPreResolved = 0
         var totalUnresolved = 0
@@ -17,7 +20,7 @@ class ImportsCounter {
             totalPreResolved += srcConfigurer.totalPreResolved
             totalResolvedByUs += srcConfigurer.totalResolved - srcConfigurer.totalPreResolved
             totalUnresolved += srcConfigurer.totalUnresolved
-            println(
+            logger.debug(
                 "In project $projectDir:" +
                     " resolved ${srcConfigurer.totalResolved - srcConfigurer.totalPreResolved} imports," +
                     " unresolved ${srcConfigurer.totalUnresolved}," +
@@ -26,7 +29,7 @@ class ImportsCounter {
         }
 
         val delta = System.currentTimeMillis() - time
-        println("Time for executing: $delta")
+        logger.debug("Time for executing: $delta")
         return ResolutionResult(totalPreResolved, totalUnresolved, totalResolvedByUs)
     }
 }

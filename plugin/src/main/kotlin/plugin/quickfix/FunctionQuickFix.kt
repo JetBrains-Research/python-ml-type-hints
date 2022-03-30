@@ -3,26 +3,26 @@ package plugin.quickfix
 import com.intellij.codeInspection.LocalQuickFix
 import com.intellij.codeInspection.ProblemDescriptor
 import com.intellij.openapi.command.WriteCommandAction.writeCommandAction
+import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.fileEditor.FileEditorManager
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.popup.JBPopupFactory
 import com.intellij.openapi.ui.popup.PopupStep
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep
-import com.intellij.psi.PsiFileFactory
-import com.intellij.psi.util.parentOfType
 import com.jetbrains.python.psi.LanguageLevel
 import com.jetbrains.python.psi.PyElementGenerator
 import com.jetbrains.python.psi.PyFunction
-import com.jetbrains.python.psi.PyUtil
 import com.jetbrains.python.psi.types.PyTypeChecker
 import com.jetbrains.python.psi.types.PyTypeParser
 import com.jetbrains.python.psi.types.TypeEvalContext
 import extractor.function.FunctionExtractor
 import extractor.utils.checkEqual
-import plugin.inspections.PyTypeCheckerInspector
+//import plugin.inspections.PyTypeCheckerInspector
 import plugin.predictors.TypePredictor
 
 class FunctionQuickFix : LocalQuickFix {
+    val logger = thisLogger()
+
     override fun getFamilyName(): String {
         return name
     }
@@ -35,17 +35,21 @@ class FunctionQuickFix : LocalQuickFix {
         val function = descriptor.psiElement
         if (function !is PyFunction) return
 
-        val extractor = FunctionExtractor()
+        val time = System.currentTimeMillis()
+
+        val context = TypeEvalContext.userInitiated(project, function.containingFile)
+        val extractor = FunctionExtractor(context)
+
         function.accept(extractor)
         val functionData = extractor.functions.first { checkEqual(function, it) }
 
-        val context = TypeEvalContext.userInitiated(project, function.containingFile)
         val predictedTypes = TypePredictor.predictReturnType(functionData, topN = 10)
             .filter {
                 typeCheck(function, it, context)
 //                typeCheckWithInspection(function, it, project)
             }.let { it + listOf("typing.Any") }
-        println("predicted type for function ${functionData.fullName} is ${predictedTypes.first()}")
+        logger.debug("prediction took ${System.currentTimeMillis() - time}")
+        logger.debug("predicted type for function ${functionData.fullName} is ${predictedTypes.first()}")
         val popup = JBPopupFactory.getInstance()
             .createListPopup(object : BaseListPopupStep<String>(null, predictedTypes) {
                 override fun getTextFor(value: String): String {
@@ -85,7 +89,7 @@ class FunctionQuickFix : LocalQuickFix {
         val expectedType = context.getReturnType(function)
         val predictedType = PyTypeParser.getTypeByName(function, returnType)
         return if (!PyTypeChecker.match(expectedType, predictedType, context) || predictedType == null) {
-            println("In function ${function.name} couldn't perform typecheck " +
+            logger.warn("In function ${function.name} couldn't perform typecheck " +
                 "of expected type ${expectedType?.name} and predicted type ${predictedType?.name}")
             false
         } else {
@@ -93,7 +97,7 @@ class FunctionQuickFix : LocalQuickFix {
         }
     }
 
-    private fun typeCheckWithInspection(function: PyFunction, type: String, project: Project): Boolean {
+    /*private fun typeCheckWithInspection(function: PyFunction, type: String, project: Project): Boolean {
         val typeChecker = PyTypeCheckerInspector()
         val file = function.containingFile
         function.copy()
@@ -108,7 +112,7 @@ class FunctionQuickFix : LocalQuickFix {
 
         return mistakeAfterSwap <= mistakeBeforeSwap
 
-    }
+    }*/
 
     private fun generateNewFunctionWithType(function: PyFunction, type: String, project: Project): PyFunction {
         val generator = PyElementGenerator.getInstance(project)

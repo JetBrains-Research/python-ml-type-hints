@@ -17,7 +17,7 @@ class PyGuessTypeProvider : PyTypeProviderBase() {
         if (shouldNotInfer(param)) {
             return super.getParameterType(param, func, context)
         }
-        val extractor = FunctionExtractor()
+        val extractor = FunctionExtractor(context)
         func.accept(extractor)
         val function = extractor.functions.first()
 
@@ -41,7 +41,7 @@ class PyGuessTypeProvider : PyTypeProviderBase() {
             return super.getReturnType(callable, context)
         }
 
-        val extractor = FunctionExtractor()
+        val extractor = FunctionExtractor(context)
         callable.accept(extractor)
         val function = extractor.functions.first()
 

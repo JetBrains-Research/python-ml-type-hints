@@ -1,5 +1,6 @@
 package extractor.function
 
+import com.intellij.openapi.diagnostic.thisLogger
 import edu.stanford.nlp.simple.Sentence
 import org.apache.commons.lang.StringUtils
 import org.apache.lucene.analysis.standard.StandardAnalyzer
@@ -25,7 +26,9 @@ class Preprocessor {
             docstring = processSentence(function.docstring),
             usages = function.usages,
             fullName = function.name,
-            argFullNames = function.argNames
+            argFullNames = function.argNames,
+            returnTypePredicted = function.returnTypePredicted,
+            argsTypesPredicted = function.argsTypesPredicted
         )
     }
 
@@ -54,6 +57,7 @@ class Preprocessor {
 
     companion object {
         private val props = Properties()
+        private val logger = thisLogger()
 
         init {
             props.setProperty("annotators", "tokenize,ssplit,pos,lemma,ner,parse,depparse,coref,kbp,quote,stopword")
@@ -78,7 +82,7 @@ class Preprocessor {
                 val sent = Sentence(sentence)
                 return sent.lemmas(props).joinToString(" ")
             } catch (e: Exception) {
-                println("string is $sentence")
+                logger.warn("string is $sentence")
                 throw e
             }
         }

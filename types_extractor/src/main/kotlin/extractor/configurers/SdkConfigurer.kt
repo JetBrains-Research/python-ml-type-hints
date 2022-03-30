@@ -2,6 +2,7 @@ package extractor.configurers
 
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.application.runWriteAction
+import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.projectRoots.ProjectJdkTable
 import com.intellij.openapi.projectRoots.Sdk
@@ -12,14 +13,16 @@ import com.jetbrains.python.sdk.pythonSdk
 import com.jetbrains.python.statistics.modules
 
 class SdkConfigurer(private val project: Project, private val projectManager: ProjectRootManager) {
+    private val logger = thisLogger()
+
     private fun createSdk(sdkPath: String): Sdk {
         val sdk = PyDetectedSdk(sdkPath)
-        println("Created SDK: $sdk")
+        logger.debug("Created SDK: $sdk")
         return sdk
     }
 
     private fun connectSdkWithProject(sdk: Sdk) {
-        println("Connecting SDK with project files")
+        logger.debug("Connecting SDK with project files")
         val jdkTable = ProjectJdkTable.getInstance()
         runWriteAction {
             jdkTable.addJdk(sdk)
@@ -34,7 +37,7 @@ class SdkConfigurer(private val project: Project, private val projectManager: Pr
     }
 
     fun setProjectSdk(sdkPath: String) {
-        println("Setting up SDK for project $project")
+        logger.debug("Setting up SDK for project $project")
         val sdk = createSdk(sdkPath)
         connectSdkWithProject(sdk)
         PythonSdkType.getInstance().setupSdkPaths(sdk)

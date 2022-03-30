@@ -2,6 +2,7 @@ package plugin.quickfix
 
 import com.intellij.codeInspection.LocalQuickFix
 import com.intellij.codeInspection.ProblemDescriptor
+import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
 import com.jetbrains.python.psi.LanguageLevel
 import com.jetbrains.python.psi.PyElementGenerator
@@ -19,6 +20,8 @@ import plugin.predictors.TypePredictor
  * Quick fix for functions where at least one parameter is not type annotated
  */
 class ParametersListQuickFix : LocalQuickFix {
+    private val logger = thisLogger()
+
     override fun getFamilyName(): String {
         return name
     }
@@ -37,7 +40,7 @@ class ParametersListQuickFix : LocalQuickFix {
         val generator = PyElementGenerator.getInstance(project)
         val newParameterList = generator.createParameterList(LanguageLevel.PYTHON38, "()")
 
-        val extractor = FunctionExtractor()
+        val extractor = FunctionExtractor(project, function.containingFile)
         function.accept(extractor)
         val newParameters =
             (if (function.parameterList.parameters.none { it.isSelf }) mapOf() else mapOf("self" to listOf(""))) +
@@ -64,7 +67,7 @@ class ParametersListQuickFix : LocalQuickFix {
             val predictedType = PyTypeParser.getTypeByName(parameter, parameterType)
             val expectedType = parameter.getArgumentType(context)
             if (!PyTypeChecker.match(expectedType, predictedType, context)) {
-                println("In parameter ${parameter.name} couldn't perform typecheck of expected type ${expectedType?.name}" +
+                logger.warn("In parameter ${parameter.name} couldn't perform typecheck of expected type ${expectedType?.name}" +
                     " and predicted type ${predictedType?.name}")
                 false
             } else {
