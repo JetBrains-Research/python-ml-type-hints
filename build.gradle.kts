@@ -39,6 +39,7 @@ allprojects {
         api("io.kinference", "inference-core", "0.1.10")
         implementation("org.jetbrains.kotlinx:dataframe:0.8.0-dev-285-0.10.0.72")
         implementation("org.apache.commons:commons-csv:1.8")
+        implementation("com.github.jkcclemens:khttp:0.1.0")
     }
 
     // Configure gradle-intellij-plugin plugin.

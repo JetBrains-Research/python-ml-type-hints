@@ -17,12 +17,12 @@ class SdkConfigurer(private val project: Project, private val projectManager: Pr
 
     private fun createSdk(sdkPath: String): Sdk {
         val sdk = PyDetectedSdk(sdkPath)
-        logger.debug("Created SDK: $sdk")
+        logger.warn("Created SDK: $sdk")
         return sdk
     }
 
     private fun connectSdkWithProject(sdk: Sdk) {
-        logger.debug("Connecting SDK with project files")
+        logger.warn("Connecting SDK with project files")
         val jdkTable = ProjectJdkTable.getInstance()
         runWriteAction {
             jdkTable.addJdk(sdk)
@@ -37,7 +37,7 @@ class SdkConfigurer(private val project: Project, private val projectManager: Pr
     }
 
     fun setProjectSdk(sdkPath: String) {
-        logger.debug("Setting up SDK for project $project")
+        logger.warn("Setting up SDK for project $project")
         val sdk = createSdk(sdkPath)
         connectSdkWithProject(sdk)
         PythonSdkType.getInstance().setupSdkPaths(sdk)

@@ -4,17 +4,11 @@ import com.intellij.codeInspection.LocalQuickFix
 import com.intellij.codeInspection.ProblemDescriptor
 import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
-import com.jetbrains.python.psi.LanguageLevel
-import com.jetbrains.python.psi.PyElementGenerator
-import com.jetbrains.python.psi.PyNamedParameter
-import com.jetbrains.python.psi.PyParameter
-import com.jetbrains.python.psi.PyParameterList
+import com.jetbrains.python.psi.*
 import com.jetbrains.python.psi.types.PyTypeChecker
 import com.jetbrains.python.psi.types.PyTypeParser
 import com.jetbrains.python.psi.types.TypeEvalContext
-import extractor.function.FunctionExtractor
-import extractor.utils.checkEqual
-import plugin.predictors.TypePredictor
+import plugin.predictors.KInferencePredictor
 
 /**
  * Quick fix for functions where at least one parameter is not type annotated
@@ -40,13 +34,11 @@ class ParametersListQuickFix : LocalQuickFix {
         val generator = PyElementGenerator.getInstance(project)
         val newParameterList = generator.createParameterList(LanguageLevel.PYTHON38, "()")
 
-        val extractor = FunctionExtractor(project, function.containingFile)
-        function.accept(extractor)
+        val context = TypeEvalContext.userInitiated(project, function.containingFile)
+
         val newParameters =
             (if (function.parameterList.parameters.none { it.isSelf }) mapOf() else mapOf("self" to listOf(""))) +
-                TypePredictor.predictParameters(extractor.functions.first { checkEqual(function, it) }, 3)
-
-        val context = TypeEvalContext.userInitiated(project, function.containingFile)
+                KInferencePredictor().predictParameters(function, 3).map { it -> it.key to it.value.map { it.first } }
 
         function.parameterList.parameters.forEach { old ->
             newParameterList.addParameter(generator.createParameter(old.name!!,

@@ -30,6 +30,8 @@ open class IOCliTask : org.jetbrains.intellij.tasks.RunIdeTask() {
     //Path to the output directory
     val output: String? by project
     val envName: String? by project
+    // Path to a file containing split dataset
+    val fileFilter: String? by project
 
     init {
         jvmArgs = listOf(
@@ -51,7 +53,8 @@ tasks {
             runner,
             input,
             output,
-            envName
+            envName,
+            fileFilter ?: ""
         )
     }
 }

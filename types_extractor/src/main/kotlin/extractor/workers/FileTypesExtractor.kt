@@ -4,6 +4,8 @@ import com.intellij.openapi.diagnostic.thisLogger
 import extractor.function.FunctionExtractor
 import extractor.function.Preprocessor
 import extractor.utils.*
+import org.apache.commons.csv.CSVFormat
+import org.apache.commons.csv.QuoteMode
 import org.jetbrains.dataframe.DataFrame
 import org.jetbrains.dataframe.io.writeCSV
 import java.nio.file.Paths
@@ -12,7 +14,7 @@ class FileTypesExtractor(val output: String) {
     val logger = thisLogger()
     
     fun extractTypesFromProjectsInDir(dirPath: String, envName: String) {
-        logger.debug("Extracting projects from $dirPath")
+        logger.warn("Extracting projects from $dirPath")
 
         var totalFunctions: Long = 0
 
@@ -31,7 +33,7 @@ class FileTypesExtractor(val output: String) {
 
             var functions: DataFrame<Any?>? = null
             traverseProject(project) { psi, filePath ->
-                logger.debug("processing ${psi.name}, progress")
+                logger.warn("processing ${psi.name} from ${project.name}")
                 val functionExtractor = FunctionExtractor(project, psi)
                 val preprocessor = Preprocessor()
 
@@ -53,7 +55,7 @@ class FileTypesExtractor(val output: String) {
                     outAvalTypes.appendText(type + '\n')
                 }
             }
-            functions?.writeCSV(outFunctionsPath.toString())
+            functions?.writeCSV(outFunctionsPath.toString(), CSVFormat.DEFAULT.withQuoteMode(QuoteMode.ALL))
         }
     }
 

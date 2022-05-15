@@ -1,6 +1,8 @@
 package extractor.utils
 
+import com.intellij.history.core.Paths.relativeIfUnder
 import com.intellij.ide.impl.ProjectUtil
+import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.roots.ProjectRootManager
 import com.intellij.openapi.util.UserDataHolderBase
@@ -15,6 +17,10 @@ import extractor.configurers.MyPythonSourceRootConfigurer
 import extractor.configurers.SdkConfigurer
 import java.io.File
 import java.nio.file.Paths
+
+object ProjectUtils {
+    val logger = thisLogger()
+}
 
 fun forEachProjectInDir(dirPath: String, doAction: (project: Project, projectDir: String) -> Unit) {
     File(dirPath).list().orEmpty().forEach {
@@ -34,7 +40,7 @@ fun setupProject(project: Project, envName: String, projectPath: String):
     }
     val sdkConfigurer = SdkConfigurer(project, projectManager)
     sdkConfigurer.setProjectSdk(mySdkPaths[0])
-    print(mySdkPaths[0])
+    ProjectUtils.logger.warn("SDK is ${mySdkPaths[0]}")
 
     val sourceRootConfigurator = MyPythonSourceRootConfigurer()
     sourceRootConfigurator.configureProject(
@@ -52,7 +58,8 @@ fun traverseProject(project: Project, processFile: (psi: PsiFile, filePath: Stri
             val psi = PsiManager.getInstance(project).findFile(file) ?: return@iterateChildrenRecursively true
 
             if (isPythonFile(file)) {
-                processFile(psi, file.path)
+                println(project.basePath)
+                processFile(psi, relativeIfUnder(file.path, project.basePath))
             }
             return@iterateChildrenRecursively true
         }

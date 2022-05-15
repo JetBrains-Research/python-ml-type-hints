@@ -1,5 +1,7 @@
 package extractor.workers
 
+import com.intellij.history.core.Paths
+import com.intellij.openapi.diagnostic.thisLogger
 import com.intellij.openapi.util.text.StringUtil
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiRecursiveElementVisitor
@@ -22,13 +24,21 @@ import org.jetbrains.dataframe.io.writeCSV
 import org.jetbrains.dataframe.toDataFrameByProperties
 import java.nio.file.Path
 
-class ProjectTypeInferrer(val output: String) {
+class ProjectTypeInferrer(val output: String, val neededFiles: Set<String>?) {
+    private val logger = thisLogger()
+
     fun inferTypes(dirPath: String, envName: String): List<ElementInfo> {
         val types = mutableListOf<ElementInfo>()
 
         forEachProjectInDir(dirPath) { project, projectDir ->
             setupProject(project, envName, projectDir)
-            traverseProject(project) { psi, _ ->
+            logger.warn(projectDir)
+            traverseProject(project) { psi, filePath ->
+                if ((neededFiles != null) && (Paths.appended(project.name, filePath) !in neededFiles)) {
+                    return@traverseProject
+                }
+                logger.warn("Processing file ${Paths.appended(project.name, filePath)}")
+
                 val typedElements = mutableListOf<ElementInfo>()
                 psi.accept(InferringElementVisitor(typedElements))
                 types.addAll(typedElements)
@@ -66,13 +76,13 @@ class InferringElementVisitor(
             val elementType: ElementType = when (element) {
                 is PyParameter -> ElementType.PARAMETER
                 is PyFunction -> ElementType.FUNCTION
-                is PyTargetExpression -> ElementType.VARIABLE
+//                is PyTargetExpression -> ElementType.VARIABLE
                 else -> ElementType.NONE
             }
 
             val path = element.containingFile.virtualFile.path
             typedElements.add(
-                ElementInfo((element as PyTypedElement).name.orEmpty(), type, annotation, path, line, elementType)
+                ElementInfo((element as PyTypedElement).name.orEmpty(), type, annotation, path, line + 1, elementType)
             )
         }
     }

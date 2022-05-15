@@ -1,5 +1,6 @@
 package plugin.quickfix
 
+//import plugin.inspections.PyTypeCheckerInspector
 import com.intellij.codeInspection.LocalQuickFix
 import com.intellij.codeInspection.ProblemDescriptor
 import com.intellij.openapi.command.WriteCommandAction.writeCommandAction
@@ -15,13 +16,10 @@ import com.jetbrains.python.psi.PyFunction
 import com.jetbrains.python.psi.types.PyTypeChecker
 import com.jetbrains.python.psi.types.PyTypeParser
 import com.jetbrains.python.psi.types.TypeEvalContext
-import extractor.function.FunctionExtractor
-import extractor.utils.checkEqual
-//import plugin.inspections.PyTypeCheckerInspector
-import plugin.predictors.TypePredictor
+import plugin.predictors.KInferencePredictor
 
 class FunctionQuickFix : LocalQuickFix {
-    val logger = thisLogger()
+    private val logger = thisLogger()
 
     override fun getFamilyName(): String {
         return name
@@ -35,21 +33,14 @@ class FunctionQuickFix : LocalQuickFix {
         val function = descriptor.psiElement
         if (function !is PyFunction) return
 
-        val time = System.currentTimeMillis()
-
         val context = TypeEvalContext.userInitiated(project, function.containingFile)
-        val extractor = FunctionExtractor(context)
 
-        function.accept(extractor)
-        val functionData = extractor.functions.first { checkEqual(function, it) }
-
-        val predictedTypes = TypePredictor.predictReturnType(functionData, topN = 10)
+        val predictedTypes = KInferencePredictor().predictReturnType(function, topN = 10).map { it.first }
             .filter {
                 typeCheck(function, it, context)
 //                typeCheckWithInspection(function, it, project)
             }.let { it + listOf("typing.Any") }
-        logger.debug("prediction took ${System.currentTimeMillis() - time}")
-        logger.debug("predicted type for function ${functionData.fullName} is ${predictedTypes.first()}")
+        logger.warn("predicted type for function ${function.name} is ${predictedTypes.first()}")
         val popup = JBPopupFactory.getInstance()
             .createListPopup(object : BaseListPopupStep<String>(null, predictedTypes) {
                 override fun getTextFor(value: String): String {
