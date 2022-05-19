@@ -58,7 +58,6 @@ fun traverseProject(project: Project, processFile: (psi: PsiFile, filePath: Stri
             val psi = PsiManager.getInstance(project).findFile(file) ?: return@iterateChildrenRecursively true
 
             if (isPythonFile(file)) {
-                println(project.basePath)
                 processFile(psi, relativeIfUnder(file.path, project.basePath))
             }
             return@iterateChildrenRecursively true

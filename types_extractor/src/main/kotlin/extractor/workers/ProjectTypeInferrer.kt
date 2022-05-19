@@ -27,29 +27,33 @@ import java.nio.file.Path
 class ProjectTypeInferrer(val output: String, val neededFiles: Set<String>?) {
     private val logger = thisLogger()
 
-    fun inferTypes(dirPath: String, envName: String): List<ElementInfo> {
-        val types = mutableListOf<ElementInfo>()
+    fun inferTypes(dirPath: String, envName: String) {
 
         forEachProjectInDir(dirPath) { project, projectDir ->
+            val types = mutableListOf<ElementInfo>()
             setupProject(project, envName, projectDir)
             logger.warn(projectDir)
             traverseProject(project) { psi, filePath ->
-                if ((neededFiles != null) && (Paths.appended(project.name, filePath) !in neededFiles)) {
+                val filePathInProject = Paths.appended(project.name, filePath)
+                if ((neededFiles != null) && filePathInProject !in neededFiles) {
                     return@traverseProject
                 }
-                logger.warn("Processing file ${Paths.appended(project.name, filePath)}")
+                logger.warn("Processing file $filePathInProject")
 
                 val typedElements = mutableListOf<ElementInfo>()
-                psi.accept(InferringElementVisitor(typedElements))
-                types.addAll(typedElements)
+                try {
+                    psi.accept(InferringElementVisitor(typedElements, filePathInProject))
+                    types.addAll(typedElements)
+                } catch (e: Exception) {
+                    logger.error("Error during inferring for file $filePathInProject")
+                }
             }
+            printTypes(types, project.name)
         }
-
-        return types
     }
 
-    fun printTypes(types: List<ElementInfo>, output: String) {
-        val typePath = Path.of(output, "types.csv")
+    private fun printTypes(types: List<ElementInfo>, project: String) {
+        val typePath = Path.of(output, "inferred_types", "$project-types.csv")
         createFiles(typePath)
 
         val df = types.toDataFrameByProperties()
@@ -58,7 +62,8 @@ class ProjectTypeInferrer(val output: String, val neededFiles: Set<String>?) {
 }
 
 class InferringElementVisitor(
-    private val typedElements: MutableList<ElementInfo>
+    private val typedElements: MutableList<ElementInfo>,
+    private val filePath: String
 ) : PsiRecursiveElementVisitor() {
 
     override fun visitElement(element: PsiElement) {
@@ -80,9 +85,8 @@ class InferringElementVisitor(
                 else -> ElementType.NONE
             }
 
-            val path = element.containingFile.virtualFile.path
             typedElements.add(
-                ElementInfo((element as PyTypedElement).name.orEmpty(), type, annotation, path, line + 1, elementType)
+                ElementInfo((element as PyTypedElement).name.orEmpty(), type, annotation, filePath, line + 1, elementType)
             )
         }
     }

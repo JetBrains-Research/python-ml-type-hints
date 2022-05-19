@@ -30,8 +30,7 @@ class TypesExtractor : CliktCommand() {
         val neededFiles = if (fileFilter != "") getDatasetFrom(fileFilter, "test") else null
         val inferrer = ProjectTypeInferrer(output, neededFiles?.toSet())
 //        extractor.extractTypesFromProjectsInDir(input, envName)
-        val types = inferrer.inferTypes(input, envName)
-        inferrer.printTypes(types, output)
+        inferrer.inferTypes(input, envName)
         exitProcess(0)
     }
 }
