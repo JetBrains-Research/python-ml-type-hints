@@ -1,3 +1,7 @@
+# Status: Archived 
+
+No longer maintained
+
 # ML-based type inference in Python
 
 ## Project goals
